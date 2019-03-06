@@ -4,7 +4,27 @@
     <customButtons>copado__Add_Metadata</customButtons>
     <customButtons>copado__Add_Commits</customButtons>
     <customButtons>copado__Commit_Files</customButtons>
+    <customButtons>copado__Perform_Validation</customButtons>
+    <customButtons>copado__Apex_Test</customButtons>
+    <customButtons>copado__Pull_Request</customButtons>
+    <customButtons>copado__Select_Base_Branch</customButtons>
     <excludeButtons>Submit</excludeButtons>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>false</detailHeading>
+        <editHeading>false</editHeading>
+        <label>New Section</label>
+        <layoutColumns>
+            <layoutItems>
+                <height>50</height>
+                <page>copado__UserStory</page>
+                <showLabel>false</showLabel>
+                <showScrollbars>false</showScrollbars>
+                <width>100%</width>
+            </layoutItems>
+        </layoutColumns>
+        <style>OneColumn</style>
+    </layoutSections>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -75,11 +95,19 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>copado__Progress__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>copado__Close_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>copado__Cancellation_Reason__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>RecordTypeId</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -266,15 +294,7 @@
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>Apex Test Results</label>
-        <layoutColumns>
-            <layoutItems>
-                <height>455</height>
-                <page>copado__UserStoryApexTestResults</page>
-                <showLabel>false</showLabel>
-                <showScrollbars>false</showScrollbars>
-                <width>100%</width>
-            </layoutItems>
-        </layoutColumns>
+        <layoutColumns/>
         <style>OneColumn</style>
     </layoutSections>
     <layoutSections>

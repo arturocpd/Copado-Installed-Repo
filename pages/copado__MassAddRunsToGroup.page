@@ -10,7 +10,7 @@
             <apex:pageBlock mode="edit">
                 <apex:pageblockButtons >
                     <apex:commandButton value="{!$Label.site.cancel}" action="{!cancel}" />
-                    <apex:commandButton value="{!$Label.site.save}" styleClass="btnImportant" action="{!add}" />
+                    <apex:commandButton value="{!$Label.site.save}" styleClass="btnImportant" action="{!addTestRunsToGroup}" />
                 </apex:pageblockButtons>
                 <apex:pageBlockSection columns="1">
                     <apex:inputField value="{!dummy.copado__Selenium_Test_Group__c}" required="true"/>

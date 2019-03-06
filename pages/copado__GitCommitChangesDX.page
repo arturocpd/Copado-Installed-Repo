@@ -5,13 +5,11 @@
 
         <apex:SLDS />
         <c:WizardUtils />
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
-        <apex:stylesheet value="{!URLFOR($Resource.copado__jqx,'jqwidgets/styles/jqx.base.css')}" />
-        <apex:includeScript value="{!URLFOR($Resource.copado__jqx,'jqwidgets/jqx-all.js')}" />
+        <c:IncludeStaticsResourceComponent addJQuery="true"/>
+        <c:IncludeJqxResourceComponent addjqxAlljs="true" addjqxBasecss="true"/>
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
         <apex:includeScript value="{!URLFOR($Resource.gitCommitDXExtension) }" />
         <script>
-            var $copado = jQuery.noConflict();
             __sfdcSessionId = '{!GETSESSIONID()}';
         </script>
     </head>
@@ -24,8 +22,8 @@
                 <i><span id="retry-label">{!$Label.LOADING}</span></i>
             </center>
         </div>
-                                    <footer class="slds-modal__footer">
-                                        <button class="slds-button slds-button_neutral" onclick="gitCommit.DXArtifact_submit(this); return false;">Commit</button>
-                                    </footer>
+        <footer class="slds-modal__footer">
+            <button class="slds-button slds-button_neutral" onclick="gitCommit.DXArtifact_submit(this); return false;">Commit</button>
+        </footer>
     </body>
 </apex:page>

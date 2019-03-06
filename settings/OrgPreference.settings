@@ -45,6 +45,10 @@
         <settingValue>false</settingValue>
     </preferences>
     <preferences>
+        <settingName>Packaging2</settingName>
+        <settingValue>false</settingValue>
+    </preferences>
+    <preferences>
         <settingName>DeleteMonitoringDataEnabled</settingName>
         <settingValue>false</settingValue>
     </preferences>
@@ -61,8 +65,12 @@
         <settingValue>true</settingValue>
     </preferences>
     <preferences>
-        <settingName>ScratchOrgManagementPref</settingName>
+        <settingName>ExpandedSourceTrackingPref</settingName>
         <settingValue>false</settingValue>
+    </preferences>
+    <preferences>
+        <settingName>ScratchOrgManagementPref</settingName>
+        <settingValue>true</settingValue>
     </preferences>
     <preferences>
         <settingName>RemoveThemeBrandBanner</settingName>
@@ -105,6 +113,10 @@
         <settingValue>false</settingValue>
     </preferences>
     <preferences>
+        <settingName>PortalUserShareOnCase</settingName>
+        <settingValue>true</settingValue>
+    </preferences>
+    <preferences>
         <settingName>CompileOnDeploy</settingName>
         <settingValue>false</settingValue>
     </preferences>
@@ -126,6 +138,14 @@
     </preferences>
     <preferences>
         <settingName>LocalNames</settingName>
+        <settingValue>false</settingValue>
+    </preferences>
+    <preferences>
+        <settingName>CallDispositionEnabled</settingName>
+        <settingValue>false</settingValue>
+    </preferences>
+    <preferences>
+        <settingName>VoiceConferencingEnabled</settingName>
         <settingValue>false</settingValue>
     </preferences>
     <preferences>
@@ -162,6 +182,10 @@
     </preferences>
     <preferences>
         <settingName>NotesReservedPref01</settingName>
+        <settingValue>false</settingValue>
+    </preferences>
+    <preferences>
+        <settingName>ConsentManagementEnabled</settingName>
         <settingValue>false</settingValue>
     </preferences>
     <preferences>

@@ -11,9 +11,7 @@
         </script>
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
 
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/jquery.circliful.min.js')}" />
-        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.Statics,'css/jquery.circliful.css')}" />
+        <c:IncludeStaticsResourceComponent addJquery="true" addCirclifuljs="true" addCirclifulcss="true"/>
         <style type="text-css">
             .circle-info-half { z-index: -1; }
         </style>

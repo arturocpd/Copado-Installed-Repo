@@ -1,4 +1,4 @@
-<apex:page standardController="copado__Static_Code_Analysis_Settings__c" extensions="copado.GenerateStaticCodeAnalysisRuleSet" action="{!generateDefaultRuleSet}" id="RuleSetPage" lightningStylesheets="true" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0">
+<apex:page standardController="copado__Static_Code_Analysis_Settings__c" extensions="copado.GenerateStaticCodeAnalysisRuleSet" id="RuleSetPage" lightningStylesheets="true" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0">
 <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
 	<head>
       <c:GAnalytics />
@@ -9,7 +9,7 @@
           });
       </script>   
       <apex:slds />
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <c:IncludeStaticsResourceComponent addJQuery="true"/>
       <apex:stylesheet value="{!URLFOR($Resource.copado__SLDS, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
       <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
             <style type="text/css">
@@ -52,27 +52,25 @@
                     -khtml-opacity: 0.5;
                     z-index: 9999;
                 }
-            </style>            
-            <script>
-                var j$ = jQuery.noConflict();
-
-                j$(document).ready(function(){
-                   overridePageMessages();    
+            </style>
+            <script type="text/javascript">
+                $copado(document).ready(function(){
+                    overridePageMessages();
+                    console.log('GeneratingDefaultRuleSet in JS');
+                    if(confirm("{!JSENCODE($Label.SCA_DoYouWantToContinue)}")){
+                        generateDefaultRuleSet();
+                    }else goBack();
                 });
-                        
                 function overridePageMessages(){    
-                    
                     textureEffect = 'slds-theme--alert-texture';
-                                 
-                    j$('.warningM3').addClass('slds-notify slds-notify--toast slds-theme--warning customMessage '+textureEffect);          
-                    j$('.confirmM3').addClass('slds-notify slds-notify--alert slds-theme--success  customMessage '+textureEffect);    
-                    j$('.errorM3').addClass('slds-notify slds-notify--alert slds-theme--error customMessage '+textureEffect);                  
-                    j$('.infoM3').addClass('slds-notify slds-notify--toast customMessage '+textureEffect);    
-                                     
-                    j$('.errorM3').removeClass('errorM3'); 
-                    j$('.confirmM3').removeClass('confirmM3'); 
-                    j$('.infoM3').removeClass('infoM3');   
-                    j$('.warningM3').removeClass('warningM3');  
+                    $copado('.warningM3').addClass('slds-notify slds-notify--toast slds-theme--warning customMessage '+textureEffect);
+                    $copado('.confirmM3').addClass('slds-notify slds-notify--alert slds-theme--success  customMessage '+textureEffect);
+                    $copado('.errorM3').addClass('slds-notify slds-notify--alert slds-theme--error customMessage '+textureEffect);
+                    $copado('.infoM3').addClass('slds-notify slds-notify--toast customMessage '+textureEffect);
+                    $copado('.errorM3').removeClass('errorM3');
+                    $copado('.confirmM3').removeClass('confirmM3');
+                    $copado('.infoM3').removeClass('infoM3');
+                    $copado('.warningM3').removeClass('warningM3');
                 }
 
                 function goBack() {
@@ -86,9 +84,15 @@
     </head>
     <body  class="slds-scope">
     <apex:form id="theForm" styleClass="copado-lightning-container">
+        <apex:actionFunction name="generateDefaultRuleSet" action="{!generateDefaultRuleSet}" reRender="theForm"/>
     	<div class="slds-page-header">
                 <apex:outputPanel layout="block" id="pageMessages">
                     <apex:pagemessages id="pmessage"/>
+                    <script>
+                    setTimeout(function(){
+                        $copado('.infoM3').detach();
+                    },5000);
+                    </script>
                 </apex:outputPanel>
             <div class="slds-grid">       
                 <div class="slds-col slds-has-flexi-truncate">     
@@ -111,10 +115,8 @@
                     <button class="slds-button slds-button--neutral" onclick="goBack();return false;">Back</button>
                 </div>
                 </div>
-
             </div>
 		</div>
-	    
        	<br/><br/>
         <table class="slds-table slds-table_bordered slds-table_fixed-layout" id="tblData">
         	<thead>

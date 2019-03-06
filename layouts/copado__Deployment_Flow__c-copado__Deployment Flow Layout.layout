@@ -3,6 +3,7 @@
     <customButtons>copado__Manage_Branches</customButtons>
     <customButtons>copado__Manage_Environment_Variables</customButtons>
     <customButtons>copado__Manage_Regression_Tests</customButtons>
+    <customButtons>copado__Select_Main_Branch</customButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -60,6 +61,22 @@
                 <behavior>Edit</behavior>
                 <field>copado__Static_Code_Analysis_Settings__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Merge_Strategy__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Order_by__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Calculate_Based_on__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Hide_Tabs__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
@@ -68,15 +85,7 @@
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>Deployment Flow</label>
-        <layoutColumns>
-            <layoutItems>
-                <height>500</height>
-                <page>copado__DeploymentFlowConnections</page>
-                <showLabel>false</showLabel>
-                <showScrollbars>true</showScrollbars>
-                <width>100%</width>
-            </layoutItems>
-        </layoutColumns>
+        <layoutColumns/>
         <style>OneColumn</style>
     </layoutSections>
     <layoutSections>

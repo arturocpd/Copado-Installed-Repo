@@ -4,18 +4,12 @@
 			<c:GAnalytics />
 			<apex:slds />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 			<apex:stylesheet value="{!URLFOR($Resource.copado__SLDS, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
-			<apex:stylesheet value="{!URLFOR($Resource.copado__jqx,'jqwidgets/styles/jqx.base.css')}" />   
-			<!--<apex:stylesheet value="{!URLFOR($Resource.Statics,'css/screenLocker.css')}"/>-->
-			<apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
-			<script type="text/javascript">
-				var __sfdcSessionId = '{!GETSESSIONID()}';
-			</script>
-			<script src="../../soap/ajax/29.0/connection.js" type="text/javascript"></script>
+			<c:IncludeStaticsResourceComponent addJquery="true" addFAcss="true"/>
+			<c:IncludeJqxResourceComponent addjqxAlljs="true" addjqxBasecss="true"/>
+			<c:IncludeConnectionJsComponent />
             <c:WizardUtils ></c:WizardUtils>
-            <apex:includeScript value="{!URLFOR($Resource.copadoStreamingService) }" />			
-    		<apex:includeScript value="{!URLFOR($Resource.copado__jqx,'jqwidgets/jqx-all.js')}" />
+            <apex:includeScript value="{!URLFOR($Resource.copadoStreamingService) }" />
 			<apex:includeScript value="{!URLFOR($Resource.copado__utils)}" />
 			<script src="{!URLFOR($Resource.metadataGrid2) }" />    		
 			<style type="text/css">
@@ -30,8 +24,14 @@
 				}
 			</style>
 			<script>
-				var $copado = $copado || jQuery.noConflict();
-
+				var unlock = function() {
+			        $copado('#screenLockerLightning').hide();
+			        console.log('un-lock');
+			    };
+			    var lock = function() {
+			        $copado('#screenLockerLightning').show();
+			        console.log('lock')
+			    };
 				$copado(document).ready(function(){
 					overridePageMessages(); 
 					parseJson();   
@@ -310,21 +310,7 @@
 													customSetting.selectedType = len ? res[0].type : false;
 
 													var typeField = customSetting.selectedType == 'Hierarchy' ? 'SetupOwnerId' : 'Name';
-
-													for (var i = 0; len > i; i++) {
-														var item = res[i];
-														options += '<option value="' + item[typeField] + '">' + item.Name + '</option>';
-													}
-
-
-													$copado('#cs-valuesView').html(options);
-
-													var len = data.settings.length,
-														$obj = $copado('#cs-valuesView');
-
-													while (len--) {
-														$obj.find('option[value="' + data.settings[len] + '"]').attr('selected', 'selected');
-													}
+													customSetting.ops.createGrid(customSetting.data.values,customSetting.data.values,true);
 												}
 
 

@@ -1,12 +1,8 @@
 <apex:page id="thePage" controller="copado.CreateTestScriptStepsController" lightningStylesheets="true">
     <head>
         <c:GAnalytics />
-        <script type="text/javascript" src="{!URLFOR($Resource.CopadoChangeManagement, 'Assets/jquery-ui-1.11.1/external/jquery/jquery.js')}"></script>
-        <script type="text/javascript" id="scriptInit">
-            var __sfdcSessionId = '{!GETSESSIONID()}';
-            var $copado = jQuery.noConflict();
-        </script>
-        <script src="../../soap/ajax/31.0/connection.js" type="text/javascript"></script>
+        <c:IncludeStaticsResourceComponent addJquery="true" addUIjs="true" addUIcss="true" />
+        <c:IncludeConnectionJsComponent />
         <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
         <style>
             .ui-state-highlight{ background-color: red !important;}
@@ -57,7 +53,7 @@
                                                 <img src="/img/loading.gif" />
                                             </apex:facet>
                                             <apex:facet name="stop">
-                                                <apex:commandButton id="update" value="{!$Label.copado__update_save}" action="{!row.saveStep}" rerender="pb" status="saveStatus"/>
+                                                <apex:commandButton id="update" value="{!$Label.copado__update_save}" action="{!row.saveStep}" rerender="pb" status="saveStatus" onComplete="init();"/>
                                             </apex:facet>
                                         </apex:actionStatus>
                                     </td>
@@ -92,9 +88,7 @@
                 </table>            
             </apex:pageBlock>
         </apex:form>
-        <script type="text/javascript" src="{!URLFOR($Resource.CopadoChangeManagement, 'Assets/jquery-ui-1.11.1/jquery-ui.min.js')}"></script>
         <script id="scriptMain" type="text/javascript" src="{!URLFOR($Resource.CreateTestScriptSteps) }"></script>
-        <link href="{!URLFOR($Resource.CopadoChangeManagement, 'Assets/jquery-ui-1.11.1/jquery-ui.theme.min.css')}" rel="stylesheet" type="text/css" />
         <script id="focusAddBoxScript">
             function init(){
                 $copado(function() {

@@ -2,19 +2,27 @@
     <head>
         <c:GAnalytics />
         <c:WizardUtils id="wizardUtils"></c:WizardUtils>
-        <script type="text/javascript">
-            var __sfdcSessionId = '{!GETSESSIONID()}';
-        </script>
-        <script src="../../soap/ajax/36.0/connection.js" type="text/javascript"></script>
+        <c:IncludeConnectionJsComponent />
         <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
-        <apex:stylesheet value="{!URLFOR($Resource.copado__jqx,'jqwidgets/styles/jqx.base.css')}" />
-        <apex:stylesheet value="{!URLFOR($Resource.copado__Statics,'css/screenLocker.css')}"/>
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
-        <apex:includeScript value="{!URLFOR($Resource.copado__jqx,'jqwidgets/jqx-all.js')}" />
+        <c:IncludeStaticsResourceComponent addJQuery="true" addSLcss="true"/>
+        <c:IncludeJqxResourceComponent addjqxAlljs="true" addjqxBasecss="true"/>
         <apex:includeScript value="{!URLFOR($Resource.utilsV2) }"/>
         <apex:includeScript value="{!URLFOR($Resource.JsRemoting) }" />
         <apex:includeScript value="{!URLFOR($Resource.deploymentJobResults) }" />
-        <script> var $copado = jQuery.noConflict(); </script>
+        <style>
+            /*for Grid, go to page sections height issue on lightning design - UCU*/
+            .jqx-grid-pager-input-base{
+                height:18px !important;
+            }
+            /*show error messages on multiple rows fix - UCU*/
+            .jqx-grid-cell-wrap,.jqx-grid-cell-wrap>pre {
+                white-space: normal !important;
+            }
+            /*prevents unneeded empty space on the top of message box*/
+            .jqx-grid-cell-wrap>pre{
+                margin-top : 0px;
+            }
+        </style>
     </head>
     
     <body>

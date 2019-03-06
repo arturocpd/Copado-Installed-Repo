@@ -38,6 +38,7 @@
 				<table id="tbl_UserStories" boder="0" cellspacing="0" cellpadding="0" style="width:100%;" class="list">
 					<thead>
 						<tr class="headerRow" scope="col">
+							<th>{!$ObjectType.User_Story__c.Fields.RecordTypeId.Label}</th>
 							<th>{!$ObjectType.User_Story__c.Fields.User_Story_Title__c.Label}</th>
 							<th>{!$ObjectType.User_Story__c.Fields.userStory_Role__c.Label}</th>
 							<th>{!$ObjectType.User_Story__c.Fields.userStory_need__c.Label}</th>
@@ -49,17 +50,22 @@
 						<apex:repeat id="rptUserStories" value="{!userStories}" var="row">
 							<apex:outputPanel layout="none" id="pnl">
 								<tr class="dataRow">
-									<td style="width:25%; margin-left:1px; margin-right:1px;" class="dataCell">
+									<td class="dataCell">
+										<apex:selectList value="{!row.story.RecordTypeId}" size="1" multiSelect="false">
+											<apex:selectOptions value="{!RecordType}" />
+										</apex:selectList>
+									</td>
+									<td style="margin-left:1px; margin-right:1px;" class="dataCell">
 										<input type="hidden" name="userStoryId" value="{!row.story.Id}" />
 										<apex:inputField id="if_UserStory_Title" value="{!row.story.copado__User_Story_Title__c}" style="width:99%;height:100%;" />
 									</td>
-									<td style="width:25%; margin-left:1px; margin-right:1px;" class="dataCell">
+									<td style="margin-left:1px; margin-right:1px;" class="dataCell">
 										<apex:inputField id="if_UserStory_Role" value="{!row.story.copado__userStory_Role__c}" style="width:99%;height:100%;" />
 									</td>
-									<td style="width:25%; margin-left:1px; margin-right:1px;" class="dataCell">
+									<td style="margin-left:1px; margin-right:1px;" class="dataCell">
 										<apex:inputField id="if_UserStory_Need" value="{!row.story.copado__userStory_need__c}" style="width:99%;height:100%;" />
 									</td>
-									<td style="width:25%; margin-left:1px; margin-right:1px;" class="dataCell">
+									<td style="margin-left:1px; margin-right:1px;" class="dataCell">
 										<apex:inputField id="if_UserStory_Reason" value="{!row.story.copado__userStory_reason__c}" style="width:99%;height:100%;" />
 									</td>
 									<td class="dataCell">
@@ -78,6 +84,11 @@
 					</tbody>
 					<tfoot>
 						<tr class="dataRow">
+							<td class="dataCell">
+								<apex:selectList value="{!dummyStory.RecordTypeId}" size="1" multiSelect="false">
+									<apex:selectOptions value="{!RecordType}" />
+								</apex:selectList>
+							</td>
 							<td class="dataCell">
 								<apex:inputField id="if_Add_UserStory_Title" value="{!dummyStory.copado__User_Story_Title__c}" style="width:99%;" />
 							</td>

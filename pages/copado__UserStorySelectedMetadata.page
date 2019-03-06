@@ -2,20 +2,16 @@
     <head>
         <c:GAnalytics />
         <c:WizardUtils />
-        <apex:stylesheet value="{!URLFOR($Resource.copado__jqx,'jqwidgets/styles/jqx.base.css')}" />
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
-        <apex:includeScript value="{!URLFOR($Resource.copado__jqx,'jqwidgets/jqx-all.js')}" />
+        <c:IncludeStaticsResourceComponent addJquery="true" addWizardcss="true"/>
+        <c:IncludeJqxResourceComponent addjqxAlljs="true" addjqxBasecss="true"/>
 
         <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
-        <link rel="stylesheet" href="{!URLFOR($Resource.Statics,'css/wizard.css')}" />
         <apex:includeScript value="{!URLFOR($Resource.utilsV2) }"/>
         <apex:includeScript value="{!URLFOR($Resource.UserStorySelectedMetadata) }"/>
         <script>
-            var __sfdcSessionId = '{!GETSESSIONID()}';
-            var $copado = jQuery.noConflict();
             var Copado_Licenses = {!CurrentUserLicenses};
         </script>
-        <script id="connectionJS" src="../../soap/ajax/30.0/connection.js" type="text/javascript"></script>
+        <c:IncludeConnectionJsComponent />
     </head>
     
     <apex:pageMessages id="theMessages" />
@@ -33,6 +29,9 @@
 
         <apex:actionFunction name="addtestclasses" action="{!openAddTestClass}"/>
         <script>
+            window.onload = function() {
+                $copado('input[type=textarea]').blur();
+            };
             var _config = {
                 data:{
                     userStoryId: '{!JSENCODE(copado__User_Story__c.Id)}',

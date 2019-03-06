@@ -3,30 +3,22 @@
  -->
 
 <apex:page id="ArtifactMetadata" standardController="copado__Artifact__c" extensions="copado.Settings">
-    <link rel="stylesheet" href="{!URLFOR($Resource.jqx,'jqwidgets/styles/jqx.base.css')}"/>
     <c:WizardUtils id="cmpWizardUtilities"/>
-    <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}"/>
-    <script type="text/javascript">
-            var __sfdcSessionId = '{!GETSESSIONID()}';
-    </script>
-    <script src="/soap/ajax/36.0/connection.js"></script>
+    <c:IncludeStaticsResourceComponent addJquery="true"/>
+    <c:IncludeConnectionJsComponent />
     <apex:includeScript value="{!URLFOR($Resource.copado__JsRemoting)}"/>
-    <apex:includeScript value="{!URLFOR($Resource.copado__jqx,'jqwidgets/jqx-all.js')}"/>
+    <c:IncludeJqxResourceComponent addjqxAlljs="true" addjqxBasecss="true"/>
     <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}"/>
 
     <div id="jqxgrid" style="width:99%;"></div>
 
-
     <script type="text/javascript">
-
-
-		$(document).on('ready',function(){
+        $copado(document).ready(function(){
 			prepareGrid();
 		});
 
-
         var loadingHTML = '<center><img src="/img/loading.gif" /> <i>{!$Label.LOADING}<span id="retry-label"></span></i></center>';
-        $('#jqxgrid').html(loadingHTML);
+        $copado('#jqxgrid').html(loadingHTML);
 
 		var prepareGrid = function(){
 			var att = dw.u.getDecodedAttach("{!JSENCODE(Artifact__c.Id)}","ArtifactMetaData");
@@ -34,18 +26,19 @@
     			var body = att.Body;
                 try{
         			var metadataRecords = JSON.parse(body);
+        			console.log('metadataRecords',metadataRecords);
         			startGrid(metadataRecords);
                 } catch(e){
                     console.error(e);
                     var noDataHtml = '<center>{!JSENCODE($Label.NODATATODISPLAY)}</center>';
-                    $('#jqxgrid').html(noDataHtml);
+                    $copado('#jqxgrid').html(noDataHtml);
                 }
             } else {
                 var noDataHtml = '<center>{!JSENCODE($Label.NODATATODISPLAY)}</center>';
-                $('#jqxgrid').html(noDataHtml);
+                $copado('#jqxgrid').html(noDataHtml);
             }
 		}
-		var startGrid = function (data) {
+		var startGrid = function(data) {
 			try{
                 //normalize data
                 var len = data.length;
@@ -62,12 +55,12 @@
                     datatype: "array",
                 },
                 //adapter wrapper
-                dataAdapter = new $.jqx.dataAdapter(source),
+                dataAdapter = new $copado.jqx.dataAdapter(source),
 
                 //keep jquery pointer for performance query
-                $grid = $('<div>');
+                $grid = $copado('<div>');
 
-                $("#jqxgrid").html($grid);
+                $copado("#jqxgrid").html($grid);
 
                 $grid.jqxGrid({
                     width: '100%',
@@ -115,7 +108,7 @@
             } catch(e){
                 console.error('error',e);
                 var noDataHtml = '<center>{!JSENCODE($Label.NODATATODISPLAY)}</center>';
-                $('#jqxgrid').html(noDataHtml);
+                $copado('#jqxgrid').html(noDataHtml);
             }
 
          };

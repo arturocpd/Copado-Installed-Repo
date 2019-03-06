@@ -1,8 +1,8 @@
 <apex:page standardController="copado__Deployment__c" extensions="copado.DeploymentExt,copado.Settings,copado.JsRemotingController" id="thePage" lightningStylesheets="true" showHeader="{!AND($User.UIThemeDisplayed=='Theme3',!showStepsOnly)}" standardStylesheets="true" sidebar="{!AND($User.UIThemeDisplayed=='Theme3',!showStepsOnly)}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0">
 <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
 <apex:outputPanel layout="block" >
-</apex:outputPanel>    
-<apex:outputPanel layout="block" rendered="{!AND(showOptions,!showError)}">
+</apex:outputPanel>
+<apex:outputPanel layout="block">
     <head>
         <title>Deployment {!Deployment__c.Name} | Copado</title>
         <style type="text/css">
@@ -14,70 +14,54 @@
                 from {background-color: #f44274;}
                 to {background-color: #f2f3f3;}
             }
+            /*view result does not fit its own line issue fix - UCU*/
+            .jobIconText {
+                width: max-content;
+            }
+            /*View result fix for only failed case - UCU*/
+            .job-failed>.jobIconText{
+                display: block !important;
+            }
+            /*for Grid, go to page sections height issue on lightning design - UCU*/
+            .jqx-grid-pager-input-base{
+                height:18px !important;
+            }
+            /*show error messages on multiple rows fix - UCU*/
+            .jqx-grid-cell-wrap,.jqx-grid-cell-wrap>pre {
+                white-space: normal !important;
+            }
+            /*prevents unneeded empty space on the top of message box*/
+            .jqx-grid-cell-wrap>pre {
+                margin-top : 0px;
+            }
         </style>
         <c:GAnalytics />
         <c:ShowWebhook url="webhook/deploy" recordId="{!copado__Deployment__c.Id}" />
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/Cometd.js')}"/>
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.easytabs.min.js')}" />
+        <c:IncludeStaticsResourceComponent addJQuery="true" addCometdjs="true" addETjs="true" addJSON2js="true" addJCometdjs="true" addWizardcss="true" addSortjs="true"/>
+
         <script type="text/javascript" src="{!URLFOR($Resource.metadataGrid2) }" />
         <apex:stylesheet value="{!URLFOR($Resource.copado__SLDS, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
-        <script type="text/javascript">
-        /* NR: NOTE this replaced the apex:includeScript that was not working. */
-!function(d,B,m,l){function v(a,b){var c=Math.max(0,a[0]-b[0],b[0]-a[1]),e=Math.max(0,a[2]-b[1],b[1]-a[3]);return c+e}function w(a,b,c,e){var h=a.length;e=e?"offset":"position";for(c=c||0;h--;){var f=a[h].el?a[h].el:d(a[h]),k=f[e]();k.left+=parseInt(f.css("margin-left"),10);k.top+=parseInt(f.css("margin-top"),10);b[h]=[k.left-c,k.left+f.outerWidth()+c,k.top-c,k.top+f.outerHeight()+c]}}function p(a,b){var c=b.offset();return{left:a.left-c.left,top:a.top-c.top}}function x(a,b,c){b=[b.left,b.top];c=
-c&&[c.left,c.top];for(var e,h=a.length,d=[];h--;)e=a[h],d[h]=[h,v(e,b),c&&v(e,c)];return d=d.sort(function(a,b){return b[1]-a[1]||b[2]-a[2]||b[0]-a[0]})}function q(a){this.options=d.extend({},n,a);this.containers=[];this.options.rootGroup||(this.scrollProxy=d.proxy(this.scroll,this),this.dragProxy=d.proxy(this.drag,this),this.dropProxy=d.proxy(this.drop,this),this.placeholder=d(this.options.placeholder),a.isValidTarget||(this.options.isValidTarget=l))}function t(a,b){this.el=a;this.options=d.extend({},
-z,b);this.group=q.get(this.options);this.rootGroup=this.options.rootGroup||this.group;this.handle=this.rootGroup.options.handle||this.rootGroup.options.itemSelector;var c=this.rootGroup.options.itemPath;this.target=c?this.el.find(c):this.el;this.target.on(r.start,this.handle,d.proxy(this.dragInit,this));this.options.drop&&this.group.containers.push(this)}var r,z={drag:!0,drop:!0,exclude:"",nested:!0,vertical:!0},n={afterMove:function(a,b,c){},containerPath:"",containerSelector:"ol, ul",distance:0,
-delay:0,handle:"",itemPath:"",itemSelector:"li",isValidTarget:function(a,b){return!0},onCancel:function(a,b,c,e){},onDrag:function(a,b,c,e){a.css(b)},onDragStart:function(a,b,c,e){a.css({height:a.height(),width:a.width()});a.addClass("dragged");d("body").addClass("dragging")},onDrop:function(a,b,c,e){a.removeClass("dragged").removeAttr("style");d("body").removeClass("dragging")},onMousedown:function(a,b,c){if(!c.target.nodeName.match(/^(input|select)$/i))return c.preventDefault(),!0},placeholder:'<li class="placeholder"/>',
-pullPlaceholder:!0,serialize:function(a,b,c){a=d.extend({},a.data());if(c)return[b];b[0]&&(a.children=b);delete a.subContainers;delete a.sortable;return a},tolerance:0},s={},y=0,A={left:0,top:0,bottom:0,right:0};r={start:"touchstart.sortable mousedown.sortable",drop:"touchend.sortable touchcancel.sortable mouseup.sortable",drag:"touchmove.sortable mousemove.sortable",scroll:"scroll.sortable"};q.get=function(a){s[a.group]||(a.group===l&&(a.group=y++),s[a.group]=new q(a));return s[a.group]};q.prototype=
-{dragInit:function(a,b){this.$document=d(b.el[0].ownerDocument);this.item=d(a.target).closest(this.options.itemSelector);this.itemContainer=b;!this.item.is(this.options.exclude)&&this.options.onMousedown(this.item,n.onMousedown,a)&&(this.setPointer(a),this.toggleListeners("on"),this.setupDelayTimer(),this.dragInitDone=!0)},drag:function(a){if(!this.dragging){if(!this.distanceMet(a)||!this.delayMet)return;this.options.onDragStart(this.item,this.itemContainer,n.onDragStart,a);this.item.before(this.placeholder);
-this.dragging=!0}this.setPointer(a);this.options.onDrag(this.item,p(this.pointer,this.item.offsetParent()),n.onDrag,a);var b=a.pageX||a.originalEvent.pageX;a=a.pageY||a.originalEvent.pageY;var c=this.sameResultBox,e=this.options.tolerance;if(!c||c.top-e>a||c.bottom+e<a||c.left-e>b||c.right+e<b)this.searchValidTarget()||this.placeholder.detach()},drop:function(a){this.toggleListeners("off");this.dragInitDone=!1;if(this.dragging){if(this.placeholder.closest("html")[0])this.placeholder.before(this.item).detach();
-else this.options.onCancel(this.item,this.itemContainer,n.onCancel,a);this.options.onDrop(this.item,this.getContainer(this.item),n.onDrop,a);this.clearDimensions();this.clearOffsetParent();this.lastAppendedItem=this.sameResultBox=l;this.dragging=!1}},searchValidTarget:function(a,b){a||(a=this.relativePointer||this.pointer,b=this.lastRelativePointer||this.lastPointer);for(var c=x(this.getContainerDimensions(),a,b),e=c.length;e--;){var d=c[e][0];if(!c[e][1]||this.options.pullPlaceholder)if(d=this.containers[d],
-!d.disabled){if(!this.$getOffsetParent()){var f=d.getItemOffsetParent();a=p(a,f);b=p(b,f)}if(d.searchValidTarget(a,b))return!0}}this.sameResultBox&&(this.sameResultBox=l)},movePlaceholder:function(a,b,c,e){var d=this.lastAppendedItem;if(e||!d||d[0]!==b[0])b[c](this.placeholder),this.lastAppendedItem=b,this.sameResultBox=e,this.options.afterMove(this.placeholder,a,b)},getContainerDimensions:function(){this.containerDimensions||w(this.containers,this.containerDimensions=[],this.options.tolerance,!this.$getOffsetParent());
-return this.containerDimensions},getContainer:function(a){return a.closest(this.options.containerSelector).data(m)},$getOffsetParent:function(){if(this.offsetParent===l){var a=this.containers.length-1,b=this.containers[a].getItemOffsetParent();if(!this.options.rootGroup)for(;a--;)if(b[0]!=this.containers[a].getItemOffsetParent()[0]){b=!1;break}this.offsetParent=b}return this.offsetParent},setPointer:function(a){a=this.getPointer(a);if(this.$getOffsetParent()){var b=p(a,this.$getOffsetParent());this.lastRelativePointer=
-this.relativePointer;this.relativePointer=b}this.lastPointer=this.pointer;this.pointer=a},distanceMet:function(a){a=this.getPointer(a);return Math.max(Math.abs(this.pointer.left-a.left),Math.abs(this.pointer.top-a.top))>=this.options.distance},getPointer:function(a){return{left:a.pageX||a.originalEvent.pageX,top:a.pageY||a.originalEvent.pageY}},setupDelayTimer:function(){var a=this;this.delayMet=!this.options.delay;this.delayMet||(clearTimeout(this._mouseDelayTimer),this._mouseDelayTimer=setTimeout(function(){a.delayMet=
-!0},this.options.delay))},scroll:function(a){this.clearDimensions();this.clearOffsetParent()},toggleListeners:function(a){var b=this;d.each(["drag","drop","scroll"],function(c,e){b.$document[a](r[e],b[e+"Proxy"])})},clearOffsetParent:function(){this.offsetParent=l},clearDimensions:function(){this.traverse(function(a){a._clearDimensions()})},traverse:function(a){a(this);for(var b=this.containers.length;b--;)this.containers[b].traverse(a)},_clearDimensions:function(){this.containerDimensions=l},_destroy:function(){s[this.options.group]=
-l}};t.prototype={dragInit:function(a){var b=this.rootGroup;!this.disabled&&!b.dragInitDone&&this.options.drag&&this.isValidDrag(a)&&b.dragInit(a,this)},isValidDrag:function(a){return 1==a.which||"touchstart"==a.type&&1==a.originalEvent.touches.length},searchValidTarget:function(a,b){var c=x(this.getItemDimensions(),a,b),e=c.length,d=this.rootGroup,f=!d.options.isValidTarget||d.options.isValidTarget(d.item,this);if(!e&&f)return d.movePlaceholder(this,this.target,"append"),!0;for(;e--;)if(d=c[e][0],
-!c[e][1]&&this.hasChildGroup(d)){if(this.getContainerGroup(d).searchValidTarget(a,b))return!0}else if(f)return this.movePlaceholder(d,a),!0},movePlaceholder:function(a,b){var c=d(this.items[a]),e=this.itemDimensions[a],h="after",f=c.outerWidth(),k=c.outerHeight(),g=c.offset(),g={left:g.left,right:g.left+f,top:g.top,bottom:g.top+k};this.options.vertical?b.top<=(e[2]+e[3])/2?(h="before",g.bottom-=k/2):g.top+=k/2:b.left<=(e[0]+e[1])/2?(h="before",g.right-=f/2):g.left+=f/2;this.hasChildGroup(a)&&(g=A);
-this.rootGroup.movePlaceholder(this,c,h,g)},getItemDimensions:function(){this.itemDimensions||(this.items=this.$getChildren(this.el,"item").filter(":not(.placeholder, .dragged)").get(),w(this.items,this.itemDimensions=[],this.options.tolerance));return this.itemDimensions},getItemOffsetParent:function(){var a=this.el;return"relative"===a.css("position")||"absolute"===a.css("position")||"fixed"===a.css("position")?a:a.offsetParent()},hasChildGroup:function(a){return this.options.nested&&this.getContainerGroup(a)},
-getContainerGroup:function(a){var b=d.data(this.items[a],"subContainers");if(b===l){var c=this.$getChildren(this.items[a],"container"),b=!1;c[0]&&(b=d.extend({},this.options,{rootGroup:this.rootGroup,group:y++}),b=c[m](b).data(m).group);d.data(this.items[a],"subContainers",b)}return b},$getChildren:function(a,b){var c=this.rootGroup.options,e=c[b+"Path"],c=c[b+"Selector"];a=d(a);e&&(a=a.find(e));return a.children(c)},_serialize:function(a,b){var c=this,e=this.$getChildren(a,b?"item":"container").not(this.options.exclude).map(function(){return c._serialize(d(this),
-!b)}).get();return this.rootGroup.options.serialize(a,e,b)},traverse:function(a){d.each(this.items||[],function(b){(b=d.data(this,"subContainers"))&&b.traverse(a)});a(this)},_clearDimensions:function(){this.itemDimensions=l},_destroy:function(){var a=this;this.target.off(r.start,this.handle);this.el.removeData(m);this.options.drop&&(this.group.containers=d.grep(this.group.containers,function(b){return b!=a}));d.each(this.items||[],function(){d.removeData(this,"subContainers")})}};var u={enable:function(){this.traverse(function(a){a.disabled=
-!1})},disable:function(){this.traverse(function(a){a.disabled=!0})},serialize:function(){return this._serialize(this.el,!0)},refresh:function(){this.traverse(function(a){a._clearDimensions()})},destroy:function(){this.traverse(function(a){a._destroy()})}};d.extend(t.prototype,u);d.fn[m]=function(a){var b=Array.prototype.slice.call(arguments,1);return this.map(function(){var c=d(this),e=c.data(m);if(e&&u[a])return u[a].apply(e,b)||this;e||a!==l&&"object"!==typeof a||c.data(m,new t(c,a));return this})}}(jQuery,
-window,"sortable");</script>
 
         <apex:includeScript value="{!URLFOR($Resource.urlcallout) }" />
-        <script> var $copado = jQuery.noConflict(); 
-        var Copado_Licenses = {!CurrentUserLicenses};</script>
-
         <script type="text/javascript">
-            var __sfdcSessionId = '{!GETSESSIONID()}';
+            var Copado_Licenses = {!CurrentUserLicenses};
         </script>
-        <script src="../../soap/ajax/32.0/connection.js" type="text/javascript"></script>
-        <apex:stylesheet value="{!IF(OR($User.UIThemeDisplayed == 'Theme4d', $User.UITheme == 'Theme4d', $User.UIThemeDisplayed == 'Theme4t', $User.UITheme == 'Theme4t'),URLFOR($Resource.copado__CopadoLightningCSS),'')}" /> 
+        <c:IncludeConnectionJsComponent />
+        <apex:stylesheet value="{!IF(OR($User.UIThemeDisplayed == 'Theme4d', $User.UITheme == 'Theme4d', $User.UIThemeDisplayed == 'Theme4t', $User.UITheme == 'Theme4t'),URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
         <script type="text/javascript">
             delete Array.prototype.remove;
         </script>
 
         <c:WizardUtils />
-        <apex:stylesheet value="{!URLFOR($Resource.copado__jqx,'jqwidgets/styles/jqx.base.css')}" />
-        <apex:includeScript value="{!URLFOR($Resource.copado__jqx,'jqwidgets/jqx-all.js')}" />
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/json2.js')}"/>
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/jquery.cometd.js')}"/>
+        <c:IncludeJqxResourceComponent addjqxAlljs="true" addjqxBasecss="true"/>
         <apex:includeScript value="{!URLFOR($Resource.copadoStreamingService) }" />
-
-        <apex:stylesheet value="{!URLFOR($Resource.copado__Statics,'css/wizard.css')}" />
         <apex:includeScript value="{!URLFOR($Resource.deployment) }" />
         <apex:includeScript value="{!URLFOR($Resource.deploymentStreamingService) }" />
     </head>
 
 <div id="screenLocker" ><p><img src="/img/loading.gif" />  {!$Label.LOADING}</p></div>
 
-
-
-
-
-<div class="fixedMsg" tyle="display:none;" id="msg">
-
-</div>
+<div class="fixedMsg" tyle="display:none;" id="msg"></div>
 
 <div style="display:none;">
     <apex:pageMessage title="{!$Label.copado__warning}" summary="__MSG__" severity="warning" strength="3" id="js-msg-WARNING" />
@@ -150,7 +134,7 @@ window,"sortable");</script>
                     <c:ComplianceScanResult sId="{!copado__Deployment__c.Id}" apiName="Deployment__c"/>
                 </apex:outputPanel>
                 <apex:form id="jobsManagerForm" style="padding-bottom:12px;">
-                    <c:JobsManager matchingKeys="{!jobsManagerMatchingKey}" rendered="{! !ISBLANK(jobsManagerMatchingKey)}"></c:JobsManager>
+                    <c:JobsManager matchingKeys="{!jobsManagerMatchingKey}" rendered="{! !ISBLANK(jobsManagerMatchingKey)}" />
                 </apex:form>
               <div class="slds-grid">
                 <div class="slds-col slds-has-flexi-truncate">
@@ -171,7 +155,7 @@ window,"sortable");</script>
                 <!-- ACTION BUTTONS -->
                 <div class="slds-col slds-no-flex slds-grid slds-align-top ">
                   <div class="slds-button-group" role="group">
-                    
+
                   </div>
                 </div>
                 <!-- / ACTION BUTTONS -->
@@ -179,7 +163,7 @@ window,"sortable");</script>
                <apex:outputPanel layout="block" style="background: white;" id="headerFields">
                     <ul class="slds-grid slds-page-header__detail-row">
                       <apex:variable value="{!1}" var="rowNum"/>
-                      <apex:repeat value="{!$ObjectType.copado__Deployment__c.FieldSets.copado__Copado_Header_Fields}" var="f"> 
+                      <apex:repeat value="{!$ObjectType.copado__Deployment__c.FieldSets.copado__Copado_Header_Fields}" var="f">
                         <apex:outputPanel layout="block" rendered="{!rowNum < 8}">
                         <li class="slds-page-header__detail-block slds-truncate" style="padding-right: 2em; padding-left: 2em; ">
                             <!--<c:LightningReadyOutputFields dividerBottom="false" SObject="{!Deployment__c}" Field="{!f}"></c:LightningReadyOutputFields>-->
@@ -194,7 +178,7 @@ window,"sortable");</script>
             </div>
         </apex:outputPanel>
 
-        <apex:outputPanel id="body" layout="block" styleClass="copado-lightning-container copado-lightning-radius">
+        <apex:outputPanel id="body" layout="block" styleClass="copado-lightning-container copado-lightning-radius" rendered="{!AND(showOptions,!showError)}">
             <c:IframeLocker url="/apex/deploymentStatus?id={!dep.Id}" />
 
             <apex:sectionHeader id="sectionHeader" title="{!$ObjectType.copado__Deployment__c.Label} {!$Label.copado__edit}" subtitle="{!IF(ISBLANK(dep.Name),$Label.copado__new+' '+ $ObjectType.copado__Deployment__c.Label ,dep.Name)}" rendered="{!AND($User.UIThemeDisplayed != 'Theme4d',!showStepsOnly)}" />
@@ -208,7 +192,7 @@ window,"sortable");</script>
             <div id="form" class="copado-lightning-container" style="padding-top:12px;">
                 <apex:form id="theForm" rendered="{!!showStepsOnly}">
 
-                <c:JobsManager matchingKeys="{!jobsManagerMatchingKey}" rendered="{! !ISBLANK(jobsManagerMatchingKey)}, {!$User.UIThemeDisplayed != 'Theme4d'}"></c:JobsManager>
+                <c:JobsManager matchingKeys="{!jobsManagerMatchingKey}" rendered="{! !ISBLANK(jobsManagerMatchingKey)}, {!$User.UIThemeDisplayed != 'Theme4d'}" />
 
                 <div class="row">
                   <apex:panelGrid id="theGrid" columns="2" style="width:100%;" columnClasses="co-info-panel">
@@ -325,7 +309,7 @@ window,"sortable");</script>
                                 <apex:commandButton value="{!$Label.copado__deploy}" onclick="copadoApp.deploy();return false;" id="btnDeploy"/>
                                 <apex:commandButton value="{!$Label.copado__cancel_deployment}" onclick="copadoApp.cancelDeploy();return false;" id="btnCancelDeploy"/>
                                 <input id="btnViewStatus" type="button" class="btn" style="display:none" value="{!$Label.VIEW_DEPLOYMENT_STATUS}" onclick="openIframeBox()" />
-                                <button id="btnShowHookUrl" value="Show Hook URL" class="copado-lightning" onclick="showWebhook(); return false;">Show Hook URL</button>
+                                <apex:commandButton id="btnShowHookUrl" value="Show Hook URL" onclick="showWebhook(); return false;"/>
                             </apex:pageBlockButtons>
 
                             <apex:pageBlockSection id="pbsPbStatus" columns="1">
@@ -378,18 +362,19 @@ window,"sortable");</script>
 
                                 </tr>
                             </thead>
-                            <tbody id="tSteps-tb">
+                            <tbody id="tSteps-tb" class="tSteps2Drag">
                                 <tr class="dataRow js-row" style="display:none;">
                                     <td class="dataCell" colspan="1">
                                         <div class="js-col-actions">
                                             <img id="imgDrag" class="orgIcon iconDrag" src="{!URLFOR($Resource.Statics,'img/icons/updown.png')}" title="{!$Label.DRAG_TO_REORDER_STEP}" />
                                             <img id="imgView" class="iconAction js-action-selectStep" title="{!$Label.CLICK_FOR_STEP_DETAILS}" src="{!URLFOR($Resource.Statics,'img/icons/view.png')}"/>
                                             <img id="imgDelete" class="orgIcon iconAction" onclick="copadoApp.deleteStep( $copado(this))" src="{!URLFOR($Resource.Statics,'img/icons/remove.png')}" title="{!$Label.CLICK_TO_REMOVE_STEP}"/>
+                                            <img id="imgGo" class="orgIcon iconAction" onclick="copadoApp.gotoStepRecord(this);" src="{!URLFOR($Resource.Statics,'img/icons/view2.png')}"/>
                                         </div>
                                     </td>
                                     <td class="dataCell  js-col-name" colspan="1">
-                                        <input style="display:none" class="js-step-name"  maxlength="80" size="20" type="text" value="Step 1" />
-                                        <span class="js-step-name">Step 1</span>
+                                        <input class="js-step-name" maxlength="80" type="text" value="Step 1" />  <!-- style="display:none"  -->
+                                        <!--<span class="js-step-name">Step 1</span>  Removed by Ferhat to fix Cross-site scripting (XSS) ==> used this value to test it: >"<img src=u onerror=alert(7)>  scripts also commented out at deployment.resource-->
                                     </td>
                                     <td class="dataCell  js-col-type" colspan="1">
                                         <select class="js-step-type" data-stepid="" >
@@ -435,7 +420,7 @@ window,"sortable");</script>
                               <div id="stepDetail">
                                 <apex:form id="theForm3">
                                      <c:StepEdition />
-                                     
+
                                 </apex:form>
 
                               </div>
@@ -499,9 +484,6 @@ window,"sortable");</script>
     <img src="{!URLFOR($Resource.Statics,'img/icons/updown.png')}" style="display:none;" />
 </apex:outputPanel>
 
-<apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/Cometd.js')}"/>
-<apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/json2.js')}"/>
-<apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/jquery.cometd.js')}"/>
 <apex:includeScript value="{!URLFOR($Resource.copadoStreamingService) }" />
 <apex:includeScript value="{!URLFOR($Resource.statusManager) }" />
 <apex:includeScript value="{!URLFOR($Resource.utilsV2) }"/>

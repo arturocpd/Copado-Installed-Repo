@@ -628,6 +628,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.CI_test_1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Case.CI_test_2__c</field>
         <readable>false</readable>
@@ -708,6 +713,56 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Destructive_Test_10__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Destructive_Test_1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Destructive_Test_2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Destructive_Test_3__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Destructive_Test_4__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Destructive_Test_5__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Destructive_Test_6__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Destructive_Test_7__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Destructive_Test_8__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Destructive_Test_9__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Case.EngineeringReqNumber__c</field>
         <readable>true</readable>
@@ -715,6 +770,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.EntitlementId</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Install_package__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1183,6 +1243,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Dinner__c.External_Auto__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Dinner__c.LateDinner__c</field>
         <readable>true</readable>
@@ -1190,6 +1255,21 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Dinner__c.Point_of_contact__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Dinner__c.TEST_US__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Dinner__c.Table__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Dinner__c.historyRetentionPolicy__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2453,6 +2533,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrderLineItem.IsGeneratedFromMaintenancePlan</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>WorkOrderLineItem.ListPrice</field>
         <readable>true</readable>
@@ -2461,6 +2546,11 @@
         <editable>true</editable>
         <field>WorkOrderLineItem.LocationId</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrderLineItem.MaintenancePlanId</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -2553,6 +2643,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrderLineItem.SuggestedMaintenanceDate</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>WorkOrderLineItem.TotalPrice</field>
         <readable>true</readable>
@@ -2599,6 +2694,46 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Apex_Test_Result__c.copado__User_Story__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact_Dependency__c.copado__Depending_Artifact_Version__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact_Dependency__c.copado__Depending_Artifact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact_Dependency__c.copado__Depends_on_the_latest_version__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact_Version__c.copado__Branch__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact_Version__c.copado__Is_released__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact_Version__c.copado__Package_Version_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact_Version__c.copado__Production_Installation_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Artifact_Version__c.copado__Release_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2609,7 +2744,37 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Artifact_Version__c.copado__Sandbox_Installation_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact_Version__c.copado__Subscriber_Version_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact_Version__c.copado__Tag__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact_Version__c.copado__Version_Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact_Version__c.copado__Version_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Artifact_Version__c.copado__Version__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact_Version__c.copado__Version_number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2624,12 +2789,52 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Artifact__c.copado__Artifact_Version__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Artifact__c.copado__Description__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Artifact__c.copado__No_Namespace__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Artifact__c.copado__Org_Credential__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact__c.copado__Package_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact__c.copado__Package_Namespace__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact__c.copado__Package_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact__c.copado__Sfdc_Login_Url__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact__c.copado__Source_Api_Version__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact__c.copado__Target_Dev_Hub_Org__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2710,6 +2915,56 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Branch_Management_Permission__c.copado__User__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Build_Task__c.Migration_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Build_Task__c.copado__Deployment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Build_Task__c.copado__Duration__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Build_Task__c.copado__Start_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Build_Task__c.copado__Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Build_Task__c.copado__Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Burndown_Item__c.copado__Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Burndown_Item__c.copado__Expected_Story_Point__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Burndown_Item__c.copado__Sprint__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Burndown_Item__c.copado__Total_Story_Point__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3164,6 +3419,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Deployment_Flow__c.copado__Calculate_Based_on__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Deployment_Flow__c.copado__Copado_DX_Mode__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3199,12 +3459,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Deployment_Flow__c.copado__Hide_Tabs__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Deployment_Flow__c.copado__Main_Branch__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Deployment_Flow__c.copado__Manage_Branches__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Deployment_Flow__c.copado__Merge_Strategy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Deployment_Flow__c.copado__Order_by__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3889,6 +4164,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Kanban_Board_View__c.copado__Kanban_Board__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Kanban_Board_View__c.copado__SOQL_Json__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Kanban_Board__c.copado__Columns_SOQL__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4139,6 +4424,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Project__c.copado__Exclude_Tabs_from_Promotion_Page__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Project__c.copado__Index_Metadata__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4185,6 +4475,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Promotion__c.copado__Exclude_From_Auto_Resolve__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Promotion__c.copado__Order_by__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4475,6 +4770,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Scratch_Org_Project_Template__c.copado__SFDC_Login_Url__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Scratch_Org_Project_Template__c.copado__Source_Metadata_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4829,7 +5129,47 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Static_Code_Analysis_Result__c.copado__Blocker__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Static_Code_Analysis_Result__c.copado__Bugs__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Static_Code_Analysis_Result__c.copado__Code_Smells__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Static_Code_Analysis_Result__c.copado__Critical__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Static_Code_Analysis_Result__c.copado__Details__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Static_Code_Analysis_Result__c.copado__Highest_Priority_Violation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Static_Code_Analysis_Result__c.copado__Info__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Static_Code_Analysis_Result__c.copado__Major__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Static_Code_Analysis_Result__c.copado__Minor__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4864,7 +5204,32 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Static_Code_Analysis_Result__c.copado__Vulnerabilities__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Static_Code_Analysis_Rule__c.copado__Message__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Static_Code_Analysis_Settings__c.copado__Cloud_Organization__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Static_Code_Analysis_Settings__c.copado__CodeScan_Token__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Static_Code_Analysis_Settings__c.copado__CodeScan_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Static_Code_Analysis_Settings__c.copado__CodeScan_Version__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4905,6 +5270,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Static_Code_Analysis_Violation__c.copado__Score__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Static_Code_Analysis_Violation__c.copado__Severity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Static_Code_Analysis_Violation__c.copado__Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5831,6 +6206,10 @@
         <recordType>Dinner__c.Dinner_RT</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Dinner__c-Dinner Layout</layout>
+        <recordType>Dinner__c.Dinner_RT_2</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>DuplicateRecordSet-Duplicate Record Set Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -6116,176 +6495,8 @@
         <startAddress>2.137.120.77</startAddress>
     </loginIpRanges>
     <loginIpRanges>
-        <endAddress>5.32.60.255</endAddress>
-        <startAddress>5.32.60.224</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>12.45.249.25</endAddress>
-        <startAddress>12.45.248.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>12.155.10.255</endAddress>
-        <startAddress>12.155.10.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>12.193.208.255</endAddress>
-        <startAddress>12.193.208.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>23.253.68.51</endAddress>
-        <startAddress>23.253.68.51</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>24.38.37.255</endAddress>
-        <startAddress>24.38.37.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>24.89.173.15</endAddress>
-        <startAddress>24.89.173.8</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>24.206.164.31</endAddress>
-        <startAddress>24.206.164.31</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>40.84.6.162</endAddress>
-        <startAddress>40.84.6.162</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>40.123.47.58</endAddress>
-        <startAddress>40.123.47.58</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>41.164.132.131</endAddress>
-        <startAddress>41.164.132.131</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>41.164.132.132</endAddress>
-        <startAddress>41.164.132.132</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>46.14.169.18</endAddress>
-        <startAddress>46.14.169.18</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>46.14.201.242</endAddress>
-        <startAddress>46.14.201.242</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>46.237.217.59</endAddress>
-        <startAddress>46.237.217.59</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>47.23.135.175</endAddress>
-        <startAddress>47.23.135.168</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>50.16.247.245</endAddress>
-        <startAddress>50.16.247.245</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>50.74.163.110</endAddress>
-        <startAddress>50.74.163.97</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>50.168.21.81</endAddress>
-        <startAddress>50.168.21.81</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>52.183.81.11</endAddress>
-        <startAddress>52.183.81.11</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>52.183.92.124</endAddress>
-        <startAddress>52.183.92.124</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>54.165.97.15</endAddress>
-        <startAddress>54.165.97.15</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>54.225.196.105</endAddress>
-        <startAddress>54.225.196.105</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>59.144.10.255</endAddress>
-        <startAddress>59.144.10.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>62.2.201.43</endAddress>
-        <startAddress>62.2.201.43</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>62.2.219.234</endAddress>
-        <startAddress>62.2.219.234</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>62.97.114.223</endAddress>
-        <startAddress>62.97.114.192</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>62.119.71.255</endAddress>
-        <startAddress>62.119.71.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>63.251.57.31</endAddress>
-        <startAddress>63.251.57.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>64.61.33.163</endAddress>
-        <startAddress>64.61.33.163</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>65.210.74.255</endAddress>
-        <startAddress>65.210.74.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>66.249.67.76</endAddress>
-        <startAddress>66.249.67.76</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>68.44.105.106</endAddress>
-        <startAddress>68.44.105.106</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>68.95.99.70</endAddress>
-        <startAddress>68.95.99.70</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>69.248.168.193</endAddress>
-        <startAddress>69.248.168.193</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>71.9.232.130</endAddress>
-        <startAddress>71.9.232.130</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>71.23.218.115</endAddress>
-        <startAddress>71.23.218.115</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>73.197.178.105</endAddress>
-        <startAddress>73.197.178.105</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>74.62.18.18</endAddress>
-        <startAddress>74.62.18.18</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>76.80.27.166</endAddress>
-        <startAddress>76.80.27.166</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>80.152.133.219</endAddress>
-        <startAddress>80.152.133.219</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>80.169.192.254</endAddress>
-        <startAddress>80.169.192.61</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>82.198.216.35</endAddress>
-        <startAddress>82.198.216.0</startAddress>
+        <endAddress>33.33.77.77</endAddress>
+        <startAddress>33.33.77.77</startAddress>
     </loginIpRanges>
     <loginIpRanges>
         <endAddress>83.36.118.192</endAddress>
@@ -6300,604 +6511,8 @@
         <startAddress>83.36.118.194</startAddress>
     </loginIpRanges>
     <loginIpRanges>
-        <endAddress>83.111.204.130</endAddress>
-        <startAddress>83.111.204.130</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>83.138.167.191</endAddress>
-        <startAddress>83.138.167.176</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>84.18.191.255</endAddress>
-        <startAddress>84.18.160.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>84.18.172.130</endAddress>
-        <startAddress>84.18.172.130</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>91.109.20.196</endAddress>
-        <startAddress>91.109.20.196</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>96.56.43.223</endAddress>
-        <startAddress>96.56.43.216</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>99.99.47.5</endAddress>
-        <startAddress>99.99.47.5</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>106.39.107.255</endAddress>
-        <startAddress>106.39.107.224</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>111.93.141.3</endAddress>
-        <startAddress>111.93.141.3</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>111.93.141.4</endAddress>
-        <startAddress>111.93.141.4</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>111.93.191.10</endAddress>
-        <startAddress>111.93.191.10</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>115.111.16.255</endAddress>
-        <startAddress>115.111.16.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>115.111.64.226</endAddress>
-        <startAddress>115.111.64.226</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>115.111.69.62</endAddress>
-        <startAddress>115.111.69.62</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>115.249.46.209</endAddress>
-        <startAddress>115.249.46.209</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>121.241.0.66</endAddress>
-        <startAddress>121.241.0.66</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>124.124.1.57</endAddress>
-        <startAddress>124.124.1.57</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>124.124.42.161</endAddress>
-        <startAddress>124.124.42.160</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>124.211.59.63</endAddress>
-        <startAddress>124.211.59.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>125.7.7.255</endAddress>
-        <startAddress>125.7.7.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>137.116.72.115</endAddress>
-        <startAddress>137.116.72.115</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.3.255</endAddress>
-        <startAddress>159.220.0.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.255.255</endAddress>
-        <startAddress>159.220.0.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.255.254</endAddress>
-        <startAddress>159.220.0.1</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.7.255</endAddress>
-        <startAddress>159.220.4.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.11.255</endAddress>
-        <startAddress>159.220.8.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.13.255</endAddress>
-        <startAddress>159.220.12.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.15.255</endAddress>
-        <startAddress>159.220.14.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.19.255</endAddress>
-        <startAddress>159.220.16.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.23.255</endAddress>
-        <startAddress>159.220.20.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.25.255</endAddress>
-        <startAddress>159.220.24.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.27.255</endAddress>
-        <startAddress>159.220.26.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.31.255</endAddress>
-        <startAddress>159.220.28.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.35.255</endAddress>
-        <startAddress>159.220.32.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.36.255</endAddress>
-        <startAddress>159.220.36.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.37.255</endAddress>
-        <startAddress>159.220.37.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.39.255</endAddress>
-        <startAddress>159.220.38.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.43.255</endAddress>
-        <startAddress>159.220.40.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.47.255</endAddress>
-        <startAddress>159.220.44.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.51.255</endAddress>
-        <startAddress>159.220.48.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.52.255</endAddress>
-        <startAddress>159.220.52.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.53.255</endAddress>
-        <startAddress>159.220.53.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.55.255</endAddress>
-        <startAddress>159.220.54.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.56.255</endAddress>
-        <startAddress>159.220.56.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.57.255</endAddress>
-        <startAddress>159.220.57.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.58.255</endAddress>
-        <startAddress>159.220.58.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.59.255</endAddress>
-        <startAddress>159.220.59.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.60.255</endAddress>
-        <startAddress>159.220.60.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.61.255</endAddress>
-        <startAddress>159.220.61.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.62.255</endAddress>
-        <startAddress>159.220.62.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.63.255</endAddress>
-        <startAddress>159.220.63.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.67.255</endAddress>
-        <startAddress>159.220.64.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.72.255</endAddress>
-        <startAddress>159.220.72.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.73.255</endAddress>
-        <startAddress>159.220.73.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.74.255</endAddress>
-        <startAddress>159.220.74.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.75.255</endAddress>
-        <startAddress>159.220.75.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.75.254</endAddress>
-        <startAddress>159.220.75.1</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.76.255</endAddress>
-        <startAddress>159.220.76.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.76.254</endAddress>
-        <startAddress>159.220.76.1</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.77.255</endAddress>
-        <startAddress>159.220.77.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.78.255</endAddress>
-        <startAddress>159.220.78.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.79.255</endAddress>
-        <startAddress>159.220.79.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.233.255</endAddress>
-        <startAddress>159.220.233.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.235.255</endAddress>
-        <startAddress>159.220.235.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>159.220.236.255</endAddress>
-        <startAddress>159.220.236.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>163.231.15.255</endAddress>
-        <startAddress>163.231.0.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>163.231.6.26</endAddress>
-        <startAddress>163.231.6.26</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>163.231.6.64</endAddress>
-        <startAddress>163.231.6.64</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>163.231.6.71</endAddress>
-        <startAddress>163.231.6.71</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>164.179.255.255</endAddress>
-        <startAddress>164.179.0.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>167.68.63.255</endAddress>
-        <startAddress>167.68.0.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
         <endAddress>167.68.254.254</endAddress>
         <startAddress>167.68.0.1</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>167.68.115.255</endAddress>
-        <startAddress>167.68.114.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>167.206.188.127</endAddress>
-        <startAddress>167.206.188.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>167.206.189.255</endAddress>
-        <startAddress>167.206.189.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>173.31.255.255</endAddress>
-        <startAddress>173.16.0.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>173.227.255.254</endAddress>
-        <startAddress>173.226.0.1</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>174.70.10.88</endAddress>
-        <startAddress>174.70.10.88</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>177.43.177.26</endAddress>
-        <startAddress>177.43.177.26</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>177.99.218.50</endAddress>
-        <startAddress>177.99.218.50</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>180.151.201.250</endAddress>
-        <startAddress>180.151.201.250</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>181.118.126.231</endAddress>
-        <startAddress>181.118.126.231</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>186.129.255.136</endAddress>
-        <startAddress>186.129.255.136</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>186.215.156.243</endAddress>
-        <startAddress>186.215.156.243</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>189.21.230.159</endAddress>
-        <startAddress>189.21.230.128</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>190.93.208.40</endAddress>
-        <startAddress>190.93.208.40</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>190.191.171.62</endAddress>
-        <startAddress>190.191.171.62</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>190.192.44.113</endAddress>
-        <startAddress>190.192.44.113</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>192.152.33.255</endAddress>
-        <startAddress>192.152.33.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>192.152.33.10</endAddress>
-        <startAddress>192.152.33.10</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>192.155.151.255</endAddress>
-        <startAddress>192.155.151.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>192.165.223.255</endAddress>
-        <startAddress>192.165.208.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>192.168.1.5</endAddress>
-        <startAddress>192.168.1.5</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>192.189.224.255</endAddress>
-        <startAddress>192.189.224.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>192.189.228.255</endAddress>
-        <startAddress>192.189.228.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>192.251.4.255</endAddress>
-        <startAddress>192.251.4.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>192.251.7.255</endAddress>
-        <startAddress>192.251.7.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>193.41.153.255</endAddress>
-        <startAddress>193.41.152.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>195.127.226.200</endAddress>
-        <startAddress>195.127.226.200</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>196.23.48.34</endAddress>
-        <startAddress>196.23.48.34</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>198.22.181.255</endAddress>
-        <startAddress>198.22.181.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>198.62.183.255</endAddress>
-        <startAddress>198.62.183.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>198.80.129.255</endAddress>
-        <startAddress>198.80.129.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>198.80.151.255</endAddress>
-        <startAddress>198.80.151.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>198.80.152.255</endAddress>
-        <startAddress>198.80.152.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>198.80.153.255</endAddress>
-        <startAddress>198.80.153.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>198.80.155.255</endAddress>
-        <startAddress>198.80.155.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>198.80.157.255</endAddress>
-        <startAddress>198.80.157.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>198.80.191.255</endAddress>
-        <startAddress>198.80.160.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>198.176.133.255</endAddress>
-        <startAddress>198.176.133.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>198.179.136.255</endAddress>
-        <startAddress>198.179.136.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>198.179.137.254</endAddress>
-        <startAddress>198.179.137.1</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>198.179.137.255</endAddress>
-        <startAddress>198.179.137.192</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>198.179.138.255</endAddress>
-        <startAddress>198.179.138.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>198.179.139.255</endAddress>
-        <startAddress>198.179.139.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>198.244.15.254</endAddress>
-        <startAddress>198.244.12.1</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>199.224.149.255</endAddress>
-        <startAddress>199.224.149.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>199.224.150.31</endAddress>
-        <startAddress>199.224.150.16</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>199.244.150.255</endAddress>
-        <startAddress>199.244.150.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>199.248.238.255</endAddress>
-        <startAddress>199.248.238.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>200.24.255.50</endAddress>
-        <startAddress>200.24.255.50</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>200.61.174.180</endAddress>
-        <startAddress>200.61.174.180</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>200.184.26.9</endAddress>
-        <startAddress>200.184.26.9</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>200.184.46.14</endAddress>
-        <startAddress>200.184.46.14</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>200.251.63.3</endAddress>
-        <startAddress>200.251.63.3</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>201.224.80.195</endAddress>
-        <startAddress>201.224.80.195</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>201.238.206.235</endAddress>
-        <startAddress>201.238.206.235</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>202.69.223.255</endAddress>
-        <startAddress>202.69.208.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>202.126.166.255</endAddress>
-        <startAddress>202.126.166.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>203.191.132.255</endAddress>
-        <startAddress>203.191.132.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>204.16.153.143</endAddress>
-        <startAddress>204.16.153.136</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>204.153.91.255</endAddress>
-        <startAddress>204.153.88.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>205.210.47.255</endAddress>
-        <startAddress>205.210.47.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>206.112.185.255</endAddress>
-        <startAddress>206.112.185.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>207.86.142.110</endAddress>
-        <startAddress>207.86.142.110</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>209.167.231.5</endAddress>
-        <startAddress>209.167.231.5</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>209.242.154.86</endAddress>
-        <startAddress>209.242.154.82</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>212.203.92.239</endAddress>
-        <startAddress>212.203.92.224</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>213.61.236.95</endAddress>
-        <startAddress>213.61.236.64</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>216.88.130.94</endAddress>
-        <startAddress>216.88.130.94</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>216.178.113.255</endAddress>
-        <startAddress>216.178.113.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>216.190.112.63</endAddress>
-        <startAddress>216.190.112.32</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>217.33.133.95</endAddress>
-        <startAddress>217.33.133.88</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>217.33.208.255</endAddress>
-        <startAddress>217.33.208.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>217.33.216.255</endAddress>
-        <startAddress>217.33.216.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>217.92.47.197</endAddress>
-        <startAddress>217.92.47.197</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>218.30.179.255</endAddress>
-        <startAddress>218.30.179.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>223.72.183.79</endAddress>
-        <startAddress>223.72.183.64</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>223.72.183.65</endAddress>
-        <startAddress>223.72.183.65</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>223.72.183.78</endAddress>
-        <startAddress>223.72.183.78</startAddress>
     </loginIpRanges>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -7157,6 +6772,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
+        <object>copado__Artifact_Dependency__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>copado__Artifact_Version__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
@@ -7167,6 +6791,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__Artifact__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>copado__Burndown_Item__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -7221,6 +6854,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__Compliance_Scan_Result__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>copado__Kanban_Board_View__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -7312,6 +6954,11 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
+        <recordType>Dinner__c.Dinner_RT_2</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
         <recordType>Event.Time</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
@@ -7392,6 +7039,36 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
+        <recordType>copado__Static_Code_Analysis_Result__c.copado__CodeScan</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>copado__Static_Code_Analysis_Result__c.copado__PMD</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>copado__Static_Code_Analysis_Settings__c.copado__CodeScan</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>copado__Static_Code_Analysis_Settings__c.copado__PMD</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>copado__Static_Code_Analysis_Violation__c.copado__CodeScan</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>copado__Static_Code_Analysis_Violation__c.copado__PMD</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
         <recordType>copado__User_Story__c.copado__Bug</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
@@ -7414,12 +7091,20 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>Delete_me__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Dinner__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Account</tab>
         <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-ActiveScratchOrg</tab>
+        <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Asset</tab>
@@ -7442,6 +7127,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-ContactRequest</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-Contract</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -7462,6 +7151,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-Image</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-Lead</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -7479,6 +7172,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Macro</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-NamespaceRegistry</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -7502,8 +7199,16 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-Recommendation</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-Scorecard</tab>
         <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-ScratchOrgInfo</tab>
+        <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-ServiceContract</tab>
@@ -7526,6 +7231,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <userLicense>Salesforce</userLicense>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ActivitiesAccess</name>
+    </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>AddDirectMessageMembers</name>
@@ -7677,6 +7386,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SubscribeToLightningReports</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>TransactionalEmailSend</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

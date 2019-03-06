@@ -6,22 +6,15 @@
             <c:GAnalytics />
             <c:WizardUtils />
 
-            <script> var $copado = jQuery.noConflict(); </script>
-            <script type="text/javascript">
-                var __sfdcSessionId = '{!GETSESSIONID()}';
-            </script>
-            <script src="../../soap/ajax/32.0/connection.js" type="text/javascript"></script>
-
-            <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/libs/jquery.min.1.10.2.js')}" />
-            <apex:includeScript value="{!URLFOR($Resource.copado__jqx,'jqwidgets/jqx-all.js')}"/>
+            <c:IncludeStaticsResourceComponent addJQuery="true"/>
+            <c:IncludeConnectionJsComponent />
 
             <apex:includeScript value="{!URLFOR($Resource.metadataGrid2) }"/>
             <apex:includeScript value="{!URLFOR($Resource.copado__JsRemoting)}"/>
             <apex:includeScript value="{!URLFOR($Resource.utils) }"/>
 
             <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d', URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
-            <apex:stylesheet value="{!URLFOR($Resource.copado__jqx,'jqwidgets/styles/jqx.base.css')}"/>
-            <apex:stylesheet value="{!URLFOR($Resource.copado__jqx,'jqwidgets/styles/jqx.energyblue.css')}"/>
+            <c:IncludeJqxResourceComponent addjqxAlljs="true" addjqxBasecss="true" addjqxEBcss="true"/>
 
 
 
@@ -340,8 +333,8 @@
                                     var dateEpoch = new Date(0);
                                     var temp = branchData[i];
                                     dateEpoch.setMilliseconds(branchData[i].lastUpdate);
-                                    temp.lastUpdate = dateEpoch.getFullYear() + '-' + ('0'+ dateEpoch.getMonth()).slice(-2) + '-' + ('0'+dateEpoch.getDate()).slice(-2);
-
+                                    temp.lastUpdate = dateEpoch.getFullYear() + '-' + ('0'+ (parseInt(dateEpoch.getMonth())+1)).slice(-2) + '-' + ('0'+dateEpoch.getDate()).slice(-2);
+                                    ('0'+ (parseInt(dateEpoch.getMonth())+1)).slice(-2)
                                     if(isSelectable) {
                                         temp.s = false;
                                         listOfBranches[i] = temp;

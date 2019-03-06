@@ -3,10 +3,9 @@
     <head>
       <title>Edit Org Differences {!copado__OrgDiff__c.Name} | Copado</title>
         <c:GAnalytics />
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
+        <c:IncludeStaticsResourceComponent addJQuery="true"/>
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
-        <script> var $copado = jQuery.noConflict(); 
-
+        <script>
           $copado(document).ready(function(){
                   //Buttons To middle No PBtitle
                   if( (typeof sforce != 'undefined') && sforce && (!!sforce.one) ) {
@@ -20,8 +19,6 @@
                   } 
               }
             });
-
-
         </script>
         <style type="text/css">
         /*to force center multiselect component*/
@@ -33,7 +30,6 @@
         </style>
     </head>  
     <body>
-
         <div class="copado-lightning-VF">
             <apex:pageMessages id="pmessage" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
             <apex:sectionHeader title="{!$ObjectType.copado__OrgDiff__c.LabelPlural} {!$Label.copado__edit}" subtitle="{!IF(ISBLANK(copado__OrgDiff__c.Name),'New '+ $ObjectType.copado__OrgDiff__c.Label,copado__OrgDiff__c.Name)}" description="{!$Label.copado__org_diff_description}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
@@ -89,22 +85,16 @@
 
             <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
                 <apex:form styleClass="copado-lightning-container" style="padding-top:12px;" html-novalidate="true">
-                
-                <apex:pageBlock id="pb_viewGitBackup"  mode="edit" helpUrl="http://docs.copa.do/copado/org-differences" helpTitle="{!$Label.copado__help_for_this_page}" title="{!$Label.copado__details}">
-
-                    
+                <apex:pageBlock id="pb_viewGitBackup"  mode="edit" helpUrl="https://docs.copa.do/org-differences/org-differences-overview" helpTitle="{!$Label.copado__help_for_this_page}" title="{!$Label.copado__details}">
                     <apex:pageblockButtons >
                         <apex:commandButton action="{!save}" value="{!$Label.site.save}"/>
                         <apex:commandButton action="{!cancel}" value="{!$Label.site.cancel}"/>
                     </apex:pageblockButtons>
-
-
                    <apex:actionRegion >  
                         <apex:actionFunction action="{!fromOrgChanged}" name="fromOrgChanged" reRender="typesSection" >
                             <apex:param name="fromOrgID" assignTo="{!fromOrgID}" value="" />
                         </apex:actionFunction>
                    </apex:actionRegion>
-
                     <apex:pageBlockSection showHeader="true" title="{!$Label.copado__basic_information}"> 
                         <apex:inputField required="true" value="{!copado__OrgDiff__c.Name}" />
                         <apex:inputField value="{!copado__OrgDiff__c.copado__From_Date__c}" />
@@ -128,9 +118,7 @@
                                     id="siTypes"
                                     />
                             </apex:pageBlockSectionItem>
-
                      </apex:pageBlockSection>
-                    
                     <script>
                         //this method is a helper to refresh the from org in the contorller
                         //and rerender the metadataTypes block
@@ -143,18 +131,14 @@
                                 fromOrgChanged($copado('[id$="iFromOrg_lkid"]').val());
                             }
                         }
-
-                       
                     </script>
                 </apex:pageBlock>
                 </apex:form>
                 <apex:outputPanel rendered="false">
                     <apex:outputField value="{!copado__OrgDiff__c.copado__Metadata_Types__c}"/>
                 </apex:outputPanel>
-
                 <c:CheckFeaturesComponent />
             </apex:outputPanel>
         </div>
     </body>
-
 </apex:page>

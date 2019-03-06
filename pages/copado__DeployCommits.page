@@ -1,20 +1,14 @@
 <apex:page showHeader="true" sidebar="false" docType="html-5.0" standardController="copado__Deployment__c" extensions="copado.DeployCommits,copado.Settings" id="thePage" lightningStylesheets="true">
     <head>
-    
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
+        <c:IncludeStaticsResourceComponent addJquery="true" addCometdjs="true" addJcometdjs="true" addJSON2js="true"/>
         <apex:includeScript value="{!URLFOR($Resource.statusManager) }" />
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/Cometd.js')}"/>
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/json2.js')}"/>
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/jquery.cometd.js')}"/>
         <apex:includeScript value="{!URLFOR($Resource.copadoStreamingService) }" />    
         <script type="text/javascript" src="{!URLFOR($Resource.utils) }" />
-        <script type="text/javascript"> 
-            var $copado = jQuery.noConflict(); 
-        	var __sfdcSessionId = '{!GETSESSIONID()}';
+        <script type="text/javascript">
             var Copado_Licenses = {!CurrentUserLicenses};
         </script>
         <c:WizardUtils />
-        <script src="../../soap/ajax/34.0/connection.js" type="text/javascript"></script>
+        <c:IncludeConnectionJsComponent />
         <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
         <script>
         	_config = {

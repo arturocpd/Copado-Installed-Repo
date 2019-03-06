@@ -109,10 +109,12 @@
                                 <apex:facet name="header">{!$ObjectType.copado__Test_Run_Step__c.Fields.copado__Guidance_notes__c.Label}</apex:facet>
                                 <apex:outputText id="ot_GuidanceNotes" value="{!s.copado__Guidance_notes__c}" />
                             </apex:column>
-                            <apex:column id="colActualResult" width="200">
-                                <apex:facet name="header">{!$ObjectType.copado__Test_Run_Step__c.Fields.copado__Actual_Result__c.Label}</apex:facet>
-                                <apex:inputField id="if_ActionResult" value="{!s.copado__Actual_Result__c}" style="width:99%;height:100%;" />
-                            </apex:column>
+                            <apex:repeat value="{!$ObjectType.copado__Test_Run_Step__c.FieldSets.copado__TestRunExecutionFieldSet}" var="ifsm">
+                                <apex:column id="colActualResult" width="200">
+                                    <apex:facet name="header">{!ifsm.Label}</apex:facet>
+                                    <apex:inputField value="{!s[ifsm.fieldPath]}" style="width:99%;height:100%;" />
+                                </apex:column>
+                            </apex:repeat>
                             <apex:column id="colButtons" rendered="{!showButtons}" width="100">
                                 <apex:facet name="header">{!$Label.copado__buttons}</apex:facet>
                                 <apex:actionStatus id="statusButtons">

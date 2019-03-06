@@ -4,21 +4,17 @@
 			<c:GAnalytics />
 			<apex:slds />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 			<apex:stylesheet value="{!URLFOR($Resource.copado__SLDS, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
-			<apex:stylesheet value="{!URLFOR($Resource.copado__jqx,'jqwidgets/styles/jqx.base.css')}" />   
-			<!--<apex:stylesheet value="{!URLFOR($Resource.Statics,'css/screenLocker.css')}"/>-->
-			<apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
+			<c:IncludeStaticsResourceComponent addJquery="true" addFAcss="true"/>
 			<script type="text/javascript">
-				var __sfdcSessionId = '{!GETSESSIONID()}';
 				var Copado_Licenses = {!CurrentUserLicenses};
 			</script>
-			<script src="/soap/ajax/29.0/connection.js"></script>
-            <c:WizardUtils ></c:WizardUtils>
-            <apex:includeScript value="{!URLFOR($Resource.copadoStreamingService) }" />			
-    		<apex:includeScript value="{!URLFOR($Resource.copado__jqx,'jqwidgets/jqx-all.js')}" />
+            <c:IncludeConnectionJsComponent />
+            <c:WizardUtils />
+            <apex:includeScript value="{!URLFOR($Resource.copadoStreamingService) }" />
+            <c:IncludeJqxResourceComponent addjqxAlljs="true" addjqxBasecss="true"/>
 			<apex:includeScript value="{!URLFOR($Resource.copado__utils)}" />
-			<script src="{!URLFOR($Resource.metadataGrid2) }" />    		
+			<script src="{!URLFOR($Resource.metadataGrid2)}" />
 			
 			<style type="text/css">
 				.slds-col{
@@ -47,16 +43,10 @@
 				    z-index: 10000;
 				    background-color: rgba(33,33,33,0.2);
 				}
-				
-				
 			</style>
 			
 			<script>
-
-
-				var $copado = $copado || jQuery.noConflict();
-
-				$copado(document).ready(function(){
+                $copado(document).ready(function(){
 					$copado('[data-id$=performTask]').children()[0].remove();
 					overridePageMessages();
 					if($copado('[data-id$=ustry]').val() == ''){
@@ -82,8 +72,7 @@
 			        console.log('lock')
 			    };
 
-				function overridePageMessages(cb){    
-
+				function overridePageMessages(cb){
 					textureEffect = 'slds-theme--alert-texture';
 
 					$copado('.warningM3').addClass('slds-notify slds-notify--toast slds-theme--warning customMessage '+textureEffect);          
@@ -114,10 +103,28 @@
 					
 
 					var data = datasetup.save();
-					console.log('data',data);					
 					if(data){
+					    var newPrevRes = [];
+					    var parsed;
+					    try{
+					        //UCU - if the selected type is apex then the parse crashes, so placed try cache block to solve it
+					        parsed = JSON.parse(data);
+                        } catch(err){
+                            parsed = {};
+                        }
+
+					    if(parsed.prevRes){
+							for(var pr=0;pr<parsed.prevRes.length;pr++){
+								if(parsed.prevRes[pr].s){
+									newPrevRes.push(parsed.prevRes[pr]);
+								}
+							}
+                            parsed.prevRes = newPrevRes;
+                            data = JSON.stringify(parsed);
+						}
+						lockScreen();
 						saveWithDetails(data);
-						
+
 						return false;
 					}else{	
 						return false;
@@ -191,6 +198,7 @@
                 
 			</script>
 	    </head>
+		<div class="fixedMsg" tyle="display:none;" id="msg"></div>
 	    <body class="slds-scope" style="{!IF($User.UIThemeDisplayed == 'Theme4d','margin: 12px;background-image: url(/_slds/images/themes/oneSalesforce/banner-brand-default.png?cache=210.2),linear-gradient(to top,rgba(32, 92, 159, 0), rgb(32, 92, 159));','')}">
 	    	<apex:outputPanel layout="none" id="scripts" >
 	    		<script type="text/javascript">
@@ -199,7 +207,7 @@
 	    					$copado('[data-id$=ustry]').val(),
 	    					function(result){
 	    					if($copado('[data-id$=ustry]').val() != null){	
-	    						console.log(result.Org_Credential__c);								
+	    						if(!result) console.log(result.Org_Credential__c);
 								
 								if(!result){
 									alert('{!$label.DeploymentTask_Alert_ProperUS}');
@@ -253,7 +261,7 @@
 	                            <apex:commandButton value="{!$Label.copado__save}" reRender="pageMessages" onclick="return saveTask();" styleClass="slds-button slds-button--neutral" />
 	                            <apex:commandButton value="{!$Label.copado__cancel}" action="{!cancel}" immediate="true" reRender="dummy" styleClass="slds-button slds-button--neutral" />
 
-	                            <apex:actionFunction action="{!saveAction}" name="saveWithDetails" id="svd" reRender="pmessage" oncomplete="overridePageMessages();">
+	                            <apex:actionFunction action="{!saveAction}" name="saveWithDetails" id="svd" reRender="pmessage" oncomplete="unlockScreen();overridePageMessages();">
 	                            	<apex:param name="detail" value="" id="d"/>
 	                            </apex:actionFunction>
 	                                                       
@@ -331,26 +339,29 @@
 											    if(data){
 												    console.info('Setting previosly selected data for Manual Task');
 													data = JSON.parse(data);
+													console.log('data==> ',data);
 													$copado('[Id$="jsTaskDesc"]').val(data.Task_Description);
 													$copado('[Id$="jsPerformInSource"]').prop('checked',data.Perform_in_Source_Org);
 													$copado('[Id$="jsPerformInDestinations"]').prop('checked',data.Perform_in_Destination_Orgs);
 													$copado('[Id$="jsNotifyTaskOwner"]').val(data ? data.Notify_Task_Owner : 'None');
 													$copado('[Id$="jsTaskOwner_lkid"]').val(data ? data.Task_Owner : null);
-													sforce.connection.query('SELECT id, FirstName, LastName FROM User WHERE Id = \'' + data.Task_Owner+ '\' LIMIT 1', {
-														onSuccess: function(result) {
-															var records = result.getArray("records");
+													if(data.Task_Owner != undefined && data.Task_Owner != ''){
+                                                        sforce.connection.query('SELECT id, FirstName, LastName FROM User WHERE Id = \'' + data.Task_Owner+ '\' LIMIT 1', {
+                                                            onSuccess: function(result) {
+                                                                var records = result.getArray("records");
 
-															if(records.length == 1){
-																var firstname = records[0].FirstName;
-																var lastname = records[0].LastName;
-																$copado('[Id$="jsTaskOwner_lkold"]').val(firstname + ' ' + lastname);
-																$copado('[Id$="jsTaskOwner"]').val(firstname + ' ' + lastname);
-															}
-														},
-														onFailure : function(error) {
-															console.error("An error has occurred " + error);
-														}
-													});
+                                                                if(records.length == 1){
+                                                                    var firstname = records[0].FirstName;
+                                                                    var lastname = records[0].LastName;
+                                                                    $copado('[Id$="jsTaskOwner_lkold"]').val(firstname + ' ' + lastname);
+                                                                    $copado('[Id$="jsTaskOwner"]').val(firstname + ' ' + lastname);
+                                                                }
+                                                            },
+                                                            onFailure : function(error) {
+                                                                console.error("An error has occurred " + error);
+                                                            }
+                                                        });
+													}
 												}else{
 													$copado('[id$=jsTaskOwner]').val(null);
 												}
@@ -472,15 +483,21 @@
 											}
 										</script>
 									</apex:outputPanel>
-									<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Custom Settings'}">
+									<apex:outputPanel id="csPanel2Render" layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Custom Settings'}">
 										<c:CustomSettingComponent isEdit="true"/>
 										<script type="text/javascript">
 
 											datasetup.save = function(){
 												var settings = [];
-										        $copado('#cs-values option:selected').each(function(a, b) {
-										            settings.push($copado(this).val());
-										        });
+												var type;
+										        if($copado('[id$="js-stepBlock-CustomSettings"] #jqxgrid-custom-setting div[role="row"]').length > 0){
+													type = $copado('[id$="js-stepBlock-CustomSettings"] #jqxgrid-custom-setting div[role="row"]:first').find('[role="gridcell"]:nth(1) div').text();
+												}
+										        $copado('[id$="js-stepBlock-CustomSettings"] #jqxgrid-custom-setting div[role="row"]').each(function(){
+													if($copado(this).find('[role="gridcell"]:first span').attr('class') && $copado(this).find('[role="gridcell"]:first span').attr('class').indexOf('jqx-checkbox-check-checked') > -1){
+														settings.push($copado(this).find('[role="gridcell"]:nth('+(type != 'List' ? '2' : '3')+')>div').text());
+													}
+												});
 										        if(settings.length > 0){
 											        var obj = {
 											            fromSuffix: $copado('.cs-fromSuffix').val(),
@@ -504,41 +521,21 @@
 														var data = dw.u.getSavedData('{!JSENCODE(Deployment_Task__c.id)}', 'Custom Settings', true);
 												        console.log('rebuild CS selector', data);
 														data = JSON.parse(data||'{ }');
-												        if(!data) return;
+												        if(Object.keys(data).length === 0) return;
 
-												        console.log('setting data.sco...',data.sco,data.csName);
 												        $copado('.cs-fromSuffix').val(data ? data.fromSuffix : '');
 												        $copado('.cs-toSuffix').val(data ? data.toSuffix : '');											        
 												        
 											            customSetting.data.settings = data.settings;
 											            $copado('#objectsCJ').val(data.sco);
 
+														//dw.u.getSavedStepData(type, true);
 											            customSetting.data.values = data.prevRes;
-											            customSetting.ops.onSelectObject(data.csName,data.sco);
+											            customSetting.ops.createGrid(customSetting.data.values,customSetting.data.values);
+											            //customSetting.ops.onSelectObject(data.csName,data.sco);
 											            var res = customSetting.data.values,
-											            len = res.length,
-											            options = '';
-												        customSetting.selectedType = len ? res[0].type : false;
-												        											        	
-												        $copado('#cs-toggle-all').attr('data-all', true).val('Select all');
-												        
-												        
-												        var typeField = customSetting.selectedType == 'Hierarchy' ? 'SetupOwnerId' : 'Name';
 
-												        for (var i = 0; len > i; i++) {
-												            var item = res[i];
-												            options += '<option value="' + item[typeField] + '">' + item.Name + '</option>';
-												        }
-
-												        $copado('#cs-values').html(options);
-
-											            var len = data.settings.length,
-											                $obj = $copado('#cs-values');
-
-											            while (len--) {
-											                $obj.find('option[value="' + data.settings[len] + '"]').prop('selected', true);
-											            }
-											        	customSetting.ops.enabledBtn('#getCSValues', 'Get Custom Settings values');
+														len = undefined;
 											    	}catch(err){
 											    		console.warn(err);
 											    	}

@@ -2,7 +2,25 @@
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <head>
         <c:GAnalytics />    
-        <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
+        <apex:stylesheet id="lexss" value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
+        <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
+            <style>
+                .rich-tabpanel-content {
+                    border-bottom-width: 0px !important;
+                    border-left-width: 0px !important;
+                    border-right-width: 0px !important;
+                    font-family: 'Salesforce Sans',Arial,sans-serif !important;
+                    background-color: transparent !important;
+                }
+                .rich-tab-header {
+                    font-family: 'Salesforce Sans',Arial,sans-serif !important;
+                    text-align: left !important;
+                }
+                .rich-tabhdr-cell-disabled, .rich-tabhdr-cell-inactive {
+                    padding-top: 0px !important;
+                }
+            </style>
+        </apex:outputPanel>
     </head>
     <body>
         <div class="copado-lightning-VF">
@@ -81,7 +99,7 @@
                         tabClass="{!IF($User.UIThemeDisplayed=='Theme3','activeTab','')}" inactiveTabClass="{!IF($User.UIThemeDisplayed=='Theme3','inactiveTab','')}">
                         <apex:tab label="{!$Label.copado__features}" name="t_features" id="tabOne" rendered="true">
                             <apex:pageBlock id="pbFeatures" title="{!$Label.copado__features}" >
-                                <apex:pageBlockTable value="{!features}" var="f">
+                            <apex:pageBlockTable value="{!featuresList}" var="f">
                                     <apex:column value="{!f.Name}"/>
                                     <apex:column value="{!f.copado__Enabled__c}"/>
                                     <apex:column value="{!f.copado__Quantity__c}"/>
@@ -108,7 +126,7 @@
                             <apex:actionFunction name="doPrivateSettingUdate" action="{!updatePrivateSettings}" reRender="pbAPIKey"/>
                         </apex:tab>
                         <apex:tab label="{!$Label.copado__transactions}" name="transactions" id="tabThree">
-                            <apex:pageBlock id="pbTrans" title="{!$Label.copado__transactions}" helpUrl="http://docs.copa.do/copado/credit-usage" helpTitle="{!$Label.copado__help_for_this_page}">
+                            <apex:pageBlock id="pbTrans" title="{!$Label.copado__transactions}" helpUrl="https://docs.copa.do/copado-licenses/credit-usage" helpTitle="{!$Label.copado__help_for_this_page}">
                                 <apex:pageBlockTable value="{!transactions}" var="t">
                                     <apex:column >
                                         <apex:facet name="header">{!$ObjectType.User.Label}</apex:facet>

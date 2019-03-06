@@ -2,12 +2,8 @@
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <head>
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
-        <apex:stylesheet value="{!URLFOR($Resource.copado__jqx,'jqwidgets/styles/jqx.base.css')}" />
-        <apex:stylesheet value="{!URLFOR($Resource.copado__jqx,'jqwidgets/styles/jqx.fresh.css')}" />
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
-        <apex:includeScript value="{!URLFOR($Resource.copado__jqx,'jqwidgets/jqx-all.js')}" />
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery-sortable.0.9.12.min.js')}" />
-        <script type="text/javascript" src="{!URLFOR($Resource.Statics,'js/libs/jquery-ui.min.js')}"></script>
+        <c:IncludeStaticsResourceComponent addJquery="true" addUIjs="true"/>
+        <c:IncludeJqxResourceComponent addjqxAlljs="true" addjqxBasecss="true" addjqxEBcss="true"/>
     	<c:GAnalytics />
         <style>
             .apexCode {
@@ -15,8 +11,6 @@
             }
         </style>
         <script type="text/javascript">
-            var $copado = jQuery.noConflict(),
-                __sfdcSessionId = '{!GETSESSIONID()}';
             var cps = cps || {};
             function escapeHtml(unsafe) {
                 return unsafe
@@ -75,7 +69,7 @@
                 $copado("#tbl_TestScriptSteps").disableSelection();
             };
             cps.removeRow = function(rowId) {
-                if ($copado('#' + rowId).size() === 1) $copado('#' + rowId).remove();
+                if ($copado('#' + rowId).length === 1) $copado('#' + rowId).remove();
                 var tcs = cps.data.jsonSelectedTestCases;
                 for (var i = 0; i < tcs.length; i++) {
                     if (tcs[i].uid === rowId) {
@@ -86,15 +80,16 @@
             };
             cps.addRow = function(name, rowId, order, row) {
                 var _row = cps.template.row(name, rowId, order, row);
-                if ($copado('#' + rowId).size() > 0) return;
+                //below line commented out to enable adding same test case more than once
+                //if ($copado('#' + rowId).length > 0) return;
                 $copado('#resultTable tbody').append(_row);
             };
 
             cps.template.row = function(name, rowId, order, row) {
-                var i, j;
+                var j;
                 var selectDatasetName = 'dataset-' + row.Id + '-' + rowId;
                 row._selectDatasetName = selectDatasetName;
-                var options_datasetnames = ['<select id="' + selectDatasetName + '" data-uid="' + rowId + '" onchange="datasetChanged(this)">', '<option value="">(None)</option>'];
+                var options_datasetnames = ['<select id="' + selectDatasetName + '" data-uid="' + rowId + '" onchange="datasetChanged(this)">', '<option value="">{!$Label.NONE_SELECTED}</option>'];
                 row.datasets = row.datasets || [];
 
                 for (j = 0; j < row.datasets.length; j++) {
@@ -131,7 +126,6 @@
             }
 
             function datasetChanged(select) {
-                
                 var dataset = $copado(select).val();
                 var uid = $copado(select).attr('data-uid');
                 var temp = [],
@@ -145,8 +139,8 @@
 
             }
 
-            cps.data.jsonSelectedTestCases = {!LookupTestCases
-            };
+            cps.data.jsonSelectedTestCases = {!LookupTestCases};
+
             $copado.each(cps.data.jsonSelectedTestCases, function(idx, v) {
                 v.uid = 'uid' + (uid_counter++);
             });
@@ -219,7 +213,7 @@
                 cps.drawTable();
             });
         </script>
-        <script src="../../soap/ajax/36.0/connection.js" type="text/javascript"></script>
+        <c:IncludeConnectionJsComponent />
 
         <div style="float: left;" id="testtesttest"></div>
 
@@ -321,7 +315,7 @@
                         cps.data.TestCasesPerSuiteSaveElt = document.getElementById('{!$Component.TestCasesPerSuiteSave}');
                     </script>
                 </apex:form>
-                <link href="{!URLFOR($Resource.CopadoChangeManagement, 'Assets/jquery-ui-1.11.1/jquery-ui.theme.min.css')}" rel="stylesheet" type="text/css" />
+                <link href="{!URLFOR($Resource.CopadoChangeManagement, 'Assets/jquery-ui-1.12.1.custom/jquery-ui.theme.min.css')}" rel="stylesheet" type="text/css" />
             	
                 <script>
                     ga('send', 'pageview', {

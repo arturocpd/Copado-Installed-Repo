@@ -65,6 +65,10 @@
                 <behavior>Edit</behavior>
                 <field>copado__Create_Full_Profiles_Step__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__Order_by__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>

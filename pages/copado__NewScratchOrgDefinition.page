@@ -9,7 +9,7 @@
 
         <head>
             <title>New Scratch Org Definition Template</title>
-            <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
+            <c:IncludeStaticsResourceComponent addJQuery="true" />
         </head>
         <body>
             <apex:form >

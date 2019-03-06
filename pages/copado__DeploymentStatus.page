@@ -2,25 +2,14 @@
     <head>
         <c:GAnalytics />
         <c:WizardUtils id="cmpWizardUtilities" />
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/Cometd.js')}"/>
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/jquery.circliful.min.js')}" />                      
-        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.Statics,'css/jquery.circliful.css')}" />
-        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.Statics,'css/font-awesome.min.css')}" />
-        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.Statics,'css/deploymentStatus.css')}" />
+        <c:IncludeStaticsResourceComponent addJquery="true" addCometdjs="true" addJcometdjs="true" addJSON2js="true" addCirclifuljs="true" addCirclifulcss="true" addFAcss="true" addDScss="true"/>
         
         <script type="text/javascript">
-            var $copado = jQuery.noConflict(), 
-            __sfdcSessionId = '{!GETSESSIONID()}';
             var Copado_Licenses = {!CurrentUserLicenses};
         </script>
-        <script src="/soap/ajax/32.0/connection.js"></script>
-        
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/json2.js')}"/>
-        <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/jquery.cometd.js')}"/>
-   
+        <c:IncludeConnectionJsComponent />
+
         <apex:includeScript value="{!URLFOR($Resource.copadoStreamingService) }" />
-        
     </head>
     <body>
         <script>
@@ -92,8 +81,8 @@
                         $copado('#circliful_t_'+jobId).attr('data-info', o.test_completed+'/'+o.test_total);
                         $copado('#circliful_t_'+jobId).attr('data-fgcolor', tst_colour);
                     }
-                    $copado("#txtStartTime_"+jobId).text(o.start);
-                    $copado('#txtEndTime_'+jobId).text(o.end);
+                    $copado("#txtStartTime_"+jobId).text(new Date(o.start).toLocaleTimeString());
+                    $copado('#txtEndTime_'+jobId).text(new Date(o.end).toLocaleTimeString());
                     $copado('#txtDuration_'+jobId).text(reformatMilliseconds(o.duration*1000));
                     
                     $copado('#circliful_d_'+jobId).circliful();

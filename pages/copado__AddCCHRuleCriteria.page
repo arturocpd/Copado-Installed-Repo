@@ -1,9 +1,8 @@
 <apex:page docType="html-5.0" standardController="copado__Compliance_Rule__c" applyHtmlTag="true"  showHeader="true" sidebar="true" standardStylesheets="true" extensions="copado.AddCCHRuleCriteriaExt" title="Manage {!$ObjectType.copado__Compliance_Rule__c.Label} Criteria" cache="false">
 	<apex:outputField value="{!rule.copado__Metadata_Type__c}" rendered="false"/><!-- NR to avoid vf NS issues -->
-	<apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
+	<c:IncludeStaticsResourceComponent addJquery="true"/>
 	
 	<script type="text/javascript">
-		var $copado = $copado || jQuery.noConflict();
 		$copado(document).ready(function(){
 			overridePageMessages();
 		})
@@ -14,7 +13,6 @@
 		    	<TITLE>Compliance Manage Criteria {!copado__Compliance_Rule__c.Name} | Copado</TITLE>
 		      <apex:slds />
 		      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		      <apex:stylesheet value="{!URLFOR($Resource.copado__SLDS, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
 		    </head>
 		    <body class="slds-scope" style="{!IF($User.UIThemeDisplayed == 'Theme4d','margin: 12px;background-image: url(/_slds/images/themes/oneSalesforce/banner-brand-default.png?cache=210.2),linear-gradient(to top,rgba(32, 92, 159, 0), rgb(32, 92, 159));','')}">
@@ -260,7 +258,7 @@
 		                $copado('.warningM3').removeClass('warningM3');
 
 		                $copado('.message').css('margin',0);
-		                $copado('.message').on('click',function(){$copado('.message').hide()});
+		                //$copado('.message').on('click',function(){$copado('.message').hide()});
 		                $copado('.message').css('margin-top',10);
 		                $copado('.message').css('font-size','11pt');
 						$copado('.messageText').css('color','white');
