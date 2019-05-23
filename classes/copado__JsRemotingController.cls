@@ -18,8 +18,4 @@ global class JsRemotingController {
     global static void getVlocityDependencies(Id userStoryId, String jsonSelectedMetadata) {
 
     }
-    @RemoteAction
-    global static Boolean selectBranch(Id sObjectId, String fieldName, String branchName) {
-        return null;
-    }
 }

@@ -1,10 +1,16 @@
 <apex:page id="ArtifactPackage" standardController="copado__Artifact__c" lightningStylesheets="true" extensions="copado.ArtifactPackageController" sideBar="false">
     <title>{!copado__Artifact__c.Name} Source Package Management</title>
+    <link rel="stylesheet" href="{!URLFOR($Resource.jqx,'jqwidgets/styles/jqx.base.css')}"/>
     <c:WizardUtils id="cmpWizardUtilities"/>
-    <c:IncludeStaticsResourceComponent addJquery="true"/>
-    <c:IncludeConnectionJsComponent />
+    <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}"/>
+    <script type="text/javascript">
+            var __sfdcSessionId = '{!GETSESSIONID()}';
+            var $copado = $copado || jQuery.noConflict();
+    </script>
+    <script src="/soap/ajax/36.0/connection.js"></script>
     <apex:includeScript value="{!URLFOR($Resource.copado__JsRemoting)}"/>
-    <c:IncludeJqxResourceComponent addjqxAlljs="true" addjqxBasecss="true" addjqxEBcss="true"/>
+    <apex:includeScript value="{!URLFOR($Resource.copado__jqx,'jqwidgets/jqx-all.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.copado__jqx,'jqwidgets/jqxgrid.selection.js')}"/>
     <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}"/>
     <style>
         .jqx-grid-cell-selected, .jqx-grid-cell-selected-base {
@@ -66,7 +72,7 @@
     <script type="text/javascript">
 
 
-      $copado(document).ready( function(){
+      $copado(document).on('ready',function(){
          prepareGrid();
       });
       var artifactPackageGrid;

@@ -1,30 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customButtons>copado__Manage_Selenium_Tests</customButtons>
     <customButtons>copado__Add_Metadata</customButtons>
     <customButtons>copado__Add_Commits</customButtons>
     <customButtons>copado__Commit_Files</customButtons>
-    <customButtons>copado__Perform_Validation</customButtons>
-    <customButtons>copado__Apex_Test</customButtons>
-    <customButtons>copado__Pull_Request</customButtons>
-    <customButtons>copado__Select_Base_Branch</customButtons>
     <excludeButtons>Submit</excludeButtons>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>false</detailHeading>
-        <editHeading>false</editHeading>
-        <label>New Section</label>
-        <layoutColumns>
-            <layoutItems>
-                <height>50</height>
-                <page>copado__UserStory</page>
-                <showLabel>false</showLabel>
-                <showScrollbars>false</showScrollbars>
-                <width>100%</width>
-            </layoutItems>
-        </layoutColumns>
-        <style>OneColumn</style>
-    </layoutSections>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -71,10 +50,6 @@
                 <behavior>Readonly</behavior>
                 <field>copado__View_in_Git__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Migration_Id__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -95,19 +70,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>copado__Progress__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>copado__Close_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>copado__Cancellation_Reason__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>RecordTypeId</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -276,7 +243,7 @@
         <label>User Story selections</label>
         <layoutColumns>
             <layoutItems>
-                <height>200</height>
+                <height>455</height>
                 <page>copado__UserStorySelectedMetadata</page>
                 <showLabel>false</showLabel>
                 <showScrollbars>false</showScrollbars>
@@ -294,7 +261,15 @@
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>Apex Test Results</label>
-        <layoutColumns/>
+        <layoutColumns>
+            <layoutItems>
+                <height>455</height>
+                <page>copado__UserStoryApexTestResults</page>
+                <showLabel>false</showLabel>
+                <showScrollbars>false</showScrollbars>
+                <width>100%</width>
+            </layoutItems>
+        </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
@@ -372,15 +347,6 @@
         <relatedList>RelatedNoteList</relatedList>
     </relatedLists>
     <relatedLists>
-        <excludeButtons>New</excludeButtons>
-        <fields>NAME</fields>
-        <fields>copado__Selenium_Test_Group__c.NAME</fields>
-        <fields>copado__Selenium_Test_Group__c.copado__Environment__c</fields>
-        <fields>copado__Selenium_Test_Group__c.copado__Status__c</fields>
-        <fields>copado__Selenium_Test_Group__c.copado__Status_Icon__c</fields>
-        <relatedList>copado__User_Story_Selenium_Test__c.copado__User_Story__c</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>NAME</fields>
         <fields>copado__Test_Description__c</fields>
         <fields>copado__Peer_Reviewer__c</fields>
@@ -402,7 +368,6 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>copado__Promotion__c.NAME</fields>
         <fields>copado__Promotion__c.copado__Status__c</fields>
         <fields>copado__Promotion__c.copado__Source_Environment__c</fields>
         <fields>copado__Promotion__c.copado__Source_Org_Credential__c</fields>
@@ -455,31 +420,13 @@
         <fields>copado__Metadata_API_Name__c</fields>
         <relatedList>copado__User_Story_Metadata__c.copado__User_Story__c</relatedList>
     </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>copado__Pull_Request__c.copado__User_Story__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>copado__External_CI_Setting__c</fields>
-        <fields>copado__Job_Api_Name__c</fields>
-        <fields>copado__Invoke_on__c</fields>
-        <fields>copado__Continue_on_failure__c</fields>
-        <fields>copado__Timeout_in_minutes__c</fields>
-        <fields>copado__Environment__c</fields>
-        <relatedList>copado__External_CI_Job__c.copado__User_Story__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>copado__External_CI_Job_Result__c.copado__User_Story__c</relatedList>
-    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0Y000000zXCs</masterLabel>
+        <masterLabel>00h0Y000000l6Vv</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

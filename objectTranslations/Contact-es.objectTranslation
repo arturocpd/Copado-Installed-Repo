@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Best Contact --></label>
+        <name>Best_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cool Contact --></label>
+        <name>Cool_Contact__c</name>
+    </fields>
+    <fields>
+        <label>No traducir</label>
+        <name>Do_not_translate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Languages --></label>
+        <name>Languages__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level --></label>
+        <name>Level__c</name>
+        <picklistValues>
+            <masterLabel>Primary</masterLabel>
+            <translation><!-- Primary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary</masterLabel>
+            <translation><!-- Secondary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tertiary</masterLabel>
+            <translation><!-- Tertiary --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Perfect Contact --></label>
+        <name>Perfect_Contact__c</name>
+    </fields>
+    <fields>
+        <label>Traducir</label>
+        <name>Translate__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage>Traducir debe ser cierto.</errorMessage>
+        <name>Do_not_translate</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>BChild</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>BChilds</value>
+    </caseValues>
+    <fields>
+        <label><!-- BChild --></label>
+        <name>BChild__c</name>
+        <relationshipLabel><!-- BChilds --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number --></label>
+        <name>Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent --></label>
+        <name>Parent__c</name>
+        <relationshipLabel><!-- BChilds --></relationshipLabel>
+    </fields>
+    <gender>Masculine</gender>
+</CustomObjectTranslation>

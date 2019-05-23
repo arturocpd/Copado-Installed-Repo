@@ -5,10 +5,6 @@
         <name>CustomFields</name>
     </fieldSets>
     <fields>
-        <label><!-- Migration Id --></label>
-        <name>Migration_Id__c</name>
-    </fields>
-    <fields>
         <label><!-- Active --></label>
         <name>copado__Active__c</name>
     </fields>

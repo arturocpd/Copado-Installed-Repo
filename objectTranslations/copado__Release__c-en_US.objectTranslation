@@ -5,10 +5,6 @@
         <name>Copado_Header_Fields</name>
     </fieldSets>
     <fields>
-        <label><!-- Migration Id --></label>
-        <name>Migration_Id__c</name>
-    </fields>
-    <fields>
         <help><!-- All user story feature branches are created out of the main branch of the Deployment Flow. If a Release base branch is specified, all feature branches of user stories linked to the Release will be created out of the base branch. --></help>
         <label><!-- Base Branch --></label>
         <name>copado__Base_Branch__c</name>
@@ -54,9 +50,5 @@
     <webLinks>
         <label><!-- Mass_add_to_Release --></label>
         <name>copado__Mass_add_to_Release</name>
-    </webLinks>
-    <webLinks>
-        <label><!-- Select_Base_Branch --></label>
-        <name>copado__Select_Base_Branch</name>
     </webLinks>
 </CustomObjectTranslation>

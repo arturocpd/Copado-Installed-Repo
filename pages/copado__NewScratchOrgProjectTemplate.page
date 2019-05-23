@@ -8,9 +8,16 @@
     <head>
         <title>New Scratch Org Project Template</title>
         <c:WizardUtils />
-        <c:IncludeStaticsResourceComponent addJQuery="true" />
-        <c:IncludeConnectionJsComponent />
-        <c:IncludeJqxResourceComponent addjqxAlljs="true" addjqxBasecss="true" addJqxEBcss="true"/>
+        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
+        <script> var $copado = jQuery.noConflict(); </script>
+        <script type="text/javascript">
+            var __sfdcSessionId = '{!GETSESSIONID()}';
+        </script>
+        <script src="../../soap/ajax/32.0/connection.js" type="text/javascript"></script>
+        <apex:stylesheet value="{!URLFOR($Resource.copado__jqx,'jqwidgets/styles/jqx.base.css')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.copado__jqx,'jqwidgets/styles/jqx.energyblue.css')}"/>
+
+        <apex:includeScript value="{!URLFOR($Resource.copado__jqx,'jqwidgets/jqx-all.js')}"/>
         <apex:includeScript value="{!URLFOR($Resource.metadataGrid2) }"/>
         <apex:includeScript value="{!URLFOR($Resource.copado__JsRemoting)}"/>
         <apex:includeScript value="{!URLFOR($Resource.copado__ScratchOrg)}"/>
@@ -18,7 +25,7 @@
     <body>
     <apex:form style="height:700px">
         <c:ScreenLocker msg="{!$Label.copado__loading}"/>
-        <c:ScratchOrgMetadata parentPageController="{!this}" componentName="ScratchOrgMetadata" showActionButtons="false" mode="{!componentMode}" showAllTemplateButtons="true"/>
+        <c:ScratchOrgMetadata parentPageController="{!this}" componentName="ScratchOrgMetadata" showActionButtons="false" mode="template" showAllTemplateButtons="true"/>
     </apex:form>
     </body>
     </html>

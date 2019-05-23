@@ -23,10 +23,6 @@
                 <behavior>Required</behavior>
                 <field>copado__Files_to_be_deployed__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Migration_Id__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

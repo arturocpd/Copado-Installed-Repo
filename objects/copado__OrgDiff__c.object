@@ -48,6 +48,7 @@
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
@@ -226,8 +227,8 @@
     <searchLayouts>
         <customTabListAdditionalFields>copado__From_Org__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>copado__To_Org__c</customTabListAdditionalFields>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
         <lookupDialogsAdditionalFields>copado__From_Org__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>copado__To_Org__c</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>copado__From_Org__c</lookupPhoneDialogsAdditionalFields>

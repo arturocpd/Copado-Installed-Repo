@@ -17,8 +17,13 @@
             }
         </style>
 
-        <c:IncludeStaticsResourceComponent addJQuery="true" />
-        <c:IncludeConnectionJsComponent />
+        <script type="text/javascript">
+            var $copado = jQuery.noConflict(),
+            __sfdcSessionId = '{!GETSESSIONID()}';
+        </script>
+
+        <script src="/soap/ajax/34.0/connection.js"></script>
+        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}"/>
     </head>
 
     <body class="slds-scope" style="height:100%;">
@@ -128,7 +133,7 @@
                                                     </div>
                                                 </header>
                                                 <div class="slds-no-flex">
-                                                    <a href="https://www.copa.do/support"
+                                                    <a href="https://www.copa.do/Support"
                                                        target="_blank" class="slds-card__header-link slds-truncate">
                                                         <button class="slds-button slds-button_neutral" type="button">{!$Label.HELP_GET}</button>
                                                     </a>
@@ -156,7 +161,7 @@
                                                     </div>
                                                 </header>
                                                 <div class="slds-no-flex">
-                                                    <a href="https://www.copa.do/blog"
+                                                    <a href="https://www.copa.do/Blog"
                                                        target="_blank" class="slds-card__header-link slds-truncate">
                                                         <button class="slds-button slds-button_neutral" type="button">{!$Label.VISIT}</button>
                                                     </a>
@@ -170,10 +175,11 @@
                             <!-- / TAB: GENERAL -->
 
 
+
                             <!-- TAB: ORGS -->
                             <div id="tab-scoped-2" class="slds-tabs--scoped__content slds-hide" role="tabpanel"
                                  aria-labelledby="tab-scoped-2__item">
-                                <c:CopadoHelp sectionText="{!$Label.copado__org_credential_help}" sectionLink="https://docs.copa.do/org-credentials/how-to-create-an-org-credential"/>
+                                <c:CopadoHelp sectionText="{!$Label.copado__org_credential_help}" sectionLink="https://docs.copa.do/article/wF71t0f3pU"/>
                                 <apex:outputPanel layout="block" id="orgcredentialForm">
                                     <article class="slds-card">
                                         <header class="slds-card__header slds-grid">
@@ -354,7 +360,7 @@
                             <!-- TAB: ACCOUNT SUMMARY -->
                             <div id="tab-scoped-3" class="slds-tabs--scoped__content slds-hide" role="tabpanel"
                                  aria-labelledby="tab-scoped-3__item">
-                                <c:CopadoHelp sectionText="{!$Label.copado__account_summary_help}" sectionLink="https://docs.copa.do/copado-core/copado-license-manager"/>
+                                <c:CopadoHelp sectionText="{!$Label.copado__account_summary_help}" sectionLink="https://docs.copa.do/article/d2tZ5CwBMc"/>
                                 <article class="slds-card">
                                     <apex:outputPanel layout="block" id="licenseManagerCard">
                                         <header class="slds-card__header slds-grid">
@@ -371,9 +377,10 @@
                                                 </div>
                                             </div>
                                             <div class="slds-no-flex">
-                                                <a onclick="navigateTo('/apex/{!namespace}LicenseManager');"
-                                                                 Class="slds-button slds-button--neutral slds-col--bump-left"> {!$Label.ASSIGN_LICENSES}
-                                                </a>
+                                                <apex:outputLink value="{!URLFOR($Page.copado__LicenseManager)}"
+                                                                 target="_blank"
+                                                                 styleClass="slds-button slds-button--neutral slds-col--bump-left"> {!$Label.copado__assign_licenses}
+                                                </apex:outputLink>
                                             </div>
                                         </header>
                                         <div class="slds-card__body slds-card__body_inner">
@@ -454,7 +461,7 @@
                             <!-- TAB: GIT -->
                             <div id="tab-scoped-4" class="slds-tabs--scoped__content slds-hide" role="tabpanel"
                                  aria-labelledby="tab-scoped-4__item">
-                                <c:CopadoHelp sectionText="{!$Label.copado__git_repository_help}" sectionLink="https://docs.copa.do/git-repository/git-repository-overview"/>
+                                <c:CopadoHelp sectionText="{!$Label.copado__git_repository_help}" sectionLink="https://docs.copa.do/article/OtwrO1lhfX"/>
                                 <apex:outputPanel layout="block" id="gitRepoForm">
                                     <article class="slds-card">
                                         <header class="slds-card__header slds-grid">
@@ -656,7 +663,7 @@
                             <!-- TAB: DEPLOYMENT FLOWS -->
                             <div id="tab-scoped-5" class="slds-tabs--scoped__content slds-hide" role="tabpanel"
                                  aria-labelledby="tab-scoped-5__item">
-                                <c:CopadoHelp sectionText="{!$Label.copado__deployment_flow_help}" sectionLink="https://docs.copa.do/branch-management-application/branch-management-application-overview"/>
+                                <c:CopadoHelp sectionText="{!$Label.copado__deployment_flow_help}" sectionLink="https://docs.copa.do/article/lltxTl7NUS"/>
                                 <apex:outputPanel layout="block" id="deploymentFlowForm">
                                     <article class="slds-card">
                                         <header class="slds-card__header slds-grid">
@@ -894,15 +901,6 @@
                             $copadocontentToShow.siblings('.slds-tabs--scoped__content').removeClass('slds-show');
                             $copadocontentToShow.siblings('.slds-tabs--scoped__content').addClass('slds-hide');
                         });
-
-                        function navigateTo(redirectUrl){
-                            redirectUrl = encodeURI(redirectUrl);
-                            if( (typeof sforce != 'undefined') && sforce && (!!sforce.one) ) {
-                                sforce.one.navigateToURL(redirectUrl);
-                            } else {
-                                window.location.href = redirectUrl;
-                            }
-                        }
                     </script>
                 </apex:form>
 

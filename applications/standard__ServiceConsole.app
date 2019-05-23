@@ -158,14 +158,6 @@
             <location>full</location>
         </listPlacement>
         <listRefreshMethod>none</listRefreshMethod>
-        <pushNotifications>
-            <fieldNames>Phone</fieldNames>
-            <objectName>Account</objectName>
-        </pushNotifications>
-        <pushNotifications>
-            <fieldNames>BusinessHours</fieldNames>
-            <objectName>Case</objectName>
-        </pushNotifications>
     </consoleConfig>
     <defaultLandingTab>standard-home</defaultLandingTab>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
@@ -187,7 +179,11 @@
     <tabs>standard-Case</tabs>
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-Lead</tabs>
+    <tabs>Demo__c</tabs>
     <workspaceConfig>
+        <mappings>
+            <tab>Demo__c</tab>
+        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>

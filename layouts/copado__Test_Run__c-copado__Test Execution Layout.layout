@@ -114,13 +114,6 @@
         <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
-    <miniLayout>
-        <fields>copado__Test_Script__c</fields>
-        <fields>copado__Environment__c</fields>
-        <fields>copado__Status__c</fields>
-        <fields>copado__Test_Completion__c</fields>
-        <fields>copado__Percent_Passed__c</fields>
-    </miniLayout>
     <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>

@@ -228,40 +228,68 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTO</field>
+            <field>00N0Y00000EedMp</field>
+            <label>Checkopp1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMu</field>
+            <label>Checkopp2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMz</field>
+            <label>Checkopp3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN4</field>
+            <label>Checkopp4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN9</field>
+            <label>Checkopp5</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1h</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTP</field>
+            <field>00N0Y00000BZE1i</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTQ</field>
+            <field>00N0Y00000BZE1j</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTR</field>
+            <field>00N0Y00000CNNiV</field>
+            <label>Next Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IF</field>
+            <label>Numero 1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IP</field>
+            <label>Numero 2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IU</field>
+            <label>Numero 3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CMQz6</field>
+            <label>Numero 4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1k</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjG</field>
-            <label>Test Commit A</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjH</field>
-            <label>Test Commit B</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjI</field>
-            <label>Test Commit C</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTS</field>
+            <field>00N0Y00000BZE1l</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjJ</field>
-            <label>xyz SGUID Opp</label>
+            <field>PARTNER.NAME</field>
+            <label>Partner Account</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -297,15 +325,22 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N0Y00000IPUTO</field>
-            <field>00N0Y00000IPUTP</field>
-            <field>00N0Y00000IPUTQ</field>
-            <field>00N0Y00000IPUTR</field>
-            <field>00N0Y00000QYNjG</field>
-            <field>00N0Y00000QYNjH</field>
-            <field>00N0Y00000QYNjI</field>
-            <field>00N0Y00000IPUTS</field>
-            <field>00N0Y00000QYNjJ</field>
+            <field>00N0Y00000EedMp</field>
+            <field>00N0Y00000EedMu</field>
+            <field>00N0Y00000EedMz</field>
+            <field>00N0Y00000EedN4</field>
+            <field>00N0Y00000EedN9</field>
+            <field>00N0Y00000BZE1h</field>
+            <field>00N0Y00000BZE1i</field>
+            <field>00N0Y00000BZE1j</field>
+            <field>00N0Y00000CNNiV</field>
+            <field>00N0Y00000CM9IF</field>
+            <field>00N0Y00000CM9IP</field>
+            <field>00N0Y00000CM9IU</field>
+            <field>00N0Y00000CMQz6</field>
+            <field>00N0Y00000BZE1k</field>
+            <field>00N0Y00000BZE1l</field>
+            <field>PARTNER.NAME</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -462,40 +497,68 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTO</field>
+            <field>00N0Y00000EedMp</field>
+            <label>Checkopp1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMu</field>
+            <label>Checkopp2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMz</field>
+            <label>Checkopp3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN4</field>
+            <label>Checkopp4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN9</field>
+            <label>Checkopp5</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1h</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTP</field>
+            <field>00N0Y00000BZE1i</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTQ</field>
+            <field>00N0Y00000BZE1j</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTR</field>
+            <field>00N0Y00000CNNiV</field>
+            <label>Next Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IF</field>
+            <label>Numero 1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IP</field>
+            <label>Numero 2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IU</field>
+            <label>Numero 3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CMQz6</field>
+            <label>Numero 4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1k</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjG</field>
-            <label>Test Commit A</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjH</field>
-            <label>Test Commit B</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjI</field>
-            <label>Test Commit C</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTS</field>
+            <field>00N0Y00000BZE1l</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjJ</field>
-            <label>xyz SGUID Opp</label>
+            <field>PARTNER.NAME</field>
+            <label>Partner Account</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -531,15 +594,22 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N0Y00000IPUTO</field>
-            <field>00N0Y00000IPUTP</field>
-            <field>00N0Y00000IPUTQ</field>
-            <field>00N0Y00000IPUTR</field>
-            <field>00N0Y00000QYNjG</field>
-            <field>00N0Y00000QYNjH</field>
-            <field>00N0Y00000QYNjI</field>
-            <field>00N0Y00000IPUTS</field>
-            <field>00N0Y00000QYNjJ</field>
+            <field>00N0Y00000EedMp</field>
+            <field>00N0Y00000EedMu</field>
+            <field>00N0Y00000EedMz</field>
+            <field>00N0Y00000EedN4</field>
+            <field>00N0Y00000EedN9</field>
+            <field>00N0Y00000BZE1h</field>
+            <field>00N0Y00000BZE1i</field>
+            <field>00N0Y00000BZE1j</field>
+            <field>00N0Y00000CNNiV</field>
+            <field>00N0Y00000CM9IF</field>
+            <field>00N0Y00000CM9IP</field>
+            <field>00N0Y00000CM9IU</field>
+            <field>00N0Y00000CMQz6</field>
+            <field>00N0Y00000BZE1k</field>
+            <field>00N0Y00000BZE1l</field>
+            <field>PARTNER.NAME</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -700,40 +770,68 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTO</field>
+            <field>00N0Y00000EedMp</field>
+            <label>Checkopp1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMu</field>
+            <label>Checkopp2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMz</field>
+            <label>Checkopp3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN4</field>
+            <label>Checkopp4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN9</field>
+            <label>Checkopp5</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1h</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTP</field>
+            <field>00N0Y00000BZE1i</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTQ</field>
+            <field>00N0Y00000BZE1j</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTR</field>
+            <field>00N0Y00000CNNiV</field>
+            <label>Next Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IF</field>
+            <label>Numero 1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IP</field>
+            <label>Numero 2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IU</field>
+            <label>Numero 3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CMQz6</field>
+            <label>Numero 4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1k</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjG</field>
-            <label>Test Commit A</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjH</field>
-            <label>Test Commit B</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjI</field>
-            <label>Test Commit C</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTS</field>
+            <field>00N0Y00000BZE1l</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjJ</field>
-            <label>xyz SGUID Opp</label>
+            <field>PARTNER.NAME</field>
+            <label>Partner Account</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -770,15 +868,22 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N0Y00000IPUTO</field>
-            <field>00N0Y00000IPUTP</field>
-            <field>00N0Y00000IPUTQ</field>
-            <field>00N0Y00000IPUTR</field>
-            <field>00N0Y00000QYNjG</field>
-            <field>00N0Y00000QYNjH</field>
-            <field>00N0Y00000QYNjI</field>
-            <field>00N0Y00000IPUTS</field>
-            <field>00N0Y00000QYNjJ</field>
+            <field>00N0Y00000EedMp</field>
+            <field>00N0Y00000EedMu</field>
+            <field>00N0Y00000EedMz</field>
+            <field>00N0Y00000EedN4</field>
+            <field>00N0Y00000EedN9</field>
+            <field>00N0Y00000BZE1h</field>
+            <field>00N0Y00000BZE1i</field>
+            <field>00N0Y00000BZE1j</field>
+            <field>00N0Y00000CNNiV</field>
+            <field>00N0Y00000CM9IF</field>
+            <field>00N0Y00000CM9IP</field>
+            <field>00N0Y00000CM9IU</field>
+            <field>00N0Y00000CMQz6</field>
+            <field>00N0Y00000BZE1k</field>
+            <field>00N0Y00000BZE1l</field>
+            <field>PARTNER.NAME</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -935,40 +1040,68 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTO</field>
+            <field>00N0Y00000EedMp</field>
+            <label>Checkopp1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMu</field>
+            <label>Checkopp2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMz</field>
+            <label>Checkopp3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN4</field>
+            <label>Checkopp4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN9</field>
+            <label>Checkopp5</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1h</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTP</field>
+            <field>00N0Y00000BZE1i</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTQ</field>
+            <field>00N0Y00000BZE1j</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTR</field>
+            <field>00N0Y00000CNNiV</field>
+            <label>Next Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IF</field>
+            <label>Numero 1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IP</field>
+            <label>Numero 2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IU</field>
+            <label>Numero 3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CMQz6</field>
+            <label>Numero 4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1k</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjG</field>
-            <label>Test Commit A</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjH</field>
-            <label>Test Commit B</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjI</field>
-            <label>Test Commit C</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTS</field>
+            <field>00N0Y00000BZE1l</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjJ</field>
-            <label>xyz SGUID Opp</label>
+            <field>PARTNER.NAME</field>
+            <label>Partner Account</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -1004,15 +1137,22 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N0Y00000IPUTO</field>
-            <field>00N0Y00000IPUTP</field>
-            <field>00N0Y00000IPUTQ</field>
-            <field>00N0Y00000IPUTR</field>
-            <field>00N0Y00000QYNjG</field>
-            <field>00N0Y00000QYNjH</field>
-            <field>00N0Y00000QYNjI</field>
-            <field>00N0Y00000IPUTS</field>
-            <field>00N0Y00000QYNjJ</field>
+            <field>00N0Y00000EedMp</field>
+            <field>00N0Y00000EedMu</field>
+            <field>00N0Y00000EedMz</field>
+            <field>00N0Y00000EedN4</field>
+            <field>00N0Y00000EedN9</field>
+            <field>00N0Y00000BZE1h</field>
+            <field>00N0Y00000BZE1i</field>
+            <field>00N0Y00000BZE1j</field>
+            <field>00N0Y00000CNNiV</field>
+            <field>00N0Y00000CM9IF</field>
+            <field>00N0Y00000CM9IP</field>
+            <field>00N0Y00000CM9IU</field>
+            <field>00N0Y00000CMQz6</field>
+            <field>00N0Y00000BZE1k</field>
+            <field>00N0Y00000BZE1l</field>
+            <field>PARTNER.NAME</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -1173,40 +1313,68 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTO</field>
+            <field>00N0Y00000EedMp</field>
+            <label>Checkopp1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMu</field>
+            <label>Checkopp2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMz</field>
+            <label>Checkopp3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN4</field>
+            <label>Checkopp4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN9</field>
+            <label>Checkopp5</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1h</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTP</field>
+            <field>00N0Y00000BZE1i</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTQ</field>
+            <field>00N0Y00000BZE1j</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTR</field>
+            <field>00N0Y00000CNNiV</field>
+            <label>Next Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IF</field>
+            <label>Numero 1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IP</field>
+            <label>Numero 2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IU</field>
+            <label>Numero 3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CMQz6</field>
+            <label>Numero 4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1k</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjG</field>
-            <label>Test Commit A</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjH</field>
-            <label>Test Commit B</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjI</field>
-            <label>Test Commit C</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTS</field>
+            <field>00N0Y00000BZE1l</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjJ</field>
-            <label>xyz SGUID Opp</label>
+            <field>PARTNER.NAME</field>
+            <label>Partner Account</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -1243,15 +1411,22 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N0Y00000IPUTO</field>
-            <field>00N0Y00000IPUTP</field>
-            <field>00N0Y00000IPUTQ</field>
-            <field>00N0Y00000IPUTR</field>
-            <field>00N0Y00000QYNjG</field>
-            <field>00N0Y00000QYNjH</field>
-            <field>00N0Y00000QYNjI</field>
-            <field>00N0Y00000IPUTS</field>
-            <field>00N0Y00000QYNjJ</field>
+            <field>00N0Y00000EedMp</field>
+            <field>00N0Y00000EedMu</field>
+            <field>00N0Y00000EedMz</field>
+            <field>00N0Y00000EedN4</field>
+            <field>00N0Y00000EedN9</field>
+            <field>00N0Y00000BZE1h</field>
+            <field>00N0Y00000BZE1i</field>
+            <field>00N0Y00000BZE1j</field>
+            <field>00N0Y00000CNNiV</field>
+            <field>00N0Y00000CM9IF</field>
+            <field>00N0Y00000CM9IP</field>
+            <field>00N0Y00000CM9IU</field>
+            <field>00N0Y00000CMQz6</field>
+            <field>00N0Y00000BZE1k</field>
+            <field>00N0Y00000BZE1l</field>
+            <field>PARTNER.NAME</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -1408,40 +1583,68 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTO</field>
+            <field>00N0Y00000EedMp</field>
+            <label>Checkopp1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMu</field>
+            <label>Checkopp2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMz</field>
+            <label>Checkopp3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN4</field>
+            <label>Checkopp4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN9</field>
+            <label>Checkopp5</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1h</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTP</field>
+            <field>00N0Y00000BZE1i</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTQ</field>
+            <field>00N0Y00000BZE1j</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTR</field>
+            <field>00N0Y00000CNNiV</field>
+            <label>Next Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IF</field>
+            <label>Numero 1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IP</field>
+            <label>Numero 2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IU</field>
+            <label>Numero 3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CMQz6</field>
+            <label>Numero 4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1k</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjG</field>
-            <label>Test Commit A</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjH</field>
-            <label>Test Commit B</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjI</field>
-            <label>Test Commit C</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTS</field>
+            <field>00N0Y00000BZE1l</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjJ</field>
-            <label>xyz SGUID Opp</label>
+            <field>PARTNER.NAME</field>
+            <label>Partner Account</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -1477,15 +1680,22 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N0Y00000IPUTO</field>
-            <field>00N0Y00000IPUTP</field>
-            <field>00N0Y00000IPUTQ</field>
-            <field>00N0Y00000IPUTR</field>
-            <field>00N0Y00000QYNjG</field>
-            <field>00N0Y00000QYNjH</field>
-            <field>00N0Y00000QYNjI</field>
-            <field>00N0Y00000IPUTS</field>
-            <field>00N0Y00000QYNjJ</field>
+            <field>00N0Y00000EedMp</field>
+            <field>00N0Y00000EedMu</field>
+            <field>00N0Y00000EedMz</field>
+            <field>00N0Y00000EedN4</field>
+            <field>00N0Y00000EedN9</field>
+            <field>00N0Y00000BZE1h</field>
+            <field>00N0Y00000BZE1i</field>
+            <field>00N0Y00000BZE1j</field>
+            <field>00N0Y00000CNNiV</field>
+            <field>00N0Y00000CM9IF</field>
+            <field>00N0Y00000CM9IP</field>
+            <field>00N0Y00000CM9IU</field>
+            <field>00N0Y00000CMQz6</field>
+            <field>00N0Y00000BZE1k</field>
+            <field>00N0Y00000BZE1l</field>
+            <field>PARTNER.NAME</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -1642,40 +1852,68 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTO</field>
+            <field>00N0Y00000EedMp</field>
+            <label>Checkopp1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMu</field>
+            <label>Checkopp2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMz</field>
+            <label>Checkopp3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN4</field>
+            <label>Checkopp4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN9</field>
+            <label>Checkopp5</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1h</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTP</field>
+            <field>00N0Y00000BZE1i</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTQ</field>
+            <field>00N0Y00000BZE1j</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTR</field>
+            <field>00N0Y00000CNNiV</field>
+            <label>Next Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IF</field>
+            <label>Numero 1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IP</field>
+            <label>Numero 2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IU</field>
+            <label>Numero 3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CMQz6</field>
+            <label>Numero 4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1k</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjG</field>
-            <label>Test Commit A</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjH</field>
-            <label>Test Commit B</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjI</field>
-            <label>Test Commit C</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTS</field>
+            <field>00N0Y00000BZE1l</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjJ</field>
-            <label>xyz SGUID Opp</label>
+            <field>PARTNER.NAME</field>
+            <label>Account Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -1711,15 +1949,22 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N0Y00000IPUTO</field>
-            <field>00N0Y00000IPUTP</field>
-            <field>00N0Y00000IPUTQ</field>
-            <field>00N0Y00000IPUTR</field>
-            <field>00N0Y00000QYNjG</field>
-            <field>00N0Y00000QYNjH</field>
-            <field>00N0Y00000QYNjI</field>
-            <field>00N0Y00000IPUTS</field>
-            <field>00N0Y00000QYNjJ</field>
+            <field>00N0Y00000EedMp</field>
+            <field>00N0Y00000EedMu</field>
+            <field>00N0Y00000EedMz</field>
+            <field>00N0Y00000EedN4</field>
+            <field>00N0Y00000EedN9</field>
+            <field>00N0Y00000BZE1h</field>
+            <field>00N0Y00000BZE1i</field>
+            <field>00N0Y00000BZE1j</field>
+            <field>00N0Y00000CNNiV</field>
+            <field>00N0Y00000CM9IF</field>
+            <field>00N0Y00000CM9IP</field>
+            <field>00N0Y00000CM9IU</field>
+            <field>00N0Y00000CMQz6</field>
+            <field>00N0Y00000BZE1k</field>
+            <field>00N0Y00000BZE1l</field>
+            <field>PARTNER.NAME</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -1876,40 +2121,68 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTO</field>
+            <field>00N0Y00000EedMp</field>
+            <label>Checkopp1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMu</field>
+            <label>Checkopp2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMz</field>
+            <label>Checkopp3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN4</field>
+            <label>Checkopp4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN9</field>
+            <label>Checkopp5</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1h</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTP</field>
+            <field>00N0Y00000BZE1i</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTQ</field>
+            <field>00N0Y00000BZE1j</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTR</field>
+            <field>00N0Y00000CNNiV</field>
+            <label>Next Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IF</field>
+            <label>Numero 1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IP</field>
+            <label>Numero 2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IU</field>
+            <label>Numero 3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CMQz6</field>
+            <label>Numero 4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1k</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjG</field>
-            <label>Test Commit A</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjH</field>
-            <label>Test Commit B</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjI</field>
-            <label>Test Commit C</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTS</field>
+            <field>00N0Y00000BZE1l</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjJ</field>
-            <label>xyz SGUID Opp</label>
+            <field>PARTNER.NAME</field>
+            <label>Account Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -1945,15 +2218,22 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N0Y00000IPUTO</field>
-            <field>00N0Y00000IPUTP</field>
-            <field>00N0Y00000IPUTQ</field>
-            <field>00N0Y00000IPUTR</field>
-            <field>00N0Y00000QYNjG</field>
-            <field>00N0Y00000QYNjH</field>
-            <field>00N0Y00000QYNjI</field>
-            <field>00N0Y00000IPUTS</field>
-            <field>00N0Y00000QYNjJ</field>
+            <field>00N0Y00000EedMp</field>
+            <field>00N0Y00000EedMu</field>
+            <field>00N0Y00000EedMz</field>
+            <field>00N0Y00000EedN4</field>
+            <field>00N0Y00000EedN9</field>
+            <field>00N0Y00000BZE1h</field>
+            <field>00N0Y00000BZE1i</field>
+            <field>00N0Y00000BZE1j</field>
+            <field>00N0Y00000CNNiV</field>
+            <field>00N0Y00000CM9IF</field>
+            <field>00N0Y00000CM9IP</field>
+            <field>00N0Y00000CM9IU</field>
+            <field>00N0Y00000CMQz6</field>
+            <field>00N0Y00000BZE1k</field>
+            <field>00N0Y00000BZE1l</field>
+            <field>PARTNER.NAME</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -2114,40 +2394,68 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTO</field>
+            <field>00N0Y00000EedMp</field>
+            <label>Checkopp1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMu</field>
+            <label>Checkopp2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMz</field>
+            <label>Checkopp3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN4</field>
+            <label>Checkopp4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN9</field>
+            <label>Checkopp5</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1h</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTP</field>
+            <field>00N0Y00000BZE1i</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTQ</field>
+            <field>00N0Y00000BZE1j</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTR</field>
+            <field>00N0Y00000CNNiV</field>
+            <label>Next Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IF</field>
+            <label>Numero 1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IP</field>
+            <label>Numero 2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IU</field>
+            <label>Numero 3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CMQz6</field>
+            <label>Numero 4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1k</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjG</field>
-            <label>Test Commit A</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjH</field>
-            <label>Test Commit B</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjI</field>
-            <label>Test Commit C</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTS</field>
+            <field>00N0Y00000BZE1l</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjJ</field>
-            <label>xyz SGUID Opp</label>
+            <field>PARTNER.NAME</field>
+            <label>Partner Account</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -2184,15 +2492,22 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N0Y00000IPUTO</field>
-            <field>00N0Y00000IPUTP</field>
-            <field>00N0Y00000IPUTQ</field>
-            <field>00N0Y00000IPUTR</field>
-            <field>00N0Y00000QYNjG</field>
-            <field>00N0Y00000QYNjH</field>
-            <field>00N0Y00000QYNjI</field>
-            <field>00N0Y00000IPUTS</field>
-            <field>00N0Y00000QYNjJ</field>
+            <field>00N0Y00000EedMp</field>
+            <field>00N0Y00000EedMu</field>
+            <field>00N0Y00000EedMz</field>
+            <field>00N0Y00000EedN4</field>
+            <field>00N0Y00000EedN9</field>
+            <field>00N0Y00000BZE1h</field>
+            <field>00N0Y00000BZE1i</field>
+            <field>00N0Y00000BZE1j</field>
+            <field>00N0Y00000CNNiV</field>
+            <field>00N0Y00000CM9IF</field>
+            <field>00N0Y00000CM9IP</field>
+            <field>00N0Y00000CM9IU</field>
+            <field>00N0Y00000CMQz6</field>
+            <field>00N0Y00000BZE1k</field>
+            <field>00N0Y00000BZE1l</field>
+            <field>PARTNER.NAME</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -2349,40 +2664,68 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTO</field>
+            <field>00N0Y00000EedMp</field>
+            <label>Checkopp1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMu</field>
+            <label>Checkopp2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMz</field>
+            <label>Checkopp3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN4</field>
+            <label>Checkopp4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN9</field>
+            <label>Checkopp5</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1h</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTP</field>
+            <field>00N0Y00000BZE1i</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTQ</field>
+            <field>00N0Y00000BZE1j</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTR</field>
+            <field>00N0Y00000CNNiV</field>
+            <label>Next Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IF</field>
+            <label>Numero 1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IP</field>
+            <label>Numero 2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IU</field>
+            <label>Numero 3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CMQz6</field>
+            <label>Numero 4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1k</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjG</field>
-            <label>Test Commit A</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjH</field>
-            <label>Test Commit B</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjI</field>
-            <label>Test Commit C</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTS</field>
+            <field>00N0Y00000BZE1l</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjJ</field>
-            <label>xyz SGUID Opp</label>
+            <field>PARTNER.NAME</field>
+            <label>Partner Account</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -2418,15 +2761,22 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N0Y00000IPUTO</field>
-            <field>00N0Y00000IPUTP</field>
-            <field>00N0Y00000IPUTQ</field>
-            <field>00N0Y00000IPUTR</field>
-            <field>00N0Y00000QYNjG</field>
-            <field>00N0Y00000QYNjH</field>
-            <field>00N0Y00000QYNjI</field>
-            <field>00N0Y00000IPUTS</field>
-            <field>00N0Y00000QYNjJ</field>
+            <field>00N0Y00000EedMp</field>
+            <field>00N0Y00000EedMu</field>
+            <field>00N0Y00000EedMz</field>
+            <field>00N0Y00000EedN4</field>
+            <field>00N0Y00000EedN9</field>
+            <field>00N0Y00000BZE1h</field>
+            <field>00N0Y00000BZE1i</field>
+            <field>00N0Y00000BZE1j</field>
+            <field>00N0Y00000CNNiV</field>
+            <field>00N0Y00000CM9IF</field>
+            <field>00N0Y00000CM9IP</field>
+            <field>00N0Y00000CM9IU</field>
+            <field>00N0Y00000CMQz6</field>
+            <field>00N0Y00000BZE1k</field>
+            <field>00N0Y00000BZE1l</field>
+            <field>PARTNER.NAME</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -2583,40 +2933,68 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTO</field>
+            <field>00N0Y00000EedMp</field>
+            <label>Checkopp1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMu</field>
+            <label>Checkopp2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMz</field>
+            <label>Checkopp3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN4</field>
+            <label>Checkopp4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN9</field>
+            <label>Checkopp5</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1h</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTP</field>
+            <field>00N0Y00000BZE1i</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTQ</field>
+            <field>00N0Y00000BZE1j</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTR</field>
+            <field>00N0Y00000CNNiV</field>
+            <label>Next Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IF</field>
+            <label>Numero 1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IP</field>
+            <label>Numero 2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IU</field>
+            <label>Numero 3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CMQz6</field>
+            <label>Numero 4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1k</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjG</field>
-            <label>Test Commit A</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjH</field>
-            <label>Test Commit B</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjI</field>
-            <label>Test Commit C</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTS</field>
+            <field>00N0Y00000BZE1l</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjJ</field>
-            <label>xyz SGUID Opp</label>
+            <field>PARTNER.NAME</field>
+            <label>Account Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -2652,15 +3030,22 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N0Y00000IPUTO</field>
-            <field>00N0Y00000IPUTP</field>
-            <field>00N0Y00000IPUTQ</field>
-            <field>00N0Y00000IPUTR</field>
-            <field>00N0Y00000QYNjG</field>
-            <field>00N0Y00000QYNjH</field>
-            <field>00N0Y00000QYNjI</field>
-            <field>00N0Y00000IPUTS</field>
-            <field>00N0Y00000QYNjJ</field>
+            <field>00N0Y00000EedMp</field>
+            <field>00N0Y00000EedMu</field>
+            <field>00N0Y00000EedMz</field>
+            <field>00N0Y00000EedN4</field>
+            <field>00N0Y00000EedN9</field>
+            <field>00N0Y00000BZE1h</field>
+            <field>00N0Y00000BZE1i</field>
+            <field>00N0Y00000BZE1j</field>
+            <field>00N0Y00000CNNiV</field>
+            <field>00N0Y00000CM9IF</field>
+            <field>00N0Y00000CM9IP</field>
+            <field>00N0Y00000CM9IU</field>
+            <field>00N0Y00000CMQz6</field>
+            <field>00N0Y00000BZE1k</field>
+            <field>00N0Y00000BZE1l</field>
+            <field>PARTNER.NAME</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>
@@ -2817,40 +3202,68 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTO</field>
+            <field>00N0Y00000EedMp</field>
+            <label>Checkopp1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMu</field>
+            <label>Checkopp2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedMz</field>
+            <label>Checkopp3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN4</field>
+            <label>Checkopp4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000EedN9</field>
+            <label>Checkopp5</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1h</field>
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTP</field>
+            <field>00N0Y00000BZE1i</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTQ</field>
+            <field>00N0Y00000BZE1j</field>
             <label>Main Competitor(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTR</field>
+            <field>00N0Y00000CNNiV</field>
+            <label>Next Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IF</field>
+            <label>Numero 1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IP</field>
+            <label>Numero 2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CM9IU</field>
+            <label>Numero 3</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000CMQz6</field>
+            <label>Numero 4</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N0Y00000BZE1k</field>
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjG</field>
-            <label>Test Commit A</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjH</field>
-            <label>Test Commit B</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjI</field>
-            <label>Test Commit C</label>
-        </opportunityListFieldsLabelMappings>
-        <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000IPUTS</field>
+            <field>00N0Y00000BZE1l</field>
             <label>Tracking Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0Y00000QYNjJ</field>
-            <label>xyz SGUID Opp</label>
+            <field>PARTNER.NAME</field>
+            <label>Account Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -2886,15 +3299,22 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N0Y00000IPUTO</field>
-            <field>00N0Y00000IPUTP</field>
-            <field>00N0Y00000IPUTQ</field>
-            <field>00N0Y00000IPUTR</field>
-            <field>00N0Y00000QYNjG</field>
-            <field>00N0Y00000QYNjH</field>
-            <field>00N0Y00000QYNjI</field>
-            <field>00N0Y00000IPUTS</field>
-            <field>00N0Y00000QYNjJ</field>
+            <field>00N0Y00000EedMp</field>
+            <field>00N0Y00000EedMu</field>
+            <field>00N0Y00000EedMz</field>
+            <field>00N0Y00000EedN4</field>
+            <field>00N0Y00000EedN9</field>
+            <field>00N0Y00000BZE1h</field>
+            <field>00N0Y00000BZE1i</field>
+            <field>00N0Y00000BZE1j</field>
+            <field>00N0Y00000CNNiV</field>
+            <field>00N0Y00000CM9IF</field>
+            <field>00N0Y00000CM9IP</field>
+            <field>00N0Y00000CM9IU</field>
+            <field>00N0Y00000CMQz6</field>
+            <field>00N0Y00000BZE1k</field>
+            <field>00N0Y00000BZE1l</field>
+            <field>PARTNER.NAME</field>
         </opportunityListFieldsUnselectedSettings>
         <quotasSettings>
             <showQuotas>false</showQuotas>

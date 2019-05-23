@@ -1,21 +1,33 @@
 <apex:page showHeader="false" sidebar="false" standardController="copado__Compliance_Finding__c">
 
+		<link rel="stylesheet" href="{!URLFOR($Resource.jqx,'jqwidgets/styles/jqx.base.css')}" />
 		<c:WizardUtils id="cmpWizardUtilities" />
-	    <c:IncludeStaticsResourceComponent addJQuery="true" />
-		<c:IncludeConnectionJsComponent />
-		<apex:includeScript value="{!URLFOR($Resource.copado__JsRemoting)}" />
-        <c:IncludeJqxResourceComponent addjqxAlljs="true" addjqxBasecss="true"/>
+		<apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
+        <script type="text/javascript">
+            var __sfdcSessionId = '{!GETSESSIONID()}';
+        </script>
+		<script src="/soap/ajax/36.0/connection.js"></script>
+		<apex:includeScript value="{!URLFOR($Resource.copado__JsRemoting)}" /> 
+		<apex:includeScript value="{!URLFOR($Resource.copado__jqx,'jqwidgets/jqx-all.js')}" />         
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
         
 		<div id="jqxgrid" style="width:99%;"></div>
 
 
 	<script type="text/javascript">
-	 	var loadingHTML = '<center><img src="/img/loading.gif" /> <i>{!$Label.LOADING}<span id="retry-label"></span></i></center>';
-        $copado('#jqxgrid').html(loadingHTML);
+		
+		
+		$(document).on('ready',function(){
+			prepareGrid();
+		});
+
+
+        var loadingHTML = '<center><img src="/img/loading.gif" /> <i>{!$Label.LOADING}<span id="retry-label"></span></i></center>';
+        $('#jqxgrid').html(loadingHTML); 
 
 		var prepareGrid = function(){
 			var att = dw.u.getDecodedAttach("{!JSENCODE(Compliance_Finding__c.Id)}","FindingMetadata.json");
+            debugger;
             if(att){
     			var body = att.Body;
                 try{			
@@ -24,15 +36,15 @@
                 } catch(e){
                     console.error(e);
                     var noDataHtml = '<center>{!JSENCODE($Label.NODATATODISPLAY)}</center>';
-                    $copado('#jqxgrid').html(noDataHtml);
+                    $('#jqxgrid').html(noDataHtml); 
                 }
             } else {
                 var noDataHtml = '<center>{!JSENCODE($Label.NODATATODISPLAY)}</center>';
-                $copado('#jqxgrid').html(noDataHtml);
+                $('#jqxgrid').html(noDataHtml); 
             }
 		}
-
 		var setColumns = function(columnNames){
+			
 			var columns = [];
 
 			for(var c = 0; c < columnNames.length; c++){
@@ -74,12 +86,12 @@
                     }
                 },    
                 //adapter wrapper
-                dataAdapter = new $copado.jqx.dataAdapter(source),
+                dataAdapter = new $.jqx.dataAdapter(source),
                 
                 //keep jquery pointer for performance query
-                $grid = $copado('<div>');
+                $grid = $('<div>');
                 
-                $copado("#jqxgrid").html($grid);
+                $("#jqxgrid").html($grid);
                 
                 $grid.jqxGrid({
                     width: '100%',
@@ -101,10 +113,9 @@
             } catch(e){
                 console.error('error',e);
                 var noDataHtml = '<center>{!JSENCODE($Label.NODATATODISPLAY)}</center>';
-                $copado('#jqxgrid').html(noDataHtml);
+                $('#jqxgrid').html(noDataHtml); 
             }               
                            
          };
-         $copado(prepareGrid);
 	</script>
 </apex:page>

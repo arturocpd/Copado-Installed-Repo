@@ -93,7 +93,6 @@
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
     <externalSharingModel>ControlledByParent</externalSharingModel>
@@ -111,12 +110,28 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Best_Contact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Best Contact</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Birthdate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>CleanStatus</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Cool_Contact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Cool Contact</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Department</fullName>
@@ -129,6 +144,14 @@
     <fields>
         <fullName>DoNotCall</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Do_not_translate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Do not translate</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Email</fullName>
@@ -229,6 +252,14 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Perfect_Contact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Perfect Contact</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Phone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -242,10 +273,10 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
-        <fullName>UAT_field__c</fullName>
+        <fullName>Translate__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
-        <label>UAT field</label>
+        <label>Translate</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
     </fields>
@@ -313,9 +344,10 @@
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
-        <fullName>AAA_validation</fullName>
-        <active>true</active>
-        <errorConditionFormula>AND (ISNULL(Account.Name), ISNULL(Id))</errorConditionFormula>
-        <errorMessage>Account name cannot be null and Id cannot be null</errorMessage>
+        <fullName>Do_not_translate</fullName>
+        <active>false</active>
+        <errorConditionFormula>Translate__c  = False</errorConditionFormula>
+        <errorDisplayField>Translate__c</errorDisplayField>
+        <errorMessage>Translate must be True</errorMessage>
     </validationRules>
 </CustomObject>

@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
-        <label><!-- Migration Id --></label>
-        <name>Migration_Id__c</name>
-    </fields>
-    <fields>
         <label><!-- Automatically Merge and Deploy --></label>
         <name>copado__Automatically_Merge_and_Deploy__c</name>
     </fields>
@@ -158,8 +154,4 @@
             <translation><!-- Run Specified Tests --></translation>
         </picklistValues>
     </fields>
-    <webLinks>
-        <label><!-- Select_Branch --></label>
-        <name>copado__Select_Branch</name>
-    </webLinks>
 </CustomObjectTranslation>

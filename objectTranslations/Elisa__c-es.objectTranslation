@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Elisa</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Elisa</value>
+    </caseValues>
+    <fields>
+        <label><!-- Number test --></label>
+        <name>Number_test__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Field1 --></label>
+        <name>Test_Field1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Text Test --></label>
+        <name>Text_Test__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

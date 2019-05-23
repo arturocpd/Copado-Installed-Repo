@@ -13,10 +13,6 @@
         <name>CustomFields</name>
     </fieldSets>
     <fields>
-        <label><!-- Migration Id --></label>
-        <name>Migration_Id__c</name>
-    </fields>
-    <fields>
         <help><!-- the branch in the selected git repository. Usually &quot;master&quot;. --></help>
         <label><!-- Branch --></label>
         <name>copado__Branch__c</name>
@@ -88,8 +84,4 @@
         <label><!-- View in Git --></label>
         <name>copado__View_in_Git__c</name>
     </fields>
-    <webLinks>
-        <label><!-- Select_Branch --></label>
-        <name>copado__Select_Branch</name>
-    </webLinks>
 </CustomObjectTranslation>

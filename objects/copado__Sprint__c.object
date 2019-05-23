@@ -49,22 +49,12 @@
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ReadWrite</externalSharingModel>
-    <fields>
-        <fullName>Migration_Id__c</fullName>
-        <externalId>true</externalId>
-        <label>Migration Id</label>
-        <length>40</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
     <fields>
         <fullName>copado__Days_in_sprint__c</fullName>
         <deprecated>false</deprecated>
@@ -105,7 +95,7 @@
         <fullName>copado__Objective__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <label>Sprint Goal</label>
+        <label>Objective</label>
         <length>10000</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>

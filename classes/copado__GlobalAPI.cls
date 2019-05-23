@@ -9,9 +9,6 @@ global class GlobalAPI {
     global GlobalAPI() {
 
     }
-    global String createUserAPIKey() {
-        return null;
-    }
     global Boolean deleteCopadoLicense(Id userId) {
         return null;
     }

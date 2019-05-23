@@ -33,18 +33,6 @@
         <name>Work_Manager_Relations</name>
     </fieldSets>
     <fields>
-        <label><!-- External Id --></label>
-        <name>External_Id__c</name>
-    </fields>
-    <fields>
-        <label><!-- JIRA Key --></label>
-        <name>JIRA_Key__c</name>
-    </fields>
-    <fields>
-        <label><!-- Migration Id --></label>
-        <name>Migration_Id__c</name>
-    </fields>
-    <fields>
         <label><!-- Acceptance Criteria Status --></label>
         <name>copado__Acceptance_Criteria_Status__c</name>
         <picklistValues>
@@ -773,10 +761,6 @@
         <name>copado__Add_Metadata</name>
     </webLinks>
     <webLinks>
-        <label><!-- Apex_Test --></label>
-        <name>copado__Apex_Test</name>
-    </webLinks>
-    <webLinks>
         <label><!-- Assign_to_Release --></label>
         <name>copado__Assign_to_Release</name>
     </webLinks>
@@ -809,24 +793,12 @@
         <name>copado__Mass_Add_User_Stories_Sprint</name>
     </webLinks>
     <webLinks>
-        <label><!-- Perform_Validation --></label>
-        <name>copado__Perform_Validation</name>
-    </webLinks>
-    <webLinks>
-        <label><!-- Pull_Request --></label>
-        <name>copado__Pull_Request</name>
-    </webLinks>
-    <webLinks>
         <label><!-- Run_Compliance_Scan --></label>
         <name>copado__Run_Compliance_Scan</name>
     </webLinks>
     <webLinks>
         <label><!-- Run_Static_Code_Analysis --></label>
         <name>copado__Run_Static_Code_Analysis</name>
-    </webLinks>
-    <webLinks>
-        <label><!-- Select_Base_Branch --></label>
-        <name>copado__Select_Base_Branch</name>
     </webLinks>
     <webLinks>
         <label><!-- Static_Code_Analysis_Summary --></label>

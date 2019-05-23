@@ -49,6 +49,7 @@
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
@@ -159,11 +160,6 @@
         </displayedFields>
         <displayedFields>
             <field>copado__Status__c</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>copado__Order_by__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
@@ -280,16 +276,6 @@
         <label>Custom Fields</label>
     </fieldSets>
     <fields>
-        <fullName>Migration_Id__c</fullName>
-        <externalId>true</externalId>
-        <label>Migration Id</label>
-        <length>40</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>copado__Back_Promotion__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
@@ -370,18 +356,6 @@
             <valueSetName>copado__Auto_Resolve_Exceptions</valueSetName>
         </valueSet>
         <visibleLines>5</visibleLines>
-    </fields>
-    <fields>
-        <fullName>copado__Order_by__c</fullName>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <inlineHelpText>Fill this field only if you want to change the selected user stories order on deployment. (usage exp: name asc, copado__backlog_rank__c desc)</inlineHelpText>
-        <label>Order User Stories by</label>
-        <length>255</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>copado__Project__c</fullName>
@@ -494,14 +468,6 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
-    <fields>
-        <fullName>test__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>test</label>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
     <label>Promotion</label>
     <listViews>
         <fullName>copado__All</fullName>
@@ -532,15 +498,4 @@
         <errorMessage>Back Promotions to Scratch Orgs are not allowed</errorMessage>
     </validationRules>
     <visibility>Public</visibility>
-    <webLinks>
-        <fullName>Edit_Promotion</fullName>
-        <availability>online</availability>
-        <displayType>button</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <linkType>url</linkType>
-        <masterLabel>Edit Promotion</masterLabel>
-        <openType>replace</openType>
-        <protected>false</protected>
-        <url>https://eu11.salesforce.com/{!copado__Promotion__c.Id}/e?nooverride=1</url>
-    </webLinks>
 </CustomObject>

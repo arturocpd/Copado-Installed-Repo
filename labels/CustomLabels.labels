@@ -1,50 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
-        <fullName>ACCOUNT_SUMMARY</fullName>
-        <categories>Copado</categories>
+        <fullName>Do_not_translate</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>ACCOUNT SUMMARY</shortDescription>
-        <value>Account Summary</value>
+        <shortDescription>Do not translate</shortDescription>
+        <value>Do not translate1</value>
     </labels>
     <labels>
-        <fullName>ACTION_COLUMN_HEADER</fullName>
-        <categories>Copado</categories>
+        <fullName>Do_not_translate2</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>ACTION COLUMN HEADER</shortDescription>
-        <value>Action</value>
+        <shortDescription>Do not translate2</shortDescription>
+        <value>Do not translate this custom label please.</value>
     </labels>
     <labels>
-        <fullName>ADD_AUTHENTICATION</fullName>
-        <categories>Copado</categories>
+        <fullName>Translate</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>ADD_AUTHENTICATION</shortDescription>
-        <value>Add Authentication</value>
+        <shortDescription>Translate</shortDescription>
+        <value>Translate.</value>
     </labels>
     <labels>
-        <fullName>COMMITS_AHEAD</fullName>
+        <fullName>Translate_this</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>COMMITS AHEAD</shortDescription>
-        <value>Commits Ahead</value>
-    </labels>
-    <labels>
-        <fullName>CREATE_DEPLOYMENT</fullName>
-        <categories>Copado</categories>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>CREATE DEPLOYMENT</shortDescription>
-        <value>Create Deployment</value>
-    </labels>
-    <labels>
-        <fullName>DEPLOYMENT_NEW</fullName>
-        <categories>Copado</categories>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>DEPLOYMENT NEW</shortDescription>
-        <value>New Deployment</value>
+        <shortDescription>Translate this</shortDescription>
+        <value>Translate this custom label.</value>
     </labels>
 </CustomLabels>

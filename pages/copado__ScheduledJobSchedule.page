@@ -1,14 +1,19 @@
 <apex:page standardController="copado__Scheduled_Job__c" extensions="copado.ScheduledJobExtension" id="thePage" lightningStylesheets="true">    
     <head>
         <TITLE>Scheduled Job {!copado__Scheduled_Job__c.Name} | Copado</TITLE>
-        <c:IncludeStaticsResourceComponent addJquery="true" addUIjs="true"/>
-        <c:IncludeJqxResourceComponent addjqxAlljs="true" addjqxBasecss="true"/>
+        <script type="text/javascript" src="{!URLFOR($Resource.Statics,'js/libs/jquery.min.1.10.2.js')}"></script>
+        <script type="text/javascript" src="{!URLFOR($Resource.Statics,'js/libs/jquery-ui.min.js')}"></script>
+        <script type="text/javascript" src="{!URLFOR($Resource.jqx, 'jqwidgets/jqx-all.js')}"></script>
         <script type="text/javascript" src="{!URLFOR($Resource.cronExpression) }"></script>
+        <script type="text/javascript">
+            var $copado = jQuery.noConflict();
+        </script>
     	<style> 
                 #jqxTabs .apexp .bPageBlock.apexDefaultPageBlock .pbBody {margin:0;}
                 .jqx-tabs-content {font-family: Arial,Helvetica,sans-serif; }
         </style>
 
+    	<link rel="stylesheet" href="{!URLFOR($Resource.jqx,'jqwidgets/styles/jqx.base.css')}" />
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
         <c:GAnalytics />
     </head>

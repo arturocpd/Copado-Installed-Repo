@@ -10,7 +10,7 @@
       </script>   
       <apex:slds />
       <apex:stylesheet value="{!URLFOR($Resource.copado__SLDS, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
-      <c:IncludeStaticsResourceComponent addJQuery="true" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <apex:stylesheet value="{!URLFOR($Resource.copado__SLDS, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
       <style type="text/css">
         .col-right{
@@ -54,7 +54,9 @@
         }
 	    </style>            
       <script>
-        $copado(document).ready(function(){
+        var j$ = jQuery.noConflict();
+
+        j$(document).ready(function(){
         	if( (typeof sforce != 'undefined') && sforce && (!!sforce.one) ) {
                 // Do not override page messages in Lightning
             } else {
@@ -66,15 +68,15 @@
             
             textureEffect = 'slds-theme--alert-texture';
                          
-            $copado('.warningM3').addClass('slds-notify slds-notify--toast slds-theme--warning customMessage '+textureEffect);
-            $copado('.confirmM3').addClass('slds-notify slds-notify--alert slds-theme--success  customMessage '+textureEffect);
-            $copado('.errorM3').addClass('slds-notify slds-notify--alert slds-theme--error customMessage '+textureEffect);
-            $copado('.infoM3').addClass('slds-notify slds-notify--toast customMessage '+textureEffect);
+            j$('.warningM3').addClass('slds-notify slds-notify--toast slds-theme--warning customMessage '+textureEffect);          
+            j$('.confirmM3').addClass('slds-notify slds-notify--alert slds-theme--success  customMessage '+textureEffect);    
+            j$('.errorM3').addClass('slds-notify slds-notify--alert slds-theme--error customMessage '+textureEffect);                  
+            j$('.infoM3').addClass('slds-notify slds-notify--toast customMessage '+textureEffect);    
                              
-            $copado('.errorM3').removeClass('errorM3');
-            $copado('.confirmM3').removeClass('confirmM3');
-            $copado('.infoM3').removeClass('infoM3');
-            $copado('.warningM3').removeClass('warningM3');
+            j$('.errorM3').removeClass('errorM3'); 
+            j$('.confirmM3').removeClass('confirmM3'); 
+            j$('.infoM3').removeClass('infoM3');   
+            j$('.warningM3').removeClass('warningM3');  
         }
 
         function goBack() {
@@ -89,7 +91,6 @@
     </head>
     <body class="slds-scope" style="{!IF($User.UIThemeDisplayed == 'Theme4d','margin: 12px;background-image: url(/_slds/images/themes/oneSalesforce/banner-brand-default.png?cache=210.2),linear-gradient(to top,rgba(32, 92, 159, 0), rgb(32, 92, 159));','')}">
       <apex:form id="theForm">
-        <c:SObjectSummaryComponent userStory="{!userStory}" columnsHeader="2" />
         <div class="slds-page-header" style="{!IF($User.UIThemeDisplayed == 'Theme4d','background: #fdfdfd;margin-bottom: 12px;border-collapse: collapse;border-radius: 4px;','')}">
           <apex:outputPanel layout="block" id="pageMessages">
               <apex:pagemessages id="pmessage"/>

@@ -1,5 +1,6 @@
 <apex:page id="ScratchOrgOpen" controller="copado.ScratchOrgOpen" sideBar="false" showHeader="false">
-    <c:IncludeStaticsResourceComponent addJquery="true" addUIjs="true"/>
+    <script type="text/javascript" src="{!URLFOR($Resource.Statics,'js/libs/jquery.min.1.10.2.js')}"></script>
+    <script type="text/javascript" src="{!URLFOR($Resource.Statics,'js/libs/jquery-ui.min.js')}"></script>
     <apex:form >
         <c:ScreenLocker msg="{!$Label.copado__loading}" id="slock"/>
         <apex:pageMessages id="theMessages" />
@@ -8,6 +9,7 @@
         </apex:actionFunction>
         <apex:outputPanel layout="block" id="cJFlag">
         <script>
+            var $copado = jQuery.noConflict();
             var stat = {!copadoJobFinished};
             var msg = '{!JSENCODE(slockerMessage)}';
             </script>

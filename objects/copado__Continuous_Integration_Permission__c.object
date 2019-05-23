@@ -48,22 +48,12 @@
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
     <enableReports>false</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
-    <fields>
-        <fullName>Migration_Id__c</fullName>
-        <caseSensitive>false</caseSensitive>
-        <externalId>true</externalId>
-        <label>Migration Id</label>
-        <length>255</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
     <fields>
         <fullName>copado__Access__c</fullName>
         <deprecated>false</deprecated>

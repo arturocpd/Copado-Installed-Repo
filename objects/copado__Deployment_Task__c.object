@@ -48,60 +48,12 @@
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
     <enableReports>false</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
-    <fields>
-        <fullName>Migration_Id__c</fullName>
-        <externalId>true</externalId>
-        <label>Migration Id</label>
-        <length>40</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Step_Type__c</fullName>
-        <externalId>false</externalId>
-        <label>Step Type</label>
-        <required>true</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>1</fullName>
-                    <default>false</default>
-                    <label>1</label>
-                </value>
-                <value>
-                    <fullName>2</fullName>
-                    <default>false</default>
-                    <label>2</label>
-                </value>
-                <value>
-                    <fullName>3</fullName>
-                    <default>false</default>
-                    <label>3</label>
-                </value>
-                <value>
-                    <fullName>4</fullName>
-                    <default>false</default>
-                    <label>4</label>
-                </value>
-                <value>
-                    <fullName>5</fullName>
-                    <default>false</default>
-                    <label>5</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
     <fields>
         <fullName>copado__Notify_Task_Owner__c</fullName>
         <defaultValue>&apos;None&apos;</defaultValue>

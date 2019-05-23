@@ -26,10 +26,6 @@
                 <behavior>Required</behavior>
                 <field>copado__Selenium_Settings__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copado__Selenium_Test_Group__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -45,8 +41,8 @@
                 <field>copado__Last_Status_Icon__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>copado__Last_Status_Date__c</field>
+                <behavior>Edit</behavior>
+                <field>copado__Selenium_Test_Group__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -98,7 +94,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0Y000000UiJp</masterLabel>
+        <masterLabel>00h24000006bjdw</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

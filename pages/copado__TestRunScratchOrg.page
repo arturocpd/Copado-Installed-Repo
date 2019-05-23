@@ -9,8 +9,12 @@
     <html>
     <header>
         <title>Scratch Org for {!copado__Test_Run__c.Name}</title>
-        <c:IncludeStaticsResourceComponent addJquery="true"/>
-        <c:IncludeConnectionJsComponent />
+        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}"/>
+        <script> var $copado = jQuery.noConflict(); </script>
+        <script type="text/javascript">
+            var __sfdcSessionId = '{!GETSESSIONID()}';
+        </script>
+        <script src="../../soap/ajax/32.0/connection.js" type="text/javascript"></script>
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}"/>
     </header>
     <body>

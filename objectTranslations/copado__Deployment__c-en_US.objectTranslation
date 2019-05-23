@@ -9,14 +9,6 @@
         <name>CustomFields</name>
     </fieldSets>
     <fields>
-        <label><!-- Migration Id --></label>
-        <name>Migration_Id__c</name>
-    </fields>
-    <fields>
-        <label><!-- Text --></label>
-        <name>Text__c</name>
-    </fields>
-    <fields>
         <label><!-- Build Task --></label>
         <name>copado__Build_Task__c</name>
         <relationshipLabel><!-- Deployments --></relationshipLabel>

@@ -48,22 +48,12 @@
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
-    <fields>
-        <fullName>Migration_Id__c</fullName>
-        <externalId>true</externalId>
-        <label>Migration Id</label>
-        <length>40</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
     <fields>
         <fullName>copado__Automatically_Merge_and_Deploy__c</fullName>
         <defaultValue>false</defaultValue>
@@ -401,15 +391,4 @@
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
-    <webLinks>
-        <fullName>copado__Select_Branch</fullName>
-        <availability>online</availability>
-        <displayType>button</displayType>
-        <height>600</height>
-        <linkType>page</linkType>
-        <masterLabel>Select Branch</masterLabel>
-        <openType>sidebar</openType>
-        <page>copado__DeploymentFlowStepBranchSelection</page>
-        <protected>false</protected>
-    </webLinks>
 </CustomObject>

@@ -20,23 +20,35 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Login_IP_restrictions__c</field>
+                <field>Urgency__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Case_TTT__c</field>
+                <field>Spring17Issue__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Case_OOO__c</field>
+                <field>Escalation_Feedback__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Case_prod_field__c</field>
+                <field>Elisa__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>CI_test_1__c</field>
+                <field>Validate_Only1__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Validate_Only2__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Validate_Only3__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Version_8__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>

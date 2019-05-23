@@ -55,7 +55,7 @@
                     <apex:pageBlock id="pb" mode="edit" rendered="{!AND(showOptions,!showError)}" >
                         <apex:pageBlockButtons id="pbbs" location="bottom">
                             <apex:commandButton id="btnSave" action="{!save}" title="{!$Label.copado__save}" value="{!$Label.copado__save}" />
-                            <apex:commandButton id="btnCancel" action="{!cancel}" title="{!$Label.copado__cancel}" value="{!$Label.copado__cancel}" immediate="true" />
+                            <apex:commandButton id="btnCancel" action="{!cancel}" title="{!$Label.copado__cancel}" value="{!$Label.copado__cancel}" immediate="true" html-formnovalidate="formnovalidate"/>
                         </apex:pageBlockButtons>
                         
                         <apex:pageBlockSection id="pbs1" columns="1">

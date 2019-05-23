@@ -49,6 +49,7 @@
     <enableEnhancedLookup>false</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
@@ -172,6 +173,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>copado__Password__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>copado__Profile_Name__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -244,17 +250,6 @@
         </displayedFields>
         <label>Copado Header Fields</label>
     </fieldSets>
-    <fields>
-        <fullName>Migration_Id__c</fullName>
-        <externalId>true</externalId>
-        <label>Migration Id</label>
-        <length>40</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
     <fields>
         <fullName>copado__Compliance_Status__c</fullName>
         <deprecated>false</deprecated>
@@ -747,8 +742,11 @@ IMAGE(&apos;/resource/1516617568000/&apos;+IF($Setup.copado__Settings__c.copado_
         <columns>copado__Validated_Date__c</columns>
         <columns>copado__Validated_Status__c</columns>
         <columns>CREATEDBY_USER</columns>
+        <columns>copado__Last_Git_Backup_Status__c</columns>
+        <columns>copado__Last_Apex_Tests_Status__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
+        <language>en_US</language>
     </listViews>
     <nameField>
         <label>Org Name</label>

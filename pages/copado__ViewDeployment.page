@@ -1,13 +1,14 @@
 <apex:page id="thePage" standardController="copado__Deployment__c" extensions="copado.ViewDeploymentExtension" docType="html-5.0">
     <script type="text/javascript">
+        var __sfdcSessionId = '{!GETSESSIONID()}';
         var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",encode:function(c){var a="",d,b,f,g,h,e,j=0;for(c=Base64._utf8_encode(c);j<c.length;)d=c.charCodeAt(j++),b=c.charCodeAt(j++),f=c.charCodeAt(j++),g=d>>2,d=(d&3)<<4|b>>4,h=(b&15)<<2|f>>6,e=f&63,isNaN(b)?h=e=64:isNaN(f)&&(e=64),a=a+this._keyStr.charAt(g)+this._keyStr.charAt(d)+this._keyStr.charAt(h)+this._keyStr.charAt(e);return a},decode:function(c){var a="",d,b,f,g,h,e=0;for(c=c.replace(/[^A-Za-z0-9\+\/\=]/g,"");e<c.length;)d=this._keyStr.indexOf(c.charAt(e++)),b=this._keyStr.indexOf(c.charAt(e++)),g=this._keyStr.indexOf(c.charAt(e++)),h=this._keyStr.indexOf(c.charAt(e++)),d=d<<2|b>>4,b=(b&15)<<4|g>>2,f=(g&3)<<6|h,a+=String.fromCharCode(d),64!=g&&(a+=String.fromCharCode(b)),64!=h&&(a+=String.fromCharCode(f));return a=Base64._utf8_decode(a)},_utf8_encode:function(c){c=c.replace(/\r\n/g,"\n");for(var a="",d=0;d<c.length;d++){var b=c.charCodeAt(d);128>b?a+=String.fromCharCode(b):(127<b&&2048>b?a+=String.fromCharCode(b>>6|192):(a+=String.fromCharCode(b>>12|224),a+=String.fromCharCode(b>>6&63|128)),a+=String.fromCharCode(b&63|128))}return a},_utf8_decode:function(c){for(var a="",d=0,b=c1=c2=0;d<c.length;)b=c.charCodeAt(d),128>b?(a+=String.fromCharCode(b),d++):191<b&&224>b?(c2=c.charCodeAt(d+1),a+=String.fromCharCode((b&31)<<6|c2&63),d+=2):(c2=c.charCodeAt(d+1),c3=c.charCodeAt(d+2),a+=String.fromCharCode((b&15)<<12|(c2&63)<<6|c3&63),d+=3);return a}};
     </script>
-    <c:IncludeStaticsResourceComponent addJQuery="true"/>
-    <apex:includeScript value="{!URLFOR($Resource.copado__DataTables10,'DataTables10/DataTables-1.10.15/js/jquery.dataTables.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.copado__DataTables,'DataTables-1.9.4/media/js/jquery.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.copado__DataTables,'DataTables-1.9.4/media/js/jquery.dataTables.min.js')}" />
     <style type="text/css">
-        @import "{!URLFOR($Resource.copado__DataTables10,'DataTables10/datatables.css')}";
+        @import "{!URLFOR($Resource.DataTables,'DataTables-1.9.4/media/css/datatable_table.css')}";
     </style>
-    <c:IncludeConnectionJsComponent />
+    <script src="../../soap/ajax/30.0/connection.js" type="text/javascript"></script>
         
     <apex:form id="theForm">
         <apex:outputField value="{!copado__Deployment__c.copado__Status__c}" rendered="false" />
@@ -152,9 +153,9 @@
                                         for (var i=0;i<array.length;i++) {
                                             array_name[i] = new Array(array[i].n, array[i].t);
                                         }
-                                        $copado('#stepDetail').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="tblstepDetail"></table>' );
+                                        $('#stepDetail').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="tblstepDetail"></table>' );
                                         if('{!JSENCODE(step.Type__c)}'=='MetaData' || '{!JSENCODE(step.Type__c)}'=='Full Profiles' || '{!JSENCODE(step.Type__c)}'=='Full Permission Sets' || '{!JSENCODE(step.Type__c)}'=='Translations' || '{!JSENCODE(step.Type__c)}'=='Delete MetaData'){
-                                            oTable = $copado('#tblstepDetail').dataTable( {
+                                            oTable = $('#tblstepDetail').dataTable( {
                                                 "aaData": array_name,
                                                 "aoColumns": [ { "sTitle": "{!$Label.NAME}" },{ "sTitle": "{!$Label.TYPE}" } ],
                                                 "iDisplayLength": 50,
@@ -166,10 +167,10 @@
                                     function drawTableUserTable(res, stepDiv,userJson){
                                         var  stepUsers = JSON.parse(userJson);
                                         console.log("stepUsers", stepUsers);
-                                        $copado("span[id$='fromSuffix']").text(stepUsers.fromSuffix);
-                                        $copado("span[id$='toSuffix']").text(stepUsers.toSuffix);
-                                        $copado("input[id$='actives']").prop("checked", stepUsers.active);
-                                        $copado("input[id$='useTerritories']").prop("checked", stepUsers.userTerritories);
+                                        $("span[id$='fromSuffix']").text(stepUsers.fromSuffix);
+                                        $("span[id$='toSuffix']").text(stepUsers.toSuffix);
+                                        $("input[id$='actives']").prop("checked", stepUsers.active);
+                                        $("input[id$='useTerritories']").prop("checked", stepUsers.userTerritories);
                                         
                                         var sel = {};
                                         for (var i=0;i<stepUsers.userIds.length;i++) {
@@ -183,8 +184,8 @@
                                                 array_name[pos++] = new Array(array[i].n, array[i].c, array[i].p, array[i].r, array[i].u, array[i].t);
                                             }
                                         }
-                                        $copado('#stepDetail').html( '<table cellpadding="0" cellspacing="0" border="0" class="display dataTable" id="tblstepDetail"></table>' );
-                                        oTable = $copado('#tblstepDetail').dataTable( {
+                                        $('#stepDetail').html( '<table cellpadding="0" cellspacing="0" border="0" class="display dataTable" id="tblstepDetail"></table>' );
+                                        oTable = $('#tblstepDetail').dataTable( {
                                             "aaData": array_name,
                                             "aoColumns": [ { "sTitle": "{!$Label.NAME}" },{ "sTitle": "{!$ObjectType.User.Fields.Country.Label}" },{ "sTitle": "{!$ObjectType.User.Fields.ProfileId.Label}" },{ "sTitle": "{!$ObjectType.User.Fields.UserRoleId.Label}" },{ "sTitle": "{!$ObjectType.User.Fields.Username.Label}" },{"sTitle": "Territory"}],
                                             "iDisplayLength": 50,
@@ -206,8 +207,8 @@
                 for (var i=0;i<array.length;i++) { 
                     array_name[i] = new Array(array[i].l, array[i].m, array[i].t);  
                 }
-                $copado('#errorsDiv').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="errorsTable"></table>' );
-                oTable = $copado('#errorsTable').dataTable( {
+                $('#errorsDiv').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="errorsTable"></table>' );
+                oTable = $('#errorsTable').dataTable( {
                     "aaData": array_name,
                     "aoColumns": [
                         { "sTitle": "{!$Label.copado__level}" },

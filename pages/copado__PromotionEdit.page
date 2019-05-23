@@ -2,11 +2,10 @@
     <apex:slds />
     <head>
          <title>Edit Promotion {!Promotion__c.Name} | Copado</title>
-        <c:IncludeStaticsResourceComponent addJQuery="true"/>
+        <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/libs/jquery.min.1.10.2.js')}" />
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
     </head>
     <body>
-
     <div class="copado-lightning-VF">
         <apex:sectionHeader title="Promotion Edit" subtitle="New Promotion" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" />
         <apex:outputPanel rendered="{!$User.UIThemeDisplayed != 'Theme4d'}">
@@ -60,7 +59,6 @@
 
         <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
             <apex:form id="TheForm" styleClass="copado-lightning-container" style="padding-top:12px;" html-novalidate="true">
-
                 <apex:pageBlock title="" mode="edit">
                     <apex:pageBlockSection columns="2" showHeader="false" title="">
                         <apex:inputField value="{!copado__Promotion__c.copado__Release__c}" id="releasefield"/>
@@ -69,7 +67,6 @@
                         <apex:inputField value="{!copado__Promotion__c.copado__Status__c}" />
                         <apex:inputField value="{!copado__Promotion__c.copado__Source_Environment__c}"  required="true" rendered="{!copado__Promotion__c.copado__Back_Promotion__c=false}"/>
                         <apex:inputField value="{!copado__Promotion__c.copado__Destination_Environment__c}" rendered="{!copado__Promotion__c.copado__Back_Promotion__c=true}"/>
-                        <apex:inputField value="{!copado__Promotion__c.copado__Order_by__c}" />
 
                         <apex:pageBlockSectionItem >
                             <apex:outputLabel value="{!$ObjectType.copado__Promotion__c.fields.copado__Back_Promotion__c.Label}" for="backpromotionfield"/>
@@ -112,6 +109,7 @@
     </div>
     </body>
     <script type="text/javascript">
+        var $copado = jQuery.noConflict();
         $copado(document).ready(function(){
            fixButtonAlign();
         });

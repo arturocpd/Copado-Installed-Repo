@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <emailDefault>false</emailDefault>
+    <excludeButtons>Submit</excludeButtons>
     <feedLayout>
         <autocollapsePublisher>true</autocollapsePublisher>
         <compactFeed>true</compactFeed>
@@ -47,8 +48,6 @@
         </rightComponents>
         <useInlineFiltersInConsole>false</useInlineFiltersInConsole>
     </feedLayout>
-    <headers>PersonalTagging</headers>
-    <headers>PublicTagging</headers>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -81,23 +80,35 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Login_IP_restrictions__c</field>
+                <field>Urgency__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Case_TTT__c</field>
+                <field>Spring17Issue__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Now_Time__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Case_OOO__c</field>
+                <field>Elisa__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Case_prod_field__c</field>
+                <field>Validate_Only1__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>CI_test_1__c</field>
+                <field>Validate_Only2__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Validate_Only3__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Version_8__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -227,9 +238,10 @@
         <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>false</customLabel>
+        <customLabel>true</customLabel>
         <detailHeading>false</detailHeading>
         <editHeading>false</editHeading>
+        <label>Custom Links</label>
         <layoutColumns>
             <layoutItems>
                 <customLink>UpsellCrosssellOpportunity</customLink>
@@ -239,6 +251,43 @@
         <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Escalation Monitor</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Bad_Escalation__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Agent__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Escalation_Feedback__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>OneColumn</style>
+    </layoutSections>
+    <miniLayout>
+        <fields>ContactId</fields>
+        <fields>Status</fields>
+        <fields>Priority</fields>
+        <fields>Origin</fields>
+        <fields>SuppliedEmail</fields>
+        <fields>Subject</fields>
+        <fields>Description</fields>
+        <fields>OwnerId</fields>
+        <fields>Reason</fields>
+        <fields>ContactEmail</fields>
+        <fields>ContactPhone</fields>
+        <fields>CreatedById</fields>
+        <fields>ClosedDate</fields>
+        <fields>CreatedDate</fields>
+    </miniLayout>
     <quickActionList>
         <quickActionListItems>
             <quickActionName>FeedItem.TextPost</quickActionName>
@@ -314,11 +363,11 @@
     <showEmailCheckbox>true</showEmailCheckbox>
     <showHighlightsPanel>true</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
-    <showKnowledgeComponent>true</showKnowledgeComponent>
+    <showKnowledgeComponent>false</showKnowledgeComponent>
     <showRunAssignmentRulesCheckbox>true</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>true</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h1a0000012AGt</masterLabel>
+        <masterLabel>00h0Y000002gMGB</masterLabel>
         <sizeX>3</sizeX>
         <sizeY>4</sizeY>
         <summaryLayoutItems>

@@ -49,60 +49,12 @@
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ReadWrite</externalSharingModel>
-    <fields>
-        <fullName>Change_Management_Integration__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>Change Management Integration</label>
-        <referenceTo>Change_Management_Integration_Credential__c</referenceTo>
-        <relationshipLabel>Projects</relationshipLabel>
-        <relationshipName>Projects</relationshipName>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>External_Id__c</fullName>
-        <caseSensitive>true</caseSensitive>
-        <externalId>true</externalId>
-        <inlineHelpText>Add here the Id of the record within your external Project Management system.</inlineHelpText>
-        <label>External Id</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
-    <fields>
-        <fullName>Migration_Id__c</fullName>
-        <externalId>true</externalId>
-        <label>Migration Id</label>
-        <length>40</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Workspace_Id__c</fullName>
-        <externalId>false</externalId>
-        <inlineHelpText>For Rally, the workspace ID is required in addition to the External Project Id.</inlineHelpText>
-        <label>Workspace Id</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
     <fields>
         <fullName>copado__Deployment_Flow__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
@@ -139,40 +91,8 @@
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>copado__Exclude_Tabs_from_Promotion_Page__c</fullName>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>Exclude Tabs from Promotion Page</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>MultiselectPicklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Static Code Analysis Summary</fullName>
-                    <default>false</default>
-                    <label>Static Code Analysis Summary</label>
-                </value>
-                <value>
-                    <fullName>Selenium Test</fullName>
-                    <default>false</default>
-                    <label>Selenium Test</label>
-                </value>
-                <value>
-                    <fullName>Promotion User Story Metadata</fullName>
-                    <default>false</default>
-                    <label>Promotion User Story Metadata</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-        <visibleLines>3</visibleLines>
-    </fields>
-    <fields>
         <fullName>copado__Index_Metadata__c</fullName>
-        <defaultValue>true</defaultValue>
+        <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <inlineHelpText>When this field is checked, Copado will index the metadata selected against the user stories into the User Story Metadata custom object. Indexed metadata can be used for reporting and compliance, and it&apos;s also used by Copado overlap awareness feature.</inlineHelpText>
@@ -265,15 +185,4 @@
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
-    <webLinks>
-        <fullName>Sync_External_User_Stories</fullName>
-        <availability>online</availability>
-        <displayType>button</displayType>
-        <height>600</height>
-        <linkType>page</linkType>
-        <masterLabel>Sync External User Stories</masterLabel>
-        <openType>noSidebar</openType>
-        <page>CopadoSyncUserStories</page>
-        <protected>false</protected>
-    </webLinks>
 </CustomObject>

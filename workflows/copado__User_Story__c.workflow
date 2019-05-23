@@ -5,7 +5,7 @@
         <description>US alert</description>
         <protected>false</protected>
         <recipients>
-            <recipient>{!Environment.VAR_Username}</recipient>
+            <recipient>arturodev1cpd@gmail.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>

@@ -28,14 +28,10 @@ copadoApp.getSelectedElementList = function() {
 copadoApp.save = function(){
     coGridHelper.datasource = metadataGrid2.datasource;
     coGridHelper.saveSelected(_config.data.id, _config.attachmentName, null, false, function(){
-        window.top.location.href = '/'+metadataGrid2.conf.data.id;
+        metadataApp.showMessage('CONFIRM', 'Data added. Close window', 0);
+        window.opener.location.reload();
     });
     copadoApp.diffCalculationGridDirty = false;
-    return false;
-};
-
-copadoApp.cancel = function(){
-    window.top.location.href = '/'+metadataGrid2.conf.data.id;
     return false;
 };
 

@@ -1,463 +1,310 @@
-<apex:page standardController="copado__Kanban_Board__c" extensions="copado.KanbanBoard" standardStylesheets="true" sideBar="false" showHeader="true" applyHtmlTag="true" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true" cache="false">
-    <apex:slds />
+<apex:page docType="html-5.0" standardStylesheets="true" showHeader="true" sidebar="true" standardController="copado__Kanban_Board__c" extensions="copado.KanbanBoard" title="{!$ObjectType.copado__Kanban_Board__c.label} {!$Label.copado__edit}">
     <html>
     <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <apex:slds />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <apex:stylesheet value="{!URLFOR($Resource.copado__jqw430,'styles/jqx.base.css')}" />
+    <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.copado__jqw430,'jqxcore.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.copado__jqw430,'jqxsortable.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.copado__jqw430,'jqxkanban.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.copado__jqw430,'jqxdata.js')}" />
 
-        <title>Kanban Board</title>
+    <apex:includeScript value="{!$Resource.copado__CopadoKanban}" />
 
-        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.KanbanBoard,'css/font-awesome.css')}" />
-        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.KanbanBoard,'css/font-awesome.min.css')}" />
-        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.KanbanBoard,'css/toastr-min.css')}" />
+    <script src="../../soap/ajax/38.0/connection.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        sforce.connection.sessionId = '{!GETSESSIONID()}';
 
-        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.DataTables10,'DataTables10/datatables.min.css')}" />
-        <c:IncludeStaticsResourceComponent addJQuery="true" addUIjs="true" />
-        <apex:includeScript value="{!URLFOR($Resource.copado__KanbanBoard,'js/toastr-min.js')}" />
-        <!-- DataTable -->
-        <apex:includeScript value="{!URLFOR($Resource.copado__DataTables10,'DataTables10/datatables.min.js')}" />
-
-        <script>
-            $copado(document).ready(function(){
-                unlockScreen();
+        var boardData = JSON.parse(decodeURIComponent('{! URLENCODE(JSonRecord)}'.replace(/\+/g, '%20')));
+        
+        $(window).load(function () {
+            $('.jqx-kanban-column-header-title').each(function(){
+                var pageHeight = window.innerHeight / 2 ;
+                $(this).css('left',0-pageHeight);
             });
 
-
-        </script>
-
-        <style type="text/css">
-            body {
-                padding: 1em;
-            }
-            .slds-item {
-                box-shadow: 0 0 10px gray;
-                border: none !important;
-                background-color: #fff;
-                border-radius: 0 !important;
-            }
-            .slds-title {
-                border-radius: 3px;
-                background-color: #e0e5ee;
-                border: 1px solid #d8dde6;
-                cursor: move;
-            }
-            .slds-col {
-                height: 800px;
-                overflow-y: auto;
-                border-left: 1px solid whitesmoke;
-            }
-            .slds-item-placeholder {
-                border: 2px dotted gray !important;
-                height: 5rem;
-            }
-            .moving-card {
-                opacity: 0.5;
-                transform: rotate( -5deg );
-            }
-            .slds-scope .slds-grid {
-                display: -webkit-inline-box;
-                width: inherit;
-            }
-            .boxTitle{
-                padding-top: 5px !important;
-                padding-bottom: 5px !important;
-                width: 100% !important;
-            }
-            .imageAdjuster{
-                border-radius: 45px;
-                left: 88%;
-                top: 0px;
-                height: 30px !important;
-            }
-            .cardFooter{
-                background-color: #efe9e9;
-                border-color: white 1px solid;
-                border: 1px solid white;
-                text-align: center;
-                font-size: 0.75rem;
-            }
-            .floatRight{
-                margin-right:1%;
-            }
-            .msgIcon {
-                display: none!important
-            }
-            .customMessage * {
-                color: #fff!important
-            }
-            .customMessage {
-                margin: 0!important;
-                opacity: 1!important;
-                width: 100%;
-                font-size: 12px;
-                border: 0px;
-                padding-left: 10px;
-            }
-            .message {
-                opacity: .1;
-            }
-            .slds-scope .slds-section-title--divider{
-                text-transform: none;
+            function getVisible() {    
+                var $el = $('jqx-kanban'),
+                scrollTop = $(window).scrollTop();
+                var before = 99999;
+                $('.jqx-kanban-column-header-title').each(function(){                    
+                    before = $(this).offset().top < before ? $(this).offset().top : before;
+                });
+                $('.jqx-kanban-column-header-title').each(function(){
+                    if(before < scrollTop)
+                    $(this).css('left',parseInt((0-before)-(scrollTop-before)));
+                });
             }
 
+            $(window).on('scroll resize', getVisible);
+        });
+        function onDocumentReady(fn) {
+            if (document.readyState != 'loading') {
+                fn();
+            } else {
+                document.addEventListener('DOMContentLoaded', fn);
+            }
+        }
+        $(document).ready(function(){
+           overridePageMessages();
+              
+        });
 
-        </style>
+
+                
+        function overridePageMessages(){    
+            
+            var textureEffect = 'slds-theme--alert-texture';
+                         
+            $('.warningM3').addClass('slds-notify slds-notify--toast slds-theme--warning customMessage '+textureEffect);          
+            $('.confirmM3').addClass('slds-notify slds-notify--alert slds-theme--success  customMessage '+textureEffect);    
+            $('.errorM3').addClass('slds-notify slds-notify--alert slds-theme--error customMessage '+textureEffect);                  
+            $('.infoM3').addClass('slds-notify slds-notify--toast customMessage '+textureEffect);    
+                             
+            $('.errorM3').removeClass('errorM3'); 
+            $('.confirmM3').removeClass('confirmM3'); 
+            $('.infoM3').removeClass('infoM3');   
+            $('.warningM3').removeClass('warningM3');  
+        }
+
+        onDocumentReady(function() {
+            
+            CopadoKanban.UI.initialize();
+            try {
+                CopadoKanban.initialize(boardData, function() {
+                    CopadoKanban.UI.initializeAfterLoadingData();
+                });
+            } catch (e) {
+                console.error(e, e.stack, e.prevStack);
+                var msg = e.faultstring ? e.faultstring : String(e);
+                return CopadoKanban.UI.showError('Could not load the data.' + msg, e);
+            }
+            $('.jqx-kanban-column').each(function(){
+                $(this).addClass('slds-section');
+                $(this).addClass('slds-is-open');
+            });
+            $('.jqx-kanban-column-header-collapsed').each(function(){
+                $(this).addClass('slds-theme_info');
+                $(this).addClass('slds-theme_alert-texture');
+            });
+            $('.jqx-kanban-column-header').each(function(){
+                $(this).addClass('slds-section__title');
+                $(this).addClass('slds-theme_info');
+                $(this).addClass('slds-theme_alert-texture');
+            });
+            $('.jqx-kanban-item').each(function(){
+                $(this).addClass('slds-card');
+            });
+            $('.jqx-kanban-item-content').each(function(){
+                $(this).addClass('slds-card__header');
+                $(this).addClass('slds-grid');
+                $(this).addClass('slds-media');
+                $(this).addClass('slds-has-flexi-truncate');
+            });
+            
+            $('.jqx-kanban-item-text').each(function(){
+                $(this).addClass('slds-media__body');
+            });
+
+            var userTheme = "{!$User.UIThemeDisplayed}";
+            if(userTheme == "Theme4d"){
+                $('.jqx-kanban-template-icon').each(function(){
+                    $(this).removeAttr('onmouseover');
+                    $(this).removeAttr('onmouseout');
+                    var usId = $(this).parent().attr('id').replace('kanban_','');
+                    $(this).find('.usLink').attr("href", "/"+usId);
+                    $(this).find('.usLink').attr("target", "_bank");
+                });
+                $('.jqx-kanban-item-content').each(function(){
+                    var node = document.getElementById("cardMedia");
+                    $(this).append(node);
+                    var elms = $(this).children();
+                    for(var i = 0; i< elms.length; i++){
+                        if(elms[i].id == "cardMedia"){
+                            elms[i].style.display = '';
+                        }
+                    }                    
+                });
+                
+            }else{
+                $('.jqx-kanban-template-icon').each(function(){
+                    $(this).addClass('slds-media__figure');
+                    var usId = $(this).parent().attr('id').replace('kanban_','');
+                    $(this).find('.usLink').attr("href", "/"+usId);
+                    $(this).find('.usLink').attr("target", "_bank");
+                });
+            }
+        });
+    </script>
+    <style type="text/css">
+
+        .copado-lightning{
+            font-size: 16pt;
+            position: absolute;
+            right: 3px;
+            top: 3px;
+        }
+
+        .jqx-kanban-item {
+            padding-top: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+
+        .jqx-kanban-item-content {
+            background-color: rgb(244,246,249); /*#b4c374;*/
+            width: 100%;
+            min-height: 22px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            position: relative;
+            margin-top: 0px;
+            padding-left: 5px;
+            padding-top: 5px;
+            top: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            color: #4a4a56;
+        }
+
+        .jqx-kanban-item-text {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+
+        .jqx-kanban-item-avatar {
+            top: 2px;
+        }
+
+        .jqx-kanban-template-icon {
+            font-size: 16pt;
+            position: absolute;
+            right: 3px;
+            top: 3px;
+        }
+
+        .jqx-kanban-column-header {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10.92px;
+            color: rgb(74, 74, 86);
+            margin-bottom: 10px;
+        }
+
+        .jqx-kanban-item dl {
+            margin: 0px;
+        }
+
+        .jqx-kanban-item dl dt {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .jqx-kanban-item dl dd {
+            margin: 0px;
+        }
+
+        .jqx-kanban-item dl dt span {
+            font-size: 8pt;
+            font-weight: normal;
+            color: #ccc;
+            padding: 2px;
+            border-radius: 3px;
+        }
+        ..jqx-widget-header{
+            border-color: #e9ebee !important;
+            background: rgb(235,238,241) !important;
+        }
+    </style>
     </head>
-    <body class="slds-scope" style="{!IF($User.UIThemeDisplayed == 'Theme4d','background-image: url(/_slds/images/themes/oneSalesforce/banner-brand-default.png?cache=210.2),linear-gradient(to top,rgba(32, 92, 159, 0), rgb(32, 92, 159));','')}">
-    <apex:form id="kanbanform">
-        <c:ScreenLocker msg="{!$Label.copado__loading}" lockOnLoad="true" />
-        <div class="slds">
-            <!--Page Header-->
-            <div class="slds-page-header slds-m-bottom--small" role="banner" style="border-radius:0.25rem;">
-                <div class="slds-media slds-media--center">
-                    <div class="slds-media__body">
-                        <p class="slds-page-header__title slds-truncate slds-align-middle slds-text-heading--large">
-                            <strong><img src="{!URLFOR($Resource.Statics,'img/icons/logo-icon.png')}" class="slds-icon slds-page-header__icon" aria-hidden="true" />&nbsp;{!objectLabel}
-                            </strong>
-
-                            <apex:outputLink onClick="lockScreen();" styleClass="slds-button slds-button_icon slds-button_icon-border-filled slds-float_right floatRight">
-                                <i class="fa fa-refresh fa-2x" aria-hidden="true" style="margin-top:2.3px"></i>
-                            </apex:outputLink>
-                            <apex:outputLink onClick="toggleAllCards();return false;" styleClass="slds-button slds-button_icon slds-button_icon-border-filled slds-float_right floatRight">
-                                <i class="fa fa-angle-double-up fa-2x changeclass" aria-hidden="true" style="margin-top:2.3px"></i>
-                            </apex:outputLink>
-                            <apex:outputLink rendered="{!picklistValuesMap != null}" onClick="showModal('#kanbanColumnModal','#kanbanColumnBackdrop');return false;" styleClass="slds-button slds-button_icon slds-button_icon-border-filled slds-float_right floatRight">
-                                <i class="fa fa-filter fa-2x" aria-hidden="true" style="margin-top:2.3px"></i>
-                            </apex:outputLink>
-                        </p>
-                        <p class="slds-text-body--small page-header__info">
-                            {!kanbanDescription}
-                        </p>
-                    </div>
-
-                </div>
-                <!-- HEADER DETAIL ROW-->
-                <ul class="slds-grid slds-page-header__detail-row" style="width:100%;margin-left:auto;">
-                    <li class="slds-page-header__detail-block">
-                        <p class="slds-truncate">
-                            <b>{!$Label.VIEW}:&nbsp;</b>
-                            <apex:selectList value="{!selectedKanbanView}" multiselect="false" size="1">
-                                <apex:actionSupport action="{!changeView}" event="onchange" />
-                                <apex:selectOptions value="{!KanbanViews}" />
-                            </apex:selectList>
-                        </p>
-                    </li>
-                    <li>
-                        <apex:commandlink action="{!kanbanViewsActions}" onClick="lockScreen();" onComplete="showModal('#viewsModal','#viewsBackdrop');unlockScreen();" reRender="viewsContent,viewsFooter,pageActionMessages">
-                            <apex:param value="Edit" name="kanbanView" />
-                            {!$Label.copado__edit}
-                        </apex:commandlink>
-                        &nbsp; | &nbsp;
-                    </li>
-                    <apex:outputPanel layout="none" rendered="{!selectedKanbanView != 'default'}">
-                        <li>
-                            <apex:commandlink action="{!deleteView}" onClick="lockScreen();">
-                                {!$Label.copado__delete}
-                            </apex:commandlink>
-                            &nbsp; | &nbsp;
-                        </li>
-                    </apex:outputPanel>
-                    <li>
-                        <apex:commandlink action="{!kanbanViewsActions}" onClick="lockScreen();" onComplete="showModal('#viewsModal','#viewsBackdrop');unlockScreen();" reRender="viewsContent,viewsFooter,pageActionMessages">
-                            <apex:param value="NewView" name="kanbanView" />
-                            {!$Label.copado__create_new_view}
-                        </apex:commandlink>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="slds-scrollable_x" style="width:100%;background-color: white;border-radius: 15px;">
-                <!--Column Headers-->
-                <div class="slds-grid">
-                    <div class="slds-tabs--path" role="application">
-                        <ul class="slds-tabs--path__nav" role="tablist">
-                            <apex:repeat value="{!picklistValuesMap}" var="status">
-                                <apex:outputPanel layout="none" rendered="{!columnFilterMap[status].isSelected}">
-                                    <li class="slds-tabs--path__item slds-is-incomplete breadcrump {!status}" role="presentation">
-                                        <a class="slds-tabs--path__link" tabindex="-1" role="tab" href="javascript:void(0);">
-                                            <span class="slds-tabs--path__title slds-text-heading--medium">{!status}  ( {!numberOfItemMap[status]} )</span>
-                                        </a>
-                                    </li>
-                                </apex:outputPanel>
-                            </apex:repeat>
-                        </ul>
-                    </div>
-                </div>
-
-                <!--Cards-->
-                <div class="slds-grid">
-                    <apex:repeat value="{!picklistValuesMap}" var="status">
-                        <apex:outputPanel layout="none" rendered="{!columnFilterMap[status].isSelected}">
-                            <div class="slds-col slds-size--3-of-12 slds-has-dividers--around-space slds-scrollable--y" name="{!picklistValuesMap[status]}">
-
-                                <!-- Summarize Information -->
-                                <div class="slds-tile__detail slds-text-body--small column-summary {!status}">
-                                    <apex:repeat value="{!newSummarizeByOperatorMap}" var="sumOperator">
-                                        <apex:repeat value="{!newSummarizeByOperatorMap[sumOperator]}" var="opr">
-                                            <apex:repeat value="{!summarizeInformationMap[status]}" var="summarize">
-                                                <apex:outputPanel layout="none" rendered="{!opr == summarize}">
-                                                    <center>
-                                                        <p class="slds-truncate">
-                                                            <b>{!summarize}&nbsp;{!$ObjectType[sObjectName].fields[sumOperator].Label}:&nbsp;</b>
-                                                            <span style="color:blue">{!summarizeInformationMap[status][summarize]}</span>
-                                                        </p>
-                                                    </center>
-                                                </apex:outputPanel>
-                                            </apex:repeat>
-                                        </apex:repeat>
-                                    </apex:repeat>
-                                </div>
-                                <apex:repeat value="{!allRecordsMap[status]}" var="rec">
-                                    <div class="slds-item slds-m-around--small" id="{!rec.Id}" style="{!IF(AND(colorValueMap != null,cardColorField != null,rec != null,rec[cardColorField] != null),'border-left: 8px solid ' + colorValueMap[rec[cardColorField]] + '!important','border-left: 8px solid #56aadf !important')}">
-                                        <div class="slds-tile slds-tile--board ">
-
-                                            <!-- Card Header -->
-                                            <div class="slds-grid slds-section-title--divider slds-m-bottom--small slds-title slds-clearfix boxTitle">
-                                                <div style="width:80%;"> <!--height:30px;-->
-                                                    <a href="{!URLFOR($Action[sObjectName].View,rec.Id)}" target="_blank">
-                                                        {!rec[nameReplacement]}
-                                                    </a>
-                                                </div>
-                                                <div style="width:20%;"><!--height:30px;-->
-                                                    <apex:image styleClass="slds-float_right imageAdjuster" id="profileImage" url="{!profileImageMap[rec[userImageField]]}" rendered="{!AND(profileImageMap != null,userImageField != null,rec != null,rec[userImageField] != null)}" />
-                                                </div>
-                                            </div>
-
-                                            <!-- Card Body -->
-                                            <div class="slds-tile__detail slds-text-body--small slds-is-open cardbody">
-                                                <apex:repeat value="{!cardDetailsMap[rec.Id]}" var="recItems">
-                                                    <apex:outputPanel layout="none" rendered="{!AND(recItems != nameReplacement,recItems != 'Id',recItems != nameReplacement,recItems != 'OwnerId',NOT(CONTAINS(recItems,'__r')),recItems != fieldToReadUpdate)}">
-                                                        <p class="slds-truncate">
-                                                            <b>{!$ObjectType[sObjectName].fields[recItems].Label}:&nbsp;</b>
-                                                            <apex:outputField value="{!rec[recItems]}" />
-                                                        </p>
-                                                    </apex:outputPanel>
-                                                </apex:repeat>
-                                            </div>
-
-                                            <!-- Card Footer -->
-                                            <apex:outputPanel layout="none" rendered="{!footerFieldList.size>0}">
-                                                <div class="slds-grid boxTitle">
-                                                    <div class="slds-small-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_12-of-12 cardFooter">
-                                                        <table>
-                                                            <tr>
-                                                                <apex:repeat value="{!footerFieldList}" var="footerField">
-                                                                    <td>
-                                                                        <apex:outputField value="{!rec[footerField]}" styleClass="slds-clearfix" />
-                                                                    </td>
-                                                                </apex:repeat>
-                                                            </tr>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </apex:outputPanel>
-                                        </div>
-                                    </div>
-                                </apex:repeat>
-                            </div>
-                        </apex:outputPanel>
-                    </apex:repeat>
-                </div>
-
+    <body class="slds-scope">
+        <div style="display: none;" id="cardMedia">
+            <div class="slds-media__figure">
+                
             </div>
         </div>
-
-        <apex:actionFunction name="getJson" action="{!saveAsNew}" immediate="true" onComplete="overridePageMessages();unlockScreen();" reRender="viewComponentMessages" />
-        <apex:actionFunction name="updateJson" action="{!applyChanges}" immediate="true" onComplete="overridePageMessages();unlockScreen();" reRender="viewComponentMessages" />
-
-        <!-- Views Modal -->
-        <section role="dialog" id="viewsModal" tabindex="-1" aria-labelledby="viewsHeader" aria-modal="true" aria-describedby="viewsContent" class="slds-modal slds-modal_large">
-            <div class="slds-modal__container">
-                <header class="slds-modal__header">
-                    <h2 id="viewsHeader" class="slds-text-heading_medium slds-hyphenate">{!$Label.Kanban_View_Editor}</h2>
-                </header>
-
-                <apex:pageMessages id="viewComponentMessages" />
-
-                <apex:outputPanel layout="block" styleClass="slds-modal__content slds-p-around_medium" id="viewsContent">
-                    <apex:outputPanel layout="none" rendered="{!showQueryEditor}">
-                        <c:QueryEditor dynamicSOQL="{!qEditor}" componentMode="{!queryEditorMode}" />
-                    </apex:outputPanel>
-                </apex:outputPanel>
-                <apex:outputPanel layout="block" id="viewsFooter">
-                    <footer class="slds-modal__footer">
-                        <button type="button" class="slds-button slds-button_neutral" onclick="closeModal('#viewsModal','#viewsBackdrop')">{!$Label.Cancel}</button>
-                        <apex:outputPanel layout="none" rendered="{!AND(NOT(ISBLANK(queryEditorMode)),queryEditorMode == 'Edit')}">
-                            <button type="button" class="slds-button slds-button_brand" onclick="lockScreen();updateJson();">{!$Label.Apply}</button>
-                        </apex:outputPanel>
-                        <apex:outputPanel layout="none" rendered="{!AND(NOT(ISBLANK(queryEditorMode)),queryEditorMode == 'NewView')}">
-                            <button type="button" class="slds-button slds-button_brand" onclick="lockScreen();getJson();">{!$Label.Save_as_New}</button>
-                        </apex:outputPanel>
-                    </footer>
-                </apex:outputPanel>
+        <apex:form id="form">
+            <apex:pageMessages />
+            <div id="generalStatus"></div>
+            <div class="message errorM3" role="alert" id="generalErrorFrame" style="display: none">
+                <table border="0" cellpadding="0" cellspacing="0" class="messageTable" style="padding:0px;margin:0px;">
+                    <tbody>
+                        <tr valign="top">
+                            <td><img alt="ERROR" class="msgIcon" src="/s.gif" title="ERROR"/></td>
+                            <td class="messageCell">
+                                <div id="j_id0:myForm:pgBlock:j_id14:j_id15:j_id16:0:j_id17:j_id18:j_id20" class="messageText"><span id="j_id0:myForm:pgBlock:j_id14:j_id15:j_id16:0:j_id17:j_id18:j_id21" style="color:white"><!--#cc0000-->
+                                    <h4>Errors</h4></span><br/></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><span id="j_id0:myForm:pgBlock:j_id14:j_id15:j_id16:0:j_id17:j_id18:j_id30">
+                            <ul style="padding-left:10px;padding-top:0px;margin:0px">
+                                <li style="padding-top:5px" id="generalErrorMessage"></li>
+                            </ul></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </section>
-        <div class="slds-backdrop" id="viewsBackdrop"></div>
-        <!-- !Views Modal -->
-
-        <!-- Kanban column editor -->
-        <section role="dialog" id="kanbanColumnModal" tabindex="-1" aria-labelledby="kanbanColumnHeader" aria-modal="true" aria-describedby="kanbanColumnContent" class="slds-modal slds-modal_small">
-            <div class="slds-modal__container">
-                <header class="slds-modal__header">
-                    <h2 id="kanbanColumnHeader" class="slds-text-heading_medium slds-hyphenate">{!$Label.Select_Fields_to_Remove_From_Column}</h2>
-                </header>
-
-                <apex:outputPanel layout="block" styleClass="slds-modal__content slds-p-around_small" id="kanbanColumnContent">
-                    <apex:repeat value="{!columnFilterMap}" var="cfl">
-                        <div class="slds-form slds-form_horizontal">
-                            <div class="slds-form-element">
-                                <label>
-                                    <apex:inputCheckbox value="{!columnFilterMap[cfl].isSelected}" />
-                                </label>
-                                <div class="slds-form-element__control">
-                                    {!cfl}
-                                </div>
+            <apex:pageMessages />
+            <div id="generalStatus"></div>
+            <div class="message errorM3" role="alert" id="generalErrorFrame" style="display: none">
+                <table border="0" cellpadding="0" cellspacing="0" class="messageTable" style="padding:0px;margin:0px;">
+                    <tbody>
+                        <tr valign="top">
+                            <td><img alt="ERROR" class="msgIcon" src="/s.gif" title="ERROR"/></td>
+                            <td class="messageCell">
+                                <div id="j_id0:myForm:pgBlock:j_id14:j_id15:j_id16:0:j_id17:j_id18:j_id20" class="messageText"><span id="j_id0:myForm:pgBlock:j_id14:j_id15:j_id16:0:j_id17:j_id18:j_id21" style="color:#cc0000">
+                                    <h4>Errors</h4></span><br/></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><span id="j_id0:myForm:pgBlock:j_id14:j_id15:j_id16:0:j_id17:j_id18:j_id30">
+                            <ul style="padding-left:10px;padding-top:0px;margin:0px">
+                                <li style="padding-top:5px" id="generalErrorMessage"></li>
+                            </ul></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="slds-page-header">
+                
+                <div class="slds-grid">                 
+                    <div class="slds-col slds-has-flexi-truncate">
+                        <div class="slds-media">
+                            <div class="slds-media__figure">
+                                <span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+                                    <svg class="slds-icon" aria-hidden="true">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/custom-sprite/svg/symbols.svg#custom33')}"></use>
+                                    </svg>
+                                </span>
                             </div>
+                            <div class="slds-media__body">
+                                <p class="slds-text-heading--label slds-line-height--reset">{!$ObjectType.copado__Kanban_Board__c.Label}</p>
+                                <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{!$ObjectType.copado__Kanban_Board__c.Label} {!$Label.copado__edit}"><apex:outputField value="{!copado__Kanban_Board__c.Name}"/></h1><br/>
+                                <p class="slds-text-body_small slds-line-height--reset"><apex:outputField value="{!copado__Kanban_Board__c.copado__Description__c}"/></p>
+                            </div>
+                          </div>
+                    </div>
+                  <!-- ACTION BUTTONS -->
+                    <div class="slds-col slds-no-flex slds-grid slds-align-top ">
+                        <div class="slds-button-group" role="group">
+                            <apex:commandButton value="{!$Label.copado__edit}" action="{!Edit}" styleClass="slds-button slds-button--neutral"/>
+                            <apex:commandButton value="{!$Label.copado__delete}" action="{!Delete}" styleClass="slds-button slds-button--neutral"/>
+                            <apex:commandButton value="{!$Label.copado__clone}" action="{!URLFOR($Action.Kanban_Board__c.Clone,Kanban_Board__c.id)}" styleClass="slds-button 
+                            slds-button--neutral"/>
                         </div>
-                    </apex:repeat>
-                </apex:outputPanel>
-
-                <apex:outputPanel layout="block" id="kanbanColumnFooter">
-                    <footer class="slds-modal__footer">
-                        <button type="button" class="slds-button slds-button_neutral" onclick="closeModal('#kanbanColumnModal','#kanbanColumnBackdrop');">{!$Label.SprintWall_Button_Cancel}</button>
-                        <button type="button" class="slds-button slds-button_brand" onclick="lockScreen();hideColumn();">{!$Label.Save}</button>
-                    </footer>
-                </apex:outputPanel>
-                <apex:actionFunction name="hideColumn" action="{!updateJsonToHideColum}" reRender="kanbanform" onComplete="closeModal('#kanbanColumnModal','#kanbanColumnBackdrop');alignFormWidth();alignTabsWithColumn();unlockScreen();" />
+                    </div>
+                    <!-- / ACTION BUTTONS -->
+                </div>
             </div>
-        </section>
-        <div class="slds-backdrop" id="kanbanColumnBackdrop"></div>
-        <!-- / Kanban Column Editor -->
-
-        <script type="text/javascript">
-        $copado(document).ready(function(){
-            alignFormWidth();
-            alignTabsWithColumn();
-            overridePageMessages();
-        });
-
-        $copado(window).on('resize',function(){
-            alignFormWidth();
-            alignTabsWithColumn();
-        });
-
-        function overridePageMessages(){
-            var textureEffect = '';
-            //Uncomment below line for texture effect on page messages
-            textureEffect = 'slds-theme--alert-texture';
-
-            $copado('.warningM3').addClass('slds-notify slds-notify--toast slds-theme--warning customMessage '+textureEffect);
-            $copado('.confirmM3').addClass('slds-notify slds-notify--alert slds-theme--success  customMessage '+textureEffect);
-            $copado('.errorM3').addClass('slds-notify slds-notify--alert slds-theme--error customMessage '+textureEffect);
-            $copado('.infoM3').addClass('slds-notify slds-notify--toast customMessage '+textureEffect);
-
-            $copado('.errorM3').removeClass('errorM3');
-            $copado('.confirmM3').removeClass('confirmM3');
-            $copado('.infoM3').removeClass('infoM3');
-            $copado('.warningM3').removeClass('warningM3');
-        }
-
-        var initSortable = $copado( ".slds-col" ).sortable(
-            {
-                connectWith: ".slds-col",
-                handle: ".slds-title",
-                placeholder: "slds-item slds-m-around--small slds-item-placeholder",
-                start: function( event, ui ) {
-                    $copado( ui.item ).addClass( "moving-card" );
-                },
-                stop: function( event, ui ) {
-                    $copado( ui.item ).removeClass( "moving-card" );
-
-                    var recordId        = $copado( ui.item ).attr( "id" );
-                    var recordStatus    = $copado( ui.item ).parent().attr( "name" );
-                    var fieldToUpdates  = '{!JSENCODE(fieldToReadUpdate)}';
-                    var nameReplacement = '{!JSENCODE(nameReplacement)}';
-                    var ns = '{!JSENCODE(namespace)}';
-                    var core = ns ? window[ns.split('__')[0]] : window;
-
-                    lockScreen();
-
-                    (core).KanbanBoard.updateRecordsPicklistValue(
-                        recordId,
-                        recordStatus,
-                        fieldToUpdates,
-                        nameReplacement,
-                        function( result, event ) {
-                            unlockScreen();
-                            toastr.info( result.message );
-                        }
-                    );
-                }
-            }
-        );
-
-        var alignFormWidth = function(){
-            var formContent = $copado('[id$=kanbanform]');
-            var iWidht = $copado('#tabContainer').innerWidth() - 20;
-            if(iWidht > 0){
-                formContent.css('width','' + iWidht + 'px');
-            }
-        }
-
-        var alignTabsWithColumn = function(){
-            var tabs = $copado('.slds-tabs--path');
-            if(tabs){
-                var columnWidth = $copado('.slds-size--3-of-12') ? $copado('.slds-size--3-of-12').css('width') : false;
-                var itemCount = $copado('.slds-tabs--path__item') ? $copado('.slds-tabs--path__item').length : false;
-                if(columnWidth && itemCount){
-                    tabs.css('width','' + (parseInt(columnWidth,10) * itemCount) + 'px');
-                }
-            }
-        }
-
-        var toggleAllCards = function(){
-            $copado(".cardbody").each(function(){
-                var elem = $copado(this);
-                if(elem.hasClass('slds-is-open')){
-                    elem.removeClass('slds-is-open');
-                    elem.hide();
-
-                } else {
-                    elem.addClass('slds-is-open');
-                    elem.show();
-                }
-            });
-
-            $copado(".changeclass").each(function(){
-                var icon = $copado(this);
-                if(icon.hasClass('fa-angle-double-up')){
-                    icon.removeClass('fa-angle-double-up').addClass('fa-angle-double-down');
-
-                } else {
-                    icon.removeClass('fa-angle-double-down').addClass('fa-angle-double-up');
-                }
-            });
-        }
-
-        function showModal(modalId,backDropId) {
-            setTimeout(function() {
-                $copado(backDropId).addClass('slds-backdrop--open');
-                $copado(modalId).addClass('slds-fade-in-open');
-            }, 500);
-        }
-
-        function closeModal(modalId,backDropId) {
-            $copado(modalId).removeClass('slds-fade-in-open');
-            $copado(backDropId).removeClass('slds-backdrop--open');
-            return false;
-        }
-
-        function initDataTable(tableId){
-            $copado(tableId).dataTable({
-                "paging": false,
-                "scrollCollapse": true
-            });
-        }
-
-
-        </script>
-    </apex:form>
+            <div id="kanban"></div>
+        </apex:form>
     </body>
     </html>
+    
 </apex:page>

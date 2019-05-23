@@ -77,8 +77,7 @@ var dw = dw || {};
 dw.u = {
     conf: {
         retryLimit: 300,
-        retryUISelector: '#retry-label',
-        fields2prevent: '==SetupOwnerId==, ==s==, ==Name==, ==type==, ==LastModifiedDate==, ==SystemModstamp==, ==IsDeleted==, ==CreatedById==, ==CreatedDate==, ==Id==, ==LastModifiedById=='
+        retryUISelector: '#retry-label'
     }
 };
 
@@ -119,20 +118,16 @@ dw.u.getRemote = function(url, cb, postData, avoidRetry, onError, cbOnOk) {
 
 
                 var obj = $copado.parseJSON(res.replace(/(\r\n|\n|\r)/gm, ' '));
-                console.log('obj utils ===> ',obj);
-                if(obj && typeof obj === 'object' && obj.length>0){
-                    obj = preventXSSonJQXGrid(obj);
-                }
-                console.log('object:::',obj);
 
 
                 //FIXME: understand why parse is giving an string
                 if (typeof obj === 'string') {
+
                     obj = $copado.parseJSON(obj.replace(/(\r\n|\n|\r)/gm, ' '));
                 }
 
-                if (obj.ok && !avoidRetry) {
-                    console.log('calling api in two secs...');
+
+                if (obj.ok) {
                     setTimeout(function() {
                         dw.u.retry(url, cb, postData, avoidRetry, onError);
                     }, 2000);
@@ -148,41 +143,43 @@ dw.u.getRemote = function(url, cb, postData, avoidRetry, onError, cbOnOk) {
                     alert(obj.error);
                     throw obj.error;
                 }
-                console.log('obj.messages utils ===> ',obj.messages);
+
                 if (obj.messages && obj.messages.length > 0) {
                     var errorMsgs = obj.messages.join('\n');
                     alert(errorMsgs);
                     console.error('Error Messages: ', errorMsgs);
                     throw errorMsgs;
                 }
-                console.log('cb in utilss....',cb);
+
                 cb && cb(obj);
 
             } catch (e) {
                 console.log('dw.u.getRemote() remote error', e);
                 if (avoidRetry) {
-                    var loadingPanels =  $copado('#loading,#screenLocker');
-                    if(loadingPanels.length){
-                        loadingPanels.hide();
+                    try {
+                        $copado('#loading').hide();
+                    } catch (er) {
+                        console.error('couldnt hide loading panel');
                     }
-                    var gridCheck =  $copado('#jqxgrid');
-                    if(gridCheck.length){
-                        gridCheck.html(e);
+                    try {
+                        $copado('#jqxgrid').html(e);
+                    } catch (er) {
+                        console.error('couldnt load html to grid');
                     }
                 }
 
                 if (onError) {
-                    onError(res);
+                    onError(response);
                     return;
                 }
 
                 if(avoidRetry) {
                     // there was no error handler, and there is no retry. Notify the customer
-                    var errMsg = ''+res;
+                    var errMsg = ''+response;
                     try {
                         errMsg = JSON.stringify(e);
                     } catch(e1) {
-                        console.error('Couldnt parse error json'+e1);
+                        console.error('Couldnt parse error json');
                     }
                     alert('There was an exception trying to contact Copado API: '+errMsg);
                 }else{
@@ -201,7 +198,6 @@ dw.u.getRemote = function(url, cb, postData, avoidRetry, onError, cbOnOk) {
             if(avoidRetry) {
                 // there was no error handler, and there is no retry. Notify the customer
                 var errMsg = ''+response;
-                if(!errMsg)
                 alert('There was an error trying to contact Copado API: '+errMsg);
             }else{
                 setTimeout(function() {
@@ -211,7 +207,6 @@ dw.u.getRemote = function(url, cb, postData, avoidRetry, onError, cbOnOk) {
         },
         timeout: 250000
     });
-
 };
 dw.u.getRemote.attempts = 0;
 
@@ -278,10 +273,6 @@ dw.u.getDecodedAttach = function(parentId, name) {
     var a = dw.u.getAttach(parentId, name);
     if (!a.length) return null;
     a.Body = Base64.decode(a[0].Body);
-    //below replaces opening and closing tags based on xss concerns
-    while(a.Body.indexOf('<') > -1 || a.Body.indexOf('>') > -1){
-             a.Body = a.Body.replace('<','').replace('>','');
-         }
     return a;
 };
 
@@ -316,44 +307,23 @@ dw.u.upsertAttach = function(parentId, name, body, alreadyCheck, newName) {
 
 
 };
-//added this function to be able to prevent Stored XSS Vulnerability based on Salesforce security report - UCU
-preventXSSonJQXGrid = function(objectArray){
-    //below return all fields of the current object to check on the loop
-    if(typeof objectArray == undefined || objectArray.length === 0) return; // added this condition, because it was throwing error if the objectArray was null or undefined
-
-    var fields = Object.keys(objectArray[0]);
-    for(var i=0;i<objectArray.length;i++){
-            for(var c=0;c<fields.length;c++){
-                var currentValue = objectArray[i][fields[c]];
-                if(currentValue && typeof currentValue === 'string'){
-                    while(currentValue.indexOf('<') > -1 || currentValue.indexOf('>') > -1){
-                        currentValue = currentValue.replace('<','').replace('>','');
-                    }
-                    objectArray[i][fields[c]] = currentValue;
-                }
-            }
-        }
-
-    return objectArray;
-};
 
 //this function try to recover the data from cached attach
 //if is not cached it get from remote source and save it in attach
 dw.u.getCachedRemote = function(opt) {
     /*
     opt sample
-    {
+    { 
         url: remoteUrl,
         parentId: ':)',
         name: 'Metadata' ,
         postData:data
         success:function(){},
         error:function(){},
-
+        
     };*/
 
     var attach = dw.u.getAttach(opt.parentId, opt.name);
-    console.log('attach=1==> ',attach);
     if (opt.force || attach.length != 1) {
 
         //get remote and save
@@ -364,27 +334,22 @@ dw.u.getCachedRemote = function(opt) {
 
                 //save as attach
                 dw.u.upsertAttach(opt.parentId, opt.name, JSON.stringify(res), !opt.force);
-                var attachLocal = dw.u.getAttach(opt.parentId, opt.name);
-                console.log('attachLocal===> ',attachLocal);
-                //format date
-                var date = Date.fromISOString(attachLocal[0].LastModifiedDate);
-                //added by UCU to be able update Refresh Cache date-time for the new attachments on Grid
-                opt.success(preventXSSonJQXGrid(res),  date.toLocaleString());
+                opt.success(res, 0);
             },
             opt.postData ? opt.postData : null
         );
 
     } else {
          try{
-            //decode the attach body
-            console.log('attach==2=> ',attach);
-            var res = Base64.decode(attach[0].Body);
+        //decode the attach body
+        var res = Base64.decode(attach[0].Body);
 
 
-            //format date
-            var date = Date.fromISOString(attach[0].LastModifiedDate);
-            //parse json
-            opt.success(preventXSSonJQXGrid($copado.parseJSON(res)), date.toLocaleString());
+        //format date
+        var date = Date.fromISOString(attach[0].LastModifiedDate);
+
+        //parse json
+        opt.success($copado.parseJSON(res), date.toLocaleString());
 
         }catch(e){
             //console.log(Base64.decode(attach[0].Body));
@@ -419,7 +384,6 @@ dw.u.getSavedData = function(id, type, isNotJSON) {
     }
     return false;
 };
-
 // JS Upload files
 var coUploadAttachment = {
      maxStringSize: 6000000,    //Maximum String size is 6,000,000 characters

@@ -81,23 +81,31 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Login_IP_restrictions__c</field>
+                <field>Urgency__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Case_TTT__c</field>
+                <field>Spring17Issue__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Case_OOO__c</field>
+                <field>Elisa__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Case_prod_field__c</field>
+                <field>Validate_Only1__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>CI_test_1__c</field>
+                <field>Validate_Only2__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Validate_Only3__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Version_8__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -219,6 +227,10 @@
                 <behavior>Edit</behavior>
                 <field>Comments</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Escalation_Feedback__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
@@ -235,6 +247,9 @@
         </quickActionListItems>
         <quickActionListItems>
             <quickActionName>Case.LogACall</quickActionName>
+        </quickActionListItems>
+        <quickActionListItems>
+            <quickActionName>Case.CaseComment</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
             <quickActionName>Case.ChangeStatus</quickActionName>

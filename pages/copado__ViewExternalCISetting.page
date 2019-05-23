@@ -4,7 +4,7 @@
             <c:GAnalytics />
             <apex:slds />
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            <c:IncludeStaticsResourceComponent addJquery="true"/>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <apex:stylesheet value="{!URLFOR($Resource.copado__SLDS, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
             <style type="text/css">
                 .col-right{
@@ -113,10 +113,13 @@
                 <!-- HEADER DETAIL ROW-->
                 <ul class="slds-grid slds-page-header__detail-row">
                     <li class="slds-page-header__detail-block">
-                        <c:LightningReadyOutputFields dividerBottom="false" SObject="{!externalCISetting}" Field="Name" />
+                        <c:LightningReadyOutputFields dividerBottom="false" SObject="{!externalCISetting}" Field="Name"></c:LightningReadyOutputFields>
                     </li>
                     <li class="slds-page-header__detail-block">
-                        <c:LightningReadyOutputFields dividerBottom="false" SObject="{!externalCISetting}" Field="CI_Tool__c" />
+                        <c:LightningReadyOutputFields dividerBottom="false" SObject="{!externalCISetting}" Field="CI_Tool__c"></c:LightningReadyOutputFields>
+                    </li>
+                    <li class="slds-page-header__detail-block">
+                        <c:LightningReadyOutputFields dividerBottom="false" SObject="{!externalCISetting}" Field="Username__c"></c:LightningReadyOutputFields>
                     </li>
                 </ul>
             </div>
@@ -138,9 +141,10 @@
                             <form class="slds-form--stacked">
                                 <div class="slds-grid">
                                     <div class="slds-col" >
-                                        <c:LightningReadyOutputFields SObject="{!externalCISetting}" Field="Name" />
-                                        <c:LightningReadyOutputFields SObject="{!externalCISetting}" Field="CI_Tool__c" />
-                                        <c:LightningReadyOutputFields SObject="{!externalCISetting}" Field="Endpoint__c" />
+                                        <c:LightningReadyOutputFields SObject="{!externalCISetting}" Field="Name"></c:LightningReadyOutputFields>
+                                        <c:LightningReadyOutputFields SObject="{!externalCISetting}" Field="CI_Tool__c"></c:LightningReadyOutputFields>
+                                        <c:LightningReadyOutputFields SObject="{!externalCISetting}" Field="Endpoint__c"></c:LightningReadyOutputFields>
+                                        <c:LightningReadyOutputFields SObject="{!externalCISetting}" Field="Username__c"></c:LightningReadyOutputFields>
                                     </div>
                                 </div>
                             </form>         
@@ -151,6 +155,8 @@
                             <form class="slds-form--stacked">
                                 <div class="slds-grid">
                                     <div class="slds-col" >
+                                        <!--<c:LightningReadyRelatedList sObjectAPI="External_CI_Job__c" parentsObjectAPI="External_CI_Setting__c" title="{!$ObjectType.External_CI_Job__c.Label}" parentId="{!externalCISetting.Id}" relationName="External_CI_Jobs__r" viewFieldName="Name" fieldSetName="relatedListFields" iconPath="/assets/icons/standard-sprite/svg/symbols.svg#process"/>-->
+
                                         <apex:relatedList list="External_CI_Jobs__r"/>
                                     </div>
                                 </div>
@@ -186,4 +192,35 @@
             </div>
         </body>
     </html>
+    <!--<apex:form id="form">
+        <apex:sectionHeader title="{!$ObjectType.External_CI_Setting__c.Label} {!$Label.VIEW}" subtitle="{!externalCISetting.Name}" description="{!$Label.EXTERNAL_CI_SETTING_DESC}"/>
+        <apex:pageMessages id="theMessages"/>
+
+        <apex:pageBlock id="pb_editSetting"  mode="edit">
+            <apex:pageblockButtons >
+                <apex:commandButton value="{!$Label.copado__edit}" action="{!edit}" />
+                <apex:commandButton value="{!$Label.copado__delete}" action="{!delete}" />
+                <apex:commandButton value="{!$Label.copado__validate_external_ci}" action="{!validate}" />
+            </apex:pageblockButtons>
+            <apex:pageBlockSection id="pbsMain" columns="1">
+                <apex:pageBlockSectionItem id="pbsi_name">
+                    <apex:outputLabel value="{!$ObjectType.External_CI_Setting__c.fields.Name.Label}" />
+                    <apex:outputField id="name" value="{!externalCISetting.Name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsi_ciTool">
+                    <apex:outputLabel value="{!$ObjectType.External_CI_Setting__c.fields.CI_Tool__c.Label}" />
+                    <apex:outputField id="ciType" value="{!externalCISetting.CI_Tool__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsi_endpoint">
+                    <apex:outputLabel value="{!$ObjectType.External_CI_Setting__c.fields.Endpoint__c.Label}" />
+                    <apex:outputField id="ciEndPoint" value="{!externalCISetting.Endpoint__c}" style="width:90%;"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsi_username">
+                    <apex:outputLabel value="{!$ObjectType.External_CI_Setting__c.fields.Username__c .Label}" />
+                    <apex:outputField id="ciUserName" value="{!externalCISetting.Username__c}"/>
+                </apex:pageBlockSectionItem>                        
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:relatedList id="externalJobs" pageSize="5" title="{!$ObjectType.External_CI_Setting__c.Label}" list="External_CI_Jobs__r"/>-->
 </apex:page>

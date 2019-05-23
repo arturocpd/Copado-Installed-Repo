@@ -4,13 +4,19 @@
 	<c:WizardUtils id="cmpWizardUtilities" />
 	<head>
 		<title>Continuous Integration {!copado__Continuous_Integration__c.Name} | Copado</title>
-		<c:IncludeStaticsResourceComponent addJquery="true" addCometdjs="true" addJcometdjs="true" addJSON2js="true"/>
 		<script type="text/javascript">
+            var $copado = jQuery.noConflict(), 
+            __sfdcSessionId = '{!GETSESSIONID()}';
             var Copado_Licenses = {!CurrentUserLicenses};
         </script>
-        <c:IncludeConnectionJsComponent />
+        <script src="../../soap/ajax/33.0/connection.js" type="text/javascript"></script>
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
         <c:ShowWebhook url="webhook/ci" recordId="{!copado__Continuous_Integration__c.Id}" />
+	
+		<apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/Cometd.js')}"/>
+		<apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
+		<apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/json2.js')}"/>
+	    <apex:includeScript value="{!URLFOR($Resource.copado__Statics, 'js/jquery.cometd.js')}"/>
 	    <apex:includeScript value="{!URLFOR($Resource.copadoStreamingService) }" />
 	    <apex:includeScript value="{!URLFOR($Resource.statusManager) }" />
 	    <apex:includeScript value="{!URLFOR($Resource.utils) }" />
@@ -319,7 +325,7 @@
 							<apex:commandButton id="btnEdit" value="{!$Label.copado__edit}" action="{!edit}" />
 							<apex:commandButton id="btnDelete" value="{!$Label.copado__delete}" action="{!URLFOR($Action.Continuous_Integration__c.Delete, Continuous_Integration__c.Id)}" onclick="if(!confirm('{!$Label.copado__are_you_sure}')){return false;};"/>
 							<apex:commandButton id="btnRun" value="Run Continuous Integration" action="{!executeCI}" disabled="{!!ci.copado__Active__c}" />
-							<apex:commandButton id="btnShowHookUrl" value="Show Hook URL" onclick="showWebhook(); return false;"/>
+			                <button id="btnShowHookUrl" value="Show Hook URL" class="{!IF($User.UIThemeDisplayed=='Theme3','','copado-lightning')}" onclick="showWebhook(); return false;">Show Hook URL</button>
 						</apex:pageBlockButtons>
 						<apex:pageBlockSection columns="1" collapsible="false" title="Continuous Integration URL" rendered="{!showHookURl}">
 							<apex:pageBlockSectionItem >
@@ -368,6 +374,7 @@
 									<script type="text/javascript">
 										var dura_secs = {!if(not(IsBlank(ci.Last_Build_Task_Duration__c)),ci.Last_Build_Task_Duration__c,0)} * 1000;
 										var h_dura = reformatMilliseconds(dura_secs);
+										console.debug(dura_secs,h_dura);
 										$copado('#ci_duration').text(h_dura);
 									</script>
 								</apex:outputPanel>

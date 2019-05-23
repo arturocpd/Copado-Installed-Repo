@@ -1,7 +1,10 @@
 <apex:page standardController="copado__Persona_Permission__c" id="thePage" extensions="copado.Settings" lightningStylesheets="true">
     
     <head>
-        <c:IncludeConnectionJsComponent />
+		<script type="text/javascript">
+            var __sfdcSessionId = '{!GETSESSIONID()}';
+        </script>
+        <script src="../../soap/ajax/37.0/connection.js" type="text/javascript"></script>
         <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
 	</head>
     

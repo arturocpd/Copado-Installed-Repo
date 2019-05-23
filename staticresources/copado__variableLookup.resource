@@ -2,6 +2,8 @@ var variableLookup = variableLookup || {};
 variableLookup.bindings = variableLookup.bindings || {};
 variableLookup.data = variableLookup.data || {};
 
+var $copado = $copado || jQuery.noConflict();
+
 variableLookup.data.destinationOrg = [];
 variableLookup.data.copadoOrg = [];
 variableLookup.data.deployment = [];

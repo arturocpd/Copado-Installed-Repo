@@ -49,6 +49,7 @@
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
@@ -152,19 +153,6 @@
         <type>Number</type>
         <unique>false</unique>
     </fields>
-    <fields>
-        <fullName>copado__User_Story__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>User Story</label>
-        <referenceTo>copado__User_Story__c</referenceTo>
-        <relationshipLabel>Apex Test Results</relationshipLabel>
-        <relationshipName>Apex_Test_Results</relationshipName>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
     <label>Apex Test Result</label>
     <nameField>
         <displayFormat>Test-{0000}</displayFormat>
@@ -180,8 +168,8 @@
         <customTabListAdditionalFields>copado__Failures__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>copado__Total_time__c</customTabListAdditionalFields>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>New</excludedStandardButtons>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>New</excludedStandardButtons>
         <lookupDialogsAdditionalFields>copado__Org__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>copado__Status__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>copado__Tests_run__c</lookupDialogsAdditionalFields>

@@ -1,8 +1,13 @@
+<!--
+ - Created by davidvenegas on 14/02/2018.
+ -->
+
 <apex:page id="ViewRelease" standardController="copado__Release__c" extensions="copado.ReleaseExt" title="{!$Label.copado__edit} {!$ObjectType.copado__Release__c.Label}" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds />
     <head>
         <title>{!$Label.copado__edit} {!$ObjectType.copado__Release__c.Label} {!Release__c.Name} | Copado</title>
-        <c:IncludeStaticsResourceComponent addJquery="true"/>
+
+        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
 
         <script>
@@ -68,7 +73,7 @@
 
             <apex:form id="theForm" style="padding-top:12px;" styleClass="copado-lightning-container">
                 <!-- RELEASE HELP SECTION -->
-                <c:CopadoHelp sectionText="{!$Label.copado__release_help}" sectionLink="https://docs.copa.do/release/release-overview" />
+                <c:CopadoHelp sectionText="{!$Label.copado__release_help}" sectionLink="https://docs.copa.do/article/cS53wKD0Y4" />
                 <!-- / RELEASE HELP SECTION -->
 
                 <!-- APEX DETAIL -->

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Checkopp1 --></label>
+        <name>Checkopp1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Checkopp2 --></label>
+        <name>Checkopp2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Checkopp3 --></label>
+        <name>Checkopp3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Checkopp4 --></label>
+        <name>Checkopp4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Checkopp5 --></label>
+        <name>Checkopp5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Generator(s) --></label>
+        <name>CurrentGenerators__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery/Installation Status --></label>
+        <name>DeliveryInstallationStatus__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In progress</masterLabel>
+            <translation><!-- In progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yet to begin</masterLabel>
+            <translation><!-- Yet to begin --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Main Competitor(s) --></label>
+        <name>MainCompetitors__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Contact --></label>
+        <name>Next_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Number --></label>
+        <name>OrderNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tracking Number --></label>
+        <name>TrackingNumber__c</name>
+    </fields>
+    <fields>
+        <label>Numero 2</label>
+        <name>number_2__c</name>
+    </fields>
+    <fields>
+        <label>Numero 3</label>
+        <name>number_3__c</name>
+    </fields>
+    <fields>
+        <label>Numero 4</label>
+        <name>number_4__c</name>
+    </fields>
+    <fields>
+        <label>Numero 1</label>
+        <name>numnber_1__c</name>
+    </fields>
+    <webLinks>
+        <label><!-- DeliveryStatus --></label>
+        <name>DeliveryStatus</name>
+    </webLinks>
+</CustomObjectTranslation>

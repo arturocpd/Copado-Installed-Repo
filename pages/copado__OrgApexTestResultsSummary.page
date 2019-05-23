@@ -1,14 +1,17 @@
 <apex:page showHeader="false" sidebar="false" standardController="copado__Org__c" extensions="copado.Settings" id="thePage" lightningStylesheets="true">
     <head>
-        <c:IncludeStaticsResourceComponent addJQuery="true" addATRcss="true"/>
+        <apex:includeScript value="{!URLFOR($Resource.copado__Statics,'js/libs/jquery.min.1.10.2.js')}" />
         <c:GAnalytics />
         <c:WizardUtils />
         
             <script type="text/javascript">
+                var $copado = jQuery.noConflict(), 
+                __sfdcSessionId = '{!GETSESSIONID()}';
                 var Copado_Licenses = {!CurrentUserLicenses};
             </script>
-            <c:IncludeConnectionJsComponent />
+            <script src="../../soap/ajax/33.0/connection.js" type="text/javascript"></script>
             <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
+            <link rel="stylesheet" href="{!URLFOR($Resource.Statics,'css/ApexTestResult.css')}" />
             <style>
                 body {font-size: 12px;}
                 .col1{ }

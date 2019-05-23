@@ -15,14 +15,14 @@
     <body>
         <div class="copado-lightning-VF">
             <apex:pageMessages id="theMessages" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
-            <apex:pageMessage id="theWarning" severity="WARNING" strength="2" summary="{!$Label.copado__selenium_not_enabled}" rendered="{!AND(!$Setup.copado__Copado_License__c.copado__Enable_CST__c,$User.UIThemeDisplayed != 'Theme4d')}"></apex:pageMessage>
+            <apex:pageMessage id="theWarning" severity="WARNING" strength="2" summary="{!HTMLENCODE($Label.copado__selenium_not_enabled)}" rendered="{!AND(!$Setup.copado__Copado_License__c.copado__Enable_CST__c,$User.UIThemeDisplayed != 'Theme4d')}"></apex:pageMessage>
             <apex:sectionHeader id="theHeader" title="{!$Label.copado__selenium_getting_started_header_title}" subtitle="{!$Label.copado__selenium_getting_started_header_subtitle}" description="{!$Label.copado__selenium_getting_started_header_description}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
 
             <apex:outputPanel layout="block" styleClass="slds-scope copado-lightning-container" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
                 <div class="slds-page-header">
                   <apex:outputPanel layout="block" id="pageMessages">
                     <apex:pagemessages id="msg"/>
-                    <apex:pageMessage id="theWarning2" severity="WARNING" strength="2" summary="{!$Label.copado__selenium_not_enabled}" rendered="{!!$Setup.copado__Copado_License__c.copado__Enable_CST__c}"></apex:pageMessage>
+                    <apex:pageMessage id="theWarning2" severity="WARNING" strength="2" summary="{!HTMLENCODE($Label.copado__selenium_not_enabled)}" rendered="{!!$Setup.copado__Copado_License__c.copado__Enable_CST__c}"></apex:pageMessage>
                   </apex:outputPanel>
                   <div class="slds-grid">
                     <div class="slds-col slds-has-flexi-truncate">
@@ -60,24 +60,24 @@
             </apex:outputPanel>            
             
             <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
+                <div style="display: none">
+                    <apex:outputText value="{!APIKey}" id="api_key"/>
+                    <script type="text/javascript">
+                        var copado_api_key = document.getElementById('{!$Component.api_key}').innerText;
+                    </script>
+                </div>
                 
                 <apex:outputPanel rendered="{!$Setup.copado__Copado_License__c.copado__Enable_CST__c}">
-                    <br/>
                     <div id="copadoRecorderExtensionInstalled" style="display:none">
-                        <apex:form >
-                            <apex:outputPanel rendered="{!APIKey!=''}" layout="none">
-                                <!-- non-classic button -->
-                                <apex:commandButton action="{!cstBindExtensionToOrg}" value="{!$Label.copado__selenium_getting_started_bind} ({!$Organization.Name})" immediate="true" styleClass="slds-button slds-button--neutral" rendered="{!$User.UIThemeDisplayed != 'Theme3'}" />
-                                <!-- classic button -->
-                                <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme3'}" layout="none">
-                                <a id="copadoRecorderExtensionNotInstalled1" href="{!LinkCstBindExtensionToOrg}" class="slds-button slds-button--neutral"><apex:outputText value="{!$Label.copado__selenium_getting_started_bind} ({!$Organization.Name})"></apex:outputText></a>
-                                </apex:outputPanel>
-                            </apex:outputPanel>
-                            <!-- common to both, disabled button -->
-                            <apex:commandButton action="{!cstBindExtensionToOrg}" value="{!$Label.copado__selenium_getting_started_apikey}" rendered="{!APIKey=''}" immediate="true" onclick="return false;" styleClass="slds-button slds-button--neutral" />
-                        </apex:form>                        
+                        <br />
+                        <script type="text/javascript">
+                            if(copado_api_key) {
+                                document.write('<a id="copadoRecorderExtensionNotInstalled1" href="copado:setupext/'+copado_api_key+'/{!JSENCODE($Organization.Name)}" class="copado-lightning" style="margin-left: 24px;">{!$Label.SELENIUM_GETTING_STARTED_BIND}</a>');
+                            }else{
+                                document.write('<a id="copadoRecorderExtensionNotInstalled1" href="{!$Page.appHome}" class="copado-lightning" style="margin-left: 24px;">{!$Label.SELENIUM_GETTING_STARTED_APIKEY}</a>');
+                            }
+                        </script>
                     </div>
-
                     <div id="copadoRecorderExtensionNotInstalled">
                         <br />
                         <div class="message warningM3" role="alert">
@@ -102,7 +102,7 @@
                     <p>&nbsp;</p>
                 </apex:outputPanel>
                 
-                <iframe frameBorder="0" src="https://docs.copa.do/copado-selenium-testing/selenium-setup" style="width: 100%; min-height: 1200px"></iframe>
+                <iframe frameBorder="0" src="https://docs.copa.do/copado-selenium-testing/getting-started" style="width: 100%; min-height: 1200px"></iframe>
             </apex:outputPanel>
         </div>
     </body>

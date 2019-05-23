@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- CheckLead1 --></label>
+        <name>CheckLead1__c</name>
+    </fields>
+    <fields>
+        <label><!-- CheckLead2 --></label>
+        <name>CheckLead2__c</name>
+    </fields>
+    <fields>
+        <label><!-- CheckLead3 --></label>
+        <name>CheckLead3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check case test 1 --></label>
+        <name>Check_case_test_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check case test 2 --></label>
+        <name>Check_case_test_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Generator(s) --></label>
+        <name>CurrentGenerators__c</name>
+    </fields>
+    <fields>
+        <label><!-- Global Picklist --></label>
+        <name>Global_Picklist__c</name>
+    </fields>
+    <fields>
+        <label><!-- Happy Lead --></label>
+        <name>Happy_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- Money --></label>
+        <name>Money__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Locations --></label>
+        <name>NumberofLocations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary --></label>
+        <name>Primary__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Interest --></label>
+        <name>ProductInterest__c</name>
+        <picklistValues>
+            <masterLabel>GC1000 series</masterLabel>
+            <translation><!-- GC1000 series --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GC3000 series</masterLabel>
+            <translation><!-- GC3000 series --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GC5000 series</masterLabel>
+            <translation><!-- GC5000 series --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SIC Code --></label>
+        <name>SICCode__c</name>
+    </fields>
+    <fields>
+        <label>Escenario1.1</label>
+        <name>Scenario1_1__c</name>
+    </fields>
+    <fields>
+        <label>Escenario1.2</label>
+        <name>Scenario1_2__c</name>
+    </fields>
+    <fields>
+        <label>Escenario2.1</label>
+        <name>Scenario2_1__c</name>
+    </fields>
+    <fields>
+        <label>Escenario2.2</label>
+        <name>Scenario2_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- number 5 --></label>
+        <name>number_5__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Lead Record Type2 --></label>
+        <name>Lead_Record_Type2</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Lead Record Type3 --></label>
+        <name>Lead_Record_Type3</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Lead Record Type --></label>
+        <name>Lead_Record_type</name>
+    </recordTypes>
+</CustomObjectTranslation>

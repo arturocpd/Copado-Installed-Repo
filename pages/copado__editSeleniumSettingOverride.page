@@ -1,18 +1,24 @@
-<apex:page id="thePage" standardController="copado__Selenium_Settings__c" extensions="copado.EditSeleniumSettingOverride,copado.Settings" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
+<apex:page id="thePage" standardController="copado__Selenium_Settings__c" extensions="copado.Settings" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <head>
         <c:GAnalytics />
         <c:WizardUtils />
-
-        <c:IncludeStaticsResourceComponent addJquery="true" addUIjs="true" addUIcss="true"/>
-        <c:IncludeJqxResourceComponent addjqxAlljs="true" addjqxBasecss="true"/>
-        <apex:includeScript value="{!URLFOR($Resource.utilsV2) }" />
+        <script type="text/javascript" src="{!URLFOR($Resource.Statics,'js/libs/jquery.min.1.10.2.js')}"></script>
+        <script type="text/javascript" src="{!URLFOR($Resource.Statics,'js/libs/jquery-ui.min.js')}"></script>
+        <script type="text/javascript" src="{!URLFOR($Resource.jqx, 'jqwidgets/jqx-all.js')}"></script>
+        <apex:stylesheet value="{!URLFOR($Resource.copado__jqx, 'jqwidgets/styles/jqx.base.css')}"></apex:stylesheet>
+        
+        <link rel="stylesheet" href="{!URLFOR($Resource.Statics,'css/jquery-ui.css')}"></link>
+        
+        <apex:includeScript value="{!URLFOR($Resource.utilsV2) }"></apex:includeScript>
         <script type="text/javascript" src="{!URLFOR($Resource.seleniumSettings)}"></script>
         
         <script type="text/javascript">
+            var $copado = jQuery.noConflict(); 
+            var __sfdcSessionId = '{!GETSESSIONID()}';
             var Copado_Licenses = {!CurrentUserLicenses};
         </script>
-        <c:IncludeConnectionJsComponent />
+        <script src="../../soap/ajax/36.0/connection.js" type="text/javascript"></script>
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
     </head>
     
@@ -63,18 +69,12 @@
             </apex:outputPanel>
 
             <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
-                <apex:outputPanel id="pMessages">
-                    <apex:pageMessages />
-                </apex:outputPanel>
                 <apex:form id="theForm" styleClass="copado-lightning-container" style="padding-top:12px;" html-novalidate="true">
-                    <apex:actionFunction id="afSalesforceSave" action="{!saveMethod}" name="doSalesforceSave" reRender="pbs1,pMessages">
-                        <apex:param name="retUrl" value="" assignTo="{!retUrl}"/>
-                    </apex:actionFunction>
+                    <apex:actionFunction id="afSalesforceSave" action="{!save}" name="doSalesforceSave"  />
                     <apex:pageBlock id="pb" mode="edit" title="">
                         <apex:pageBlockButtons >
-                            <input type="submit" id="btnSave" value="{!$Label.SAVE}" class="btn {!IF($User.UIThemeDisplayed=='Theme3','','copado-lightning')}" onclick="seleniumSettings.grid.setSaveValues(locSearch);return false;"/>
-                            <apex:commandButton id="btnCancel" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','copado-lightning')}" action="{!CANCEL}" rendered="{!ISBLANK(aliasString)}" value="{!$Label.copado__cancel}" />
-                            <apex:commandButton id="btnCancel4QuickRun" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','copado-lightning')}" immediate="true" action="{!goBackToQuickRunPage}" rendered="{!NOT(ISBLANK(aliasString))}" value="{!$Label.copado__cancel}" />
+                            <button id="btnSave" value="{!$Label.SAVE}" class="{!IF($User.UIThemeDisplayed=='Theme3','','copado-lightning')}" onclick="seleniumSettings.grid.setSaveValues();return false;">{!$Label.SAVE}</button>
+                            <apex:commandButton id="btnCancel" action="{!cancel}" value="{!$Label.copado__cancel}" />
                         </apex:pageBlockButtons>
                         <apex:pageBlockSection id="pbs1" columns="1">
                             <apex:inputField id="if_name" value="{!copado__Selenium_Settings__c.Name}" required="true" style="width:50%;" />
@@ -82,15 +82,7 @@
                             <apex:inputField id="if_wd_url" value="{!copado__Selenium_Settings__c.copado__Webdriver_URL__c}" required="true" style="width:50%;" />
                             <apex:inputField id="if_wd_proxy" value="{!copado__Selenium_Settings__c.copado__Webdriver_Proxy__c}" />
                             <apex:inputField id="if_desiredCaps" value="{!copado__Selenium_Settings__c.copado__Desired_Capabilities__c}" style="width:50%;" rendered="false"/><!-- NOT PART OF BETA FOR NOW -->
-                            <apex:inputField id="if_orgCred" value="{!copado__Selenium_Settings__c.copado__Default_Org_Credential__c}" required="{!isDefOrgCredRequired}" style="width:50%;" />
-                            <script>
-                                (function(){
-                                    var hasId = "{!copado__Selenium_Settings__c}";
-                                    if($copado('[id$="if_name"]').val().length > 0 && hasId.length == 0){
-                                        $copado('[id$="if_name"]').prop('disabled',true).prop('readOnly',true);
-                                    }
-                                })()
-                            </script>
+                            <apex:inputField id="if_orgCred" value="{!copado__Selenium_Settings__c.copado__Default_Org_Credential__c}" style="width:50%;" />
                         </apex:pageBlockSection>
                         
                         <br />
@@ -109,12 +101,11 @@
                     </apex:pageBlock>
                 </apex:form>
                 <script type="text/javascript">
-                    var locSearch = location.search;
                     seleniumSettings.config.herokuServer = '{!JSENCODE(herokuServer)}';
                     var copadoApp = {
                         urlParameters: '{!JSENCODE(urlParameters)}'
                     };
-
+                    
                     seleniumSettings.labels.SELECTED = copadoLabels.selected;
                     seleniumSettings.labels.OS = copadoLabels.OS;
                     seleniumSettings.labels.OS_VERSION = copadoLabels.OS_VERSION;

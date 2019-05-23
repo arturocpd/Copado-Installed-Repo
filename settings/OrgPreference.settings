@@ -22,7 +22,7 @@
     </preferences>
     <preferences>
         <settingName>NetworksEnabled</settingName>
-        <settingValue>false</settingValue>
+        <settingValue>true</settingValue>
     </preferences>
     <preferences>
         <settingName>AnalyticsSharingEnable</settingName>
@@ -45,10 +45,6 @@
         <settingValue>false</settingValue>
     </preferences>
     <preferences>
-        <settingName>Packaging2</settingName>
-        <settingValue>false</settingValue>
-    </preferences>
-    <preferences>
         <settingName>DeleteMonitoringDataEnabled</settingName>
         <settingValue>false</settingValue>
     </preferences>
@@ -65,12 +61,8 @@
         <settingValue>true</settingValue>
     </preferences>
     <preferences>
-        <settingName>ExpandedSourceTrackingPref</settingName>
-        <settingValue>false</settingValue>
-    </preferences>
-    <preferences>
         <settingName>ScratchOrgManagementPref</settingName>
-        <settingValue>true</settingValue>
+        <settingValue>false</settingValue>
     </preferences>
     <preferences>
         <settingName>RemoveThemeBrandBanner</settingName>
@@ -111,10 +103,6 @@
     <preferences>
         <settingName>HstsSitesCommunities</settingName>
         <settingValue>false</settingValue>
-    </preferences>
-    <preferences>
-        <settingName>PortalUserShareOnCase</settingName>
-        <settingValue>true</settingValue>
     </preferences>
     <preferences>
         <settingName>CompileOnDeploy</settingName>
@@ -190,6 +178,10 @@
     </preferences>
     <preferences>
         <settingName>ApexApprovalLockUnlock</settingName>
+        <settingValue>false</settingValue>
+    </preferences>
+    <preferences>
+        <settingName>PRMAccRelPref</settingName>
         <settingValue>false</settingValue>
     </preferences>
     <preferences>
