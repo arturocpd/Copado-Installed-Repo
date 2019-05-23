@@ -35,11 +35,11 @@ package.xml
 #sites/*
 #siteDotComSites/*
 #Managed packages can trigger the installation or uninstallation of applications, is recommended to manage this outside git
-installedPackages/*
+#installedPackages/*
 
 #Managed package: Copado 
-classes/Copado__*
-triggers/Copado__*
-pages/Copado__*
-components/Copado__*
-aura/Copado__*
+#classes/Copado__*
+#triggers/Copado__*
+#pages/Copado__*
+#components/Copado__*
+#aura/Copado__*
