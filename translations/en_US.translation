@@ -13,6 +13,10 @@
         <name>Do_not_translate2</name>
     </customLabels>
     <customLabels>
+        <label><!-- Test Case --></label>
+        <name>Test_Case</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Translate --></label>
         <name>Translate</name>
     </customLabels>
