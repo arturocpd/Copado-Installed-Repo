@@ -29,6 +29,10 @@
         <name>DEPLOYMENT_NEW</name>
     </customLabels>
     <customLabels>
+        <label>Caso prueba.</label>
+        <name>Test_Case</name>
+    </customLabels>
+    <customLabels>
         <label></label>
         <name>copado__ACCOUNT_SUMMARY</name>
     </customLabels>
