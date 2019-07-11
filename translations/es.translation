@@ -41,6 +41,10 @@
         <name>Do_not_translate2</name>
     </customLabels>
     <customLabels>
+        <label>Caso prueba.</label>
+        <name>Test_Case</name>
+    </customLabels>
+    <customLabels>
         <label>Traduce ahora.</label>
         <name>Translate</name>
     </customLabels>

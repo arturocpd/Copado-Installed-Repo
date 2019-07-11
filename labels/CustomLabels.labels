@@ -28,4 +28,11 @@
         <shortDescription>Translate this</shortDescription>
         <value>Translate this custom label.</value>
     </labels>
+    <labels>
+        <fullName>Test_Case</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Test Case</shortDescription>
+        <value>Test Case</value>
+    </labels>
 </CustomLabels>
