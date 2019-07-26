@@ -41,7 +41,7 @@
         <name>Do_not_translate2</name>
     </customLabels>
     <customLabels>
-        <label>Caso prueba.</label>
+        <label>Caso prueba. MOD</label>
         <name>Test_Case</name>
     </customLabels>
     <customLabels>
@@ -69,11 +69,11 @@
         <name>copado__ACTIVATE_USERS</name>
     </customLabels>
     <customLabels>
-        <label>Traduccion</label>
+        <label>Traduccion MOD</label>
         <name>copado__ADD</name>
     </customLabels>
     <customLabels>
-        <label>Añade un entorno</label>
+        <label></label>
         <name>copado__ADD_AN_ENVIRONMENT</name>
     </customLabels>
     <customLabels>
