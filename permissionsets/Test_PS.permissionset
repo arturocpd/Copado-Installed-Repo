@@ -25,6 +25,11 @@
         <field>copado__User_Story__c.copado__Base_Branch__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__User_Story__c.copado__Has_Apex_Code__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Test PS</label>
     <objectPermissions>
