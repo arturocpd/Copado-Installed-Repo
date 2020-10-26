@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>copado</members>
-        <members>sf_com_apps</members>
-        <name>InstalledPackage</name>
+        <members>copado__Copado_Smart_Help.Flow_Active_Version</members>
+        <members>copado__Copado_Smart_Help.Profile_Permission_Set_FLS</members>
+        <members>copado__Copado_Smart_Help.Profile_Permission_Set_OLS</members>
+        <members>copado__Data_Template_Setup.Disabled_Child_Objects</members>
+        <members>copado__Data_Template_Setup.Disabled_Fields</members>
+        <name>CustomMetadata</name>
     </types>
-    <version>48.0</version>
+    <version>49.0</version>
 </Package>
